@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matheus Rafael — Desenvolvedor Backend</title>
+<meta name="description" content="Portfólio de Matheus Rafael, Desenvolvedor Backend especializado em C#, .NET, Node.js, Java e APIs RESTful. São Paulo, SP.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --bg2: #111118;
+    --bg3: #16161f;
+    --border: rgba(255,255,255,0.07);
+    --border2: rgba(255,255,255,0.12);
+    --text: #e8e8f0;
+    --text2: #8888a8;
+    --text3: #55556a;
+    --accent: #7c6aff;
+    --accent2: #a594ff;
+    --green: #2dd4a0;
+    --pink: #f06292;
+    --amber: #ffb347;
+    --blue: #60a5fa;
+    --mono: 'Space Mono', monospace;
+    --sans: 'Syne', sans-serif;
+    --radius: 14px;
+    --radius-sm: 8px;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ─── NOISE TEXTURE ─── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.4;
+  }
+
+  /* ─── SCROLLBAR ─── */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 4px; }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 2.5rem;
+    background: rgba(10,10,15,0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--accent2);
+    letter-spacing: 0.08em;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text2);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--text); }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8rem 2.5rem 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-grid-lines {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(124,106,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(124,106,255,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+
+  .hero-glow {
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(124,106,255,0.12) 0%, transparent 70%);
+    top: -100px; right: -100px;
+    pointer-events: none;
+    animation: pulse 6s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.7; }
+  }
+
+  .hero-inner { position: relative; z-index: 1; max-width: 900px; }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent2);
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeUp 0.7s 0.1s forwards;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 24px; height: 1px;
+    background: var(--accent);
+  }
+
+  .hero-name {
+    font-size: clamp(3.5rem, 10vw, 7rem);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.5rem;
+    opacity: 0;
+    animation: fadeUp 0.7s 0.2s forwards;
+  }
+
+  .hero-name .accent { color: var(--accent2); }
+
+  .hero-title {
+    font-family: var(--mono);
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    color: var(--text2);
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeUp 0.7s 0.3s forwards;
+  }
+
+  .hero-desc {
+    font-size: 1.1rem;
+    color: var(--text2);
+    max-width: 580px;
+    line-height: 1.75;
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    animation: fadeUp 0.7s 0.4s forwards;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.7s 0.5s forwards;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    padding: 12px 24px;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    transition: all 0.2s;
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: #fff;
+  }
+  .btn-primary:hover { background: var(--accent2); transform: translateY(-2px); }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border2);
+  }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent2); transform: translateY(-2px); }
+
+  .hero-tech-scroll {
+    position: absolute;
+    bottom: 3rem;
+    left: 0; right: 0;
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeIn 1s 1s forwards;
+  }
+
+  .tech-track {
+    display: flex;
+    gap: 2rem;
+    width: max-content;
+    animation: scrollLeft 20s linear infinite;
+  }
+
+  @keyframes scrollLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .tech-track span {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text3);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    padding: 6px 16px;
+    border: 1px solid var(--border);
+    border-radius: 100px;
+  }
+
+  /* ─── SECTION ─── */
+  section {
+    padding: 6rem 2.5rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .section-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+  }
+
+  .section-title {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+    max-width: 200px;
+  }
+
+  /* ─── ABOUT ─── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .about-text p {
+    color: var(--text2);
+    line-height: 1.85;
+    margin-bottom: 1.25rem;
+    font-size: 1.05rem;
+  }
+
+  .about-text p strong { color: var(--text); font-weight: 500; }
+
+  .about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .stat-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    transition: border-color 0.2s;
+  }
+
+  .stat-card:hover { border-color: var(--border2); }
+
+  .stat-num {
+    font-family: var(--mono);
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--accent2);
+    line-height: 1;
+    margin-bottom: 0.35rem;
+  }
+
+  .stat-label {
+    font-size: 12px;
+    color: var(--text3);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-family: var(--mono);
+  }
+
+  /* ─── PROJECTS ─── */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .proj-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .proj-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--border2);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  }
+
+  .proj-top-bar {
+    height: 4px;
+    width: 100%;
+  }
+
+  .proj-inner { padding: 1.75rem; flex: 1; display: flex; flex-direction: column; }
+
+  .proj-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    gap: 1rem;
+  }
+
+  .proj-icon-wrap {
+    width: 48px; height: 48px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+
+  .proj-links { display: flex; gap: 8px; }
+
+  .proj-link-icon {
+    width: 32px; height: 32px;
+    border: 1px solid var(--border2);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--text2);
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.2s;
+  }
+  .proj-link-icon:hover { border-color: var(--accent); color: var(--accent2); }
+
+  .proj-badge {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 100px;
+    margin-bottom: 0.75rem;
+  }
+
+  .proj-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.5rem;
+  }
+
+  .proj-desc {
+    font-size: 0.9rem;
+    color: var(--text2);
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+  }
+
+  .proj-features {
+    list-style: none;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+  }
+
+  .proj-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.85rem;
+    color: var(--text2);
+    line-height: 1.5;
+  }
+
+  .feat-icon {
+    font-size: 12px;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+
+  .proj-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .stack-tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    padding: 4px 10px;
+    border-radius: 100px;
+    border: 1px solid var(--border2);
+    color: var(--text2);
+    letter-spacing: 0.04em;
+    transition: all 0.2s;
+  }
+
+  .stack-tag:hover { border-color: var(--accent); color: var(--accent2); }
+
+  .proj-category-label { margin-bottom: 1.5rem; }
+
+  .cat-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-weight: 700;
+  }
+
+  .cat-pill.personal {
+    background: rgba(124,106,255,0.1);
+    color: var(--accent2);
+    border: 1px solid rgba(124,106,255,0.25);
+  }
+
+  .cat-pill.academic {
+    background: rgba(45,212,160,0.08);
+    color: var(--green);
+    border: 1px solid rgba(45,212,160,0.2);
+  }
+
+  /* project colors */
+  .c-health .proj-top-bar { background: linear-gradient(90deg, #2dd4a0, #1aaf80); }
+  .c-health .proj-icon-wrap { background: rgba(45,212,160,0.1); }
+  .c-health .proj-badge { background: rgba(45,212,160,0.1); color: #2dd4a0; }
+
+  .c-couple .proj-top-bar { background: linear-gradient(90deg, #7c6aff, #a594ff); }
+  .c-couple .proj-icon-wrap { background: rgba(124,106,255,0.12); }
+  .c-couple .proj-badge { background: rgba(124,106,255,0.12); color: var(--accent2); }
+
+  .c-love .proj-top-bar { background: linear-gradient(90deg, #f06292, #e91e8c); }
+  .c-love .proj-icon-wrap { background: rgba(240,98,146,0.1); }
+  .c-love .proj-badge { background: rgba(240,98,146,0.1); color: #f06292; }
+
+  .c-pet .proj-top-bar { background: linear-gradient(90deg, #ffb347, #e08a00); }
+  .c-pet .proj-icon-wrap { background: rgba(255,179,71,0.1); }
+  .c-pet .proj-badge { background: rgba(255,179,71,0.1); color: var(--amber); }
+
+  .c-bus .proj-top-bar { background: linear-gradient(90deg, #60a5fa, #2563eb); }
+  .c-bus .proj-icon-wrap { background: rgba(96,165,250,0.1); }
+  .c-bus .proj-badge { background: rgba(96,165,250,0.1); color: var(--blue); }
+
+  /* ─── EXPERIENCE ─── */
+  .exp-timeline { position: relative; padding-left: 2rem; }
+
+  .exp-timeline::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 8px; bottom: 0;
+    width: 1px;
+    background: var(--border);
+  }
+
+  .exp-item {
+    position: relative;
+    padding-bottom: 3rem;
+  }
+
+  .exp-item:last-child { padding-bottom: 0; }
+
+  .exp-dot {
+    position: absolute;
+    left: -2.5rem;
+    top: 6px;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid var(--bg);
+    box-shadow: 0 0 0 3px rgba(124,106,255,0.2);
+  }
+
+  .exp-dot.active {
+    background: var(--green);
+    box-shadow: 0 0 0 3px rgba(45,212,160,0.2);
+    animation: dotPulse 2s ease-in-out infinite;
+  }
+
+  @keyframes dotPulse {
+    0%, 100% { box-shadow: 0 0 0 3px rgba(45,212,160,0.2); }
+    50% { box-shadow: 0 0 0 6px rgba(45,212,160,0.1); }
+  }
+
+  .exp-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .exp-period {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text3);
+    letter-spacing: 0.08em;
+  }
+
+  .exp-badge {
+    font-family: var(--mono);
+    font-size: 9px;
+    padding: 2px 8px;
+    border-radius: 100px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .exp-badge.current { background: rgba(45,212,160,0.1); color: var(--green); border: 1px solid rgba(45,212,160,0.2); }
+  .exp-badge.past { background: rgba(136,136,168,0.08); color: var(--text3); border: 1px solid var(--border); }
+
+  .exp-role { font-size: 1.15rem; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 0.2rem; }
+  .exp-company { font-family: var(--mono); font-size: 12px; color: var(--accent2); margin-bottom: 1rem; letter-spacing: 0.06em; }
+
+  .exp-body { color: var(--text2); font-size: 0.95rem; line-height: 1.8; margin-bottom: 1rem; }
+
+  .exp-techs { display: flex; flex-wrap: wrap; gap: 6px; }
+  .exp-tech {
+    font-family: var(--mono);
+    font-size: 10px;
+    padding: 3px 10px;
+    border-radius: 100px;
+    border: 1px solid var(--border);
+    color: var(--text3);
+    letter-spacing: 0.04em;
+  }
+
+  /* ─── SKILLS ─── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+  }
+
+  .skill-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    transition: border-color 0.2s;
+  }
+
+  .skill-card:hover { border-color: var(--border2); }
+
+  .skill-card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1.25rem;
+  }
+
+  .skill-card-icon { font-size: 20px; }
+
+  .skill-card-title {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text2);
+    font-weight: 700;
+  }
+
+  .skill-items { display: flex; flex-wrap: wrap; gap: 6px; }
+
+  .skill-item {
+    font-size: 13px;
+    color: var(--text);
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    padding: 5px 12px;
+    border-radius: 8px;
+    transition: all 0.2s;
+  }
+
+  .skill-item:hover { border-color: var(--accent); color: var(--accent2); }
+
+  /* ─── EDUCATION & CERTS ─── */
+  .edu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+
+  .edu-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    transition: border-color 0.2s;
+  }
+
+  .edu-card:hover { border-color: var(--border2); }
+
+  .edu-year {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--accent);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .edu-title { font-size: 1rem; font-weight: 700; margin-bottom: 0.25rem; }
+  .edu-inst { font-family: var(--mono); font-size: 11px; color: var(--text3); letter-spacing: 0.06em; margin-bottom: 0.75rem; }
+  .edu-desc { font-size: 0.875rem; color: var(--text2); line-height: 1.7; }
+
+  /* ─── CONTACT ─── */
+  .contact-inner {
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .contact-subtitle {
+    font-size: 1.1rem;
+    color: var(--text2);
+    line-height: 1.75;
+    margin-bottom: 2.5rem;
+  }
+
+  .contact-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    text-align: left;
+  }
+
+  .contact-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    text-decoration: none;
+    transition: all 0.2s;
+    display: block;
+  }
+
+  .contact-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+
+  .contact-card-icon { font-size: 20px; margin-bottom: 0.5rem; }
+  .contact-card-label { font-family: var(--mono); font-size: 10px; color: var(--text3); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.25rem; }
+  .contact-card-value { font-size: 0.875rem; color: var(--text); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    text-align: center;
+    padding: 2rem 2.5rem;
+    border-top: 1px solid var(--border);
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text3);
+    letter-spacing: 0.08em;
+  }
+
+  footer span { color: var(--accent2); }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.25rem; }
+    .nav-links { display: none; }
+    section { padding: 4rem 1.25rem; }
+    .hero { padding: 7rem 1.25rem 4rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .exp-timeline { padding-left: 1.25rem; }
+    .exp-dot { left: -1.75rem; }
+  }
+
+  @media (max-width: 480px) {
+    .hero-name { font-size: 3rem; }
+    .projects-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">MatheusRafaDev</a>
+  <ul class="nav-links">
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#projetos">Projetos</a></li>
+    <li><a href="#experiencia">Experiência</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-grid-lines"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Desenvolvedor Backend · São Paulo, SP</p>
+    <h1 class="hero-name">Matheus<br><span class="accent">Rafael</span></h1>
+    <p class="hero-title">// C# · .NET · Node.js · Java · APIs REST · SQL · AWS</p>
+    <p class="hero-desc">
+      Desenvolvedor backend com experiência real em sistemas ERP corporativos, apaixonado por construir APIs escaláveis e integrar inteligência artificial em produtos do mundo real.
+    </p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="#projetos">Ver projetos ↓</a>
+      <a class="btn btn-outline" href="https://github.com/MatheusRafaDev" target="_blank">GitHub ↗</a>
+      <a class="btn btn-outline" href="https://www.linkedin.com/in/matheus-rafael-50a676219/" target="_blank">LinkedIn ↗</a>
+    </div>
+  </div>
+  <div class="hero-tech-scroll">
+    <div class="tech-track">
+      <span>C# .NET</span><span>Node.js</span><span>Java</span><span>Spring Boot</span><span>ASP.NET Core</span>
+      <span>SQL Server</span><span>MongoDB</span><span>MySQL</span><span>React</span><span>AWS</span><span>Azure</span>
+      <span>Docker</span><span>JWT Auth</span><span>API REST</span><span>OCR</span><span>LLM · Groq</span><span>JavaMail</span>
+      <span>C# .NET</span><span>Node.js</span><span>Java</span><span>Spring Boot</span><span>ASP.NET Core</span>
+      <span>SQL Server</span><span>MongoDB</span><span>MySQL</span><span>React</span><span>AWS</span><span>Azure</span>
+      <span>Docker</span><span>JWT Auth</span><span>API REST</span><span>OCR</span><span>LLM · Groq</span><span>JavaMail</span>
+    </div>
+  </div>
+</div>
+
+<!-- SOBRE -->
+<section id="sobre">
+  <div class="section-header reveal">
+    <span class="section-num">01</span>
+    <h2 class="section-title">Sobre mim</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <p>Tenho 21 anos e sou desenvolvedor backend com atuação profissional desde outubro de 2022. Trabalho atualmente na <strong>PWI Sistemas</strong>, onde desenvolvo e mantenho sistemas ERP corporativos usando Node.js, SQL Server e integrações entre sistemas.</p>
+      <p>Minha trajetória é marcada por <strong>aprendizado contínuo e projetos práticos</strong> — cada projeto pessoal foi uma oportunidade de aprender novas tecnologias: do .NET ao Java, do MongoDB ao Docker, passando por integração com LLMs e OCR.</p>
+      <p>Tenho certificação <strong>AWS Academy Cloud Foundations</strong> e experiência com Azure, o que me dá visão de deploy e infraestrutura cloud. Gosto de arquitetura limpa, APIs bem documentadas e código que escala.</p>
+      <p>Fora do trabalho, construo produtos que resolvem problemas reais — como o <strong>Casal Planner</strong>, que usa IA para pesquisa de preços em tempo real, e o <strong>SaúdeMemora</strong>, meu TCC, que aplica OCR para digitalizar documentos médicos.</p>
+    </div>
+    <div class="about-stats reveal">
+      <div class="stat-card">
+        <div class="stat-num">3+</div>
+        <div class="stat-label">anos de experiência</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">5</div>
+        <div class="stat-label">projetos pessoais</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">10+</div>
+        <div class="stat-label">tecnologias dominadas</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">AWS</div>
+        <div class="stat-label">certificação cloud</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJETOS -->
+<section id="projetos" style="background: var(--bg2);">
+  <div class="section-header reveal">
+    <span class="section-num">02</span>
+    <h2 class="section-title">Projetos</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="proj-category-label reveal">
+    <span class="cat-pill personal">✦ Projetos Pessoais</span>
+  </div>
+  <div class="projects-grid">
+
+    <!-- SaúdeMemora -->
+    <div class="proj-card c-health reveal">
+      <div class="proj-top-bar"></div>
+      <div class="proj-inner">
+        <div class="proj-header">
+          <div class="proj-icon-wrap">🏥</div>
+          <div class="proj-links">
+            <a class="proj-link-icon" href="https://github.com/MatheusRafaDev/saude-memora" target="_blank" title="GitHub">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+          </div>
+        </div>
+        <span class="proj-badge">TCC · Senac 2025</span>
+        <h3 class="proj-name">SaúdeMemora</h3>
+        <p class="proj-desc">Aplicativo que digitaliza, organiza e centraliza documentos médicos — exames, receitas e prontuários — usando OCR e inteligência artificial para extrair informações automaticamente de imagens e transformá-las em dados estruturados.</p>
+        <ul class="proj-features">
+          <li><span class="feat-icon">📄</span>Upload de documentos médicos com processamento OCR automático</li>
+          <li><span class="feat-icon">🤖</span>IA para extração e categorização de dados clínicos</li>
+          <li><span class="feat-icon">🗂️</span>Histórico médico organizado por tipo, data e paciente</li>
+          <li><span class="feat-icon">⚡</span>Acesso rápido a documentos em consultas e emergências</li>
+          <li><span class="feat-icon">🔒</span>Armazenamento seguro e estruturado de dados de saúde</li>
+        </ul>
+        <div class="proj-stack">
+          <span class="stack-tag">C# / .NET</span>
+          <span class="stack-tag">ASP.NET Core</span>
+          <span class="stack-tag">React</span>
+          <span class="stack-tag">SQL Server</span>
+          <span class="stack-tag">OCR</span>
+          <span class="stack-tag">IA / LLM</span>
+          <span class="stack-tag">API REST</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Casal Planner -->
+    <div class="proj-card c-couple reveal">
+      <div class="proj-top-bar"></div>
+      <div class="proj-inner">
+        <div class="proj-header">
+          <div class="proj-icon-wrap">🏠</div>
+          <div class="proj-links">
+            <a class="proj-link-icon" href="https://github.com/MatheusRafaDev/casal-planner" target="_blank" title="GitHub">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+          </div>
+        </div>
+        <span class="proj-badge">Full-stack · IA integrada</span>
+        <h3 class="proj-name">Casal Planner</h3>
+        <p class="proj-desc">Plataforma full-stack para casais organizarem compras da nova casa — controle de orçamento por cômodo, separação de pagamentos VR/VA, e pesquisa de preços em tempo real usando IA (Llama 3.1) para validar produtos e lojas.</p>
+        <ul class="proj-features">
+          <li><span class="feat-icon">👥</span>Conta casal com autenticação JWT (HttpOnly cookies + BCrypt)</li>
+          <li><span class="feat-icon">🏷️</span>CRUD de cômodos com drag-and-drop e personalização visual</li>
+          <li><span class="feat-icon">🔍</span>Pesquisa de preços via SerpAPI + validação com Groq / Llama 3.1</li>
+          <li><span class="feat-icon">💰</span>Resumo financeiro com separação VR/VA automática</li>
+          <li><span class="feat-icon">🌙</span>Modo escuro/claro, mobile-first e animações com Styled Components</li>
+          <li><span class="feat-icon">🐳</span>Backend containerizado com Docker e Docker Compose</li>
+        </ul>
+        <div class="proj-stack">
+          <span class="stack-tag">ASP.NET Core 8</span>
+          <span class="stack-tag">React 18</span>
+          <span class="stack-tag">MongoDB</span>
+          <span class="stack-tag">Docker</span>
+          <span class="stack-tag">JWT Auth</span>
+          <span class="stack-tag">Groq / Llama 3.1</span>
+          <span class="stack-tag">SerpAPI</span>
+          <span class="stack-tag">Styled Components</span>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- fim grid pessoais -->
+
+  <div class="proj-category-label reveal" style="margin-top: 3rem;">
+    <span class="cat-pill academic">🎓 Projetos Acadêmicos</span>
+  </div>
+  <div class="projects-grid">
+
+    <!-- Date of Love -->
+    <div class="proj-card c-love reveal">
+      <div class="proj-top-bar"></div>
+      <div class="proj-inner">
+        <div class="proj-header">
+          <div class="proj-icon-wrap">💍</div>
+          <div class="proj-links">
+            <a class="proj-link-icon" href="https://github.com/MatheusRafaDev/date-of-love" target="_blank" title="GitHub">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+          </div>
+        </div>
+        <span class="proj-badge">Acadêmico · Java · Senac</span>
+        <h3 class="proj-name">Date of Love</h3>
+        <p class="proj-desc">Plataforma online para organização completa de festas de casamento — catálogo de serviços (buffet, decoração, música), personalização por número de convidados e local, com geração automática de orçamentos detalhados.</p>
+        <ul class="proj-features">
+          <li><span class="feat-icon">🗂️</span>Catálogo completo de fornecedores e serviços para casamentos</li>
+          <li><span class="feat-icon">💸</span>Geração automática de orçamentos com base nas escolhas do casal</li>
+          <li><span class="feat-icon">📧</span>Disparo de e-mails automáticos de lembretes e confirmações</li>
+          <li><span class="feat-icon">💬</span>Chat de suporte integrado entre clientes e equipe</li>
+          <li><span class="feat-icon">🛠️</span>Painel ADM para listagem e gestão de todos os orçamentos</li>
+          <li><span class="feat-icon">🎨</span>Protótipo completo no Figma com todas as telas mapeadas</li>
+        </ul>
+        <div class="proj-stack">
+          <span class="stack-tag">Java</span>
+          <span class="stack-tag">Spring Boot</span>
+          <span class="stack-tag">Spring MVC</span>
+          <span class="stack-tag">SQL Server</span>
+          <span class="stack-tag">JSP</span>
+          <span class="stack-tag">HTML / CSS</span>
+          <span class="stack-tag">API REST</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pitiquinho -->
+    <div class="proj-card c-pet reveal">
+      <div class="proj-top-bar"></div>
+      <div class="proj-inner">
+        <div class="proj-header">
+          <div class="proj-icon-wrap">🐾</div>
+          <div class="proj-links">
+            <a class="proj-link-icon" href="https://github.com/MatheusRafaDev/pitiquinho" target="_blank" title="GitHub">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.805 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+          </div>
+        </div>
+        <span class="proj-badge">Acadêmico · Java · Senac</span>
+        <h3 class="proj-name">Pitiquinho</h3>
+        <p class="proj-desc">E-commerce completo desenvolvido em Java com Spring Boot e arquitetura MVC — sistema de cadastro e gerenciamento de usuários, catálogo de produtos, controle de sessão e telas renderizadas com JSP. Projeto de aprendizado prático com Java Web.</p>
+        <ul class="proj-features">
+          <li><span class="feat-icon">🧑‍💻</span>Cadastro de usuários com controle de sessão e login seguro</li>
+          <li><span class="feat-icon">📦</span>Cadastro, exibição e gerenciamento completo de produtos</li>
+          <li><span class="feat-icon">🔒</span>Rotas protegidas e validação de dados no backend</li>
+          <li><span class="feat-icon">📄</span>Telas renderizadas server-side com JSP + HTML/CSS</li>
+          <li><span class="feat-icon">🏗️</span>Arquitetura MVC com Spring Data JPA e persistência local</li>
+        </ul>
+        <div class="proj-stack">
+          <span class="stack-tag">Java</span>
+          <span class="stack-tag">Spring Boot</span>
+          <span class="stack-tag">Spring MVC</span>
+          <span class="stack-tag">Spring Data JPA</span>
+          <span class="stack-tag">JSP</span>
+          <span class="stack-tag">Maven</span>
+          <span class="stack-tag">HTML / CSS</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- RodosBus -->
+    <div class="proj-card c-bus reveal">
+      <div class="proj-top-bar"></div>
+      <div class="proj-inner">
+        <div class="proj-header">
+          <div class="proj-icon-wrap">🚌</div>
+          <div class="proj-links">
+            <a class="proj-link-icon" href="https://github.com/MatheusRafaDev/rodobus" target="_blank" title="GitHub">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+          </div>
+        </div>
+        <span class="proj-badge">Acadêmico · Equipe</span>
+        <h3 class="proj-name">RodosBus</h3>
+        <p class="proj-desc">Plataforma acadêmica para reserva de passagens de ônibus desenvolvida em equipe de 7 pessoas no Senac — com foco em aprendizado prático, organização de código e trabalho colaborativo em um sistema real.</p>
+        <ul class="proj-features">
+          <li><span class="feat-icon">🧑‍💻</span>Cadastro e login de usuários com autenticação segura (BCrypt)</li>
+          <li><span class="feat-icon">🔍</span>Consulta de viagens disponíveis com filtros de rota e horário</li>
+          <li><span class="feat-icon">🎟️</span>Reserva de passagens com gerenciamento de assentos</li>
+          <li><span class="feat-icon">📧</span>Integração com envio de e-mails via JavaMail API</li>
+          <li><span class="feat-icon">👥</span>Gerente de projeto: liderança técnica e coordenação da equipe</li>
+          <li><span class="feat-icon">🗂️</span>Modelagem completa do banco com DER documentado</li>
+        </ul>
+        <div class="proj-stack">
+          <span class="stack-tag">Java</span>
+          <span class="stack-tag">MySQL</span>
+          <span class="stack-tag">JavaMail API</span>
+          <span class="stack-tag">BCrypt</span>
+          <span class="stack-tag">HTML / CSS</span>
+          <span class="stack-tag">JavaScript</span>
+          <span class="stack-tag">Git / GitHub</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EXPERIÊNCIA -->
+<section id="experiencia">
+  <div class="section-header reveal">
+    <span class="section-num">03</span>
+    <h2 class="section-title">Experiência</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="exp-timeline">
+
+    <div class="exp-item reveal">
+      <div class="exp-dot active"></div>
+      <div class="exp-meta">
+        <span class="exp-period">Nov 2023 — Presente</span>
+        <span class="exp-badge current">● Atual</span>
+      </div>
+      <h3 class="exp-role">Desenvolvedor Back-end Júnior</h3>
+      <p class="exp-company">PWI Sistemas</p>
+      <p class="exp-body">
+        Atuo no desenvolvimento e manutenção de sistemas ERP corporativos, com foco total em back-end. Trabalho com criação e manutenção de APIs RESTful, integrações entre sistemas, correção de bugs e implementação de melhorias evolutivas em ambiente produtivo. Participo de análises de demandas, definição de soluções técnicas e entrego em times ágeis utilizando Scrum e Kanban. Desde que entrei como júnior, evoluí de tarefas de suporte para responsabilidade direta em funcionalidades críticas do sistema.
+      </p>
+      <div class="exp-techs">
+        <span class="exp-tech">Node.js</span>
+        <span class="exp-tech">SQL Server</span>
+        <span class="exp-tech">FoxPro</span>
+        <span class="exp-tech">API REST</span>
+        <span class="exp-tech">Scrum</span>
+        <span class="exp-tech">Kanban</span>
+      </div>
+    </div>
+
+    <div class="exp-item reveal">
+      <div class="exp-dot"></div>
+      <div class="exp-meta">
+        <span class="exp-period">Out 2022 — Nov 2023</span>
+        <span class="exp-badge past">Concluído</span>
+      </div>
+      <h3 class="exp-role">Estagiário de TI</h3>
+      <p class="exp-company">PWI Sistemas</p>
+      <p class="exp-body">
+        Primeira experiência profissional na área, com apoio direto no desenvolvimento e manutenção do ERP da empresa. Realizei correções de bugs, melhorias em funcionalidades existentes, manutenção de bancos de dados SQL e desenvolvimento de telas em FoxPro. Aprendi a dinâmica de um ambiente corporativo real, participando de testes e suporte ao cliente — base que foi essencial para minha evolução para o cargo de desenvolvedor júnior.
+      </p>
+      <div class="exp-techs">
+        <span class="exp-tech">FoxPro</span>
+        <span class="exp-tech">SQL Server</span>
+        <span class="exp-tech">Testes de Software</span>
+        <span class="exp-tech">Suporte ao Cliente</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" style="background: var(--bg2);">
+  <div class="section-header reveal">
+    <span class="section-num">04</span>
+    <h2 class="section-title">Habilidades</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="skills-grid">
+
+    <div class="skill-card reveal">
+      <div class="skill-card-header">
+        <span class="skill-card-icon">⚙️</span>
+        <span class="skill-card-title">Back-end</span>
+      </div>
+      <div class="skill-items">
+        <span class="skill-item">C# / .NET</span>
+        <span class="skill-item">ASP.NET Core 8</span>
+        <span class="skill-item">Node.js</span>
+        <span class="skill-item">Java</span>
+        <span class="skill-item">Spring Boot</span>
+        <span class="skill-item">APIs RESTful</span>
+        <span class="skill-item">Microsserviços</span>
+        <span class="skill-item">JWT Auth</span>
+        <span class="skill-item">BCrypt</span>
+      </div>
+    </div>
+
+    <div class="skill-card reveal">
+      <div class="skill-card-header">
+        <span class="skill-card-icon">🗄️</span>
+        <span class="skill-card-title">Banco de Dados</span>
+      </div>
+      <div class="skill-items">
+        <span class="skill-item">SQL Server</span>
+        <span class="skill-item">MySQL</span>
+        <span class="skill-item">MongoDB</span>
+        <span class="skill-item">Entity Framework Core</span>
+        <span class="skill-item">Spring Data JPA</span>
+        <span class="skill-item">Modelagem de BD</span>
+        <span class="skill-item">Otimização de Queries</span>
+      </div>
+    </div>
+
+    <div class="skill-card reveal">
+      <div class="skill-card-header">
+        <span class="skill-card-icon">☁️</span>
+        <span class="skill-card-title">Cloud & Infra</span>
+      </div>
+      <div class="skill-items">
+        <span class="skill-item">AWS</span>
+        <span class="skill-item">Microsoft Azure</span>
+        <span class="skill-item">Docker</span>
+        <span class="skill-item">Docker Compose</span>
+        <span class="skill-item">Git / GitHub</span>
+        <span class="skill-item">Versionamento</span>
+      </div>
+    </div>
+
+    <div class="skill-card reveal">
+      <div class="skill-card-header">
+        <span class="skill-card-icon">🖥️</span>
+        <span class="skill-card-title">Front-end</span>
+      </div>
+      <div class="skill-items">
+        <span class="skill-item">React 18</span>
+        <span class="skill-item">HTML / CSS</span>
+        <span class="skill-item">JSP</span>
+        <span class="skill-item">Bootstrap</span>
+        <span class="skill-item">Styled Components</span>
+        <span class="skill-item">React Router</span>
+        <span class="skill-item">Ajax</span>
+      </div>
+    </div>
+
+    <div class="skill-card reveal">
+      <div class="skill-card-header">
+        <span class="skill-card-icon">🤖</span>
+        <span class="skill-card-title">IA & Integrações</span>
+      </div>
+      <div class="skill-items">
+        <span class="skill-item">Groq API</span>
+        <span class="skill-item">Llama 3.1</span>
+        <span class="skill-item">OpenRouter</span>
+        <span class="skill-item">OCR</span>
+        <span class="skill-item">SerpAPI</span>
+        <span class="skill-item">LLM Integration</span>
+        <span class="skill-item">Prompt Engineering</span>
+      </div>
+    </div>
+
+    <div class="skill-card reveal">
+      <div class="skill-card-header">
+        <span class="skill-card-icon">📋</span>
+        <span class="skill-card-title">Metodologias</span>
+      </div>
+      <div class="skill-items">
+        <span class="skill-item">Scrum</span>
+        <span class="skill-item">Kanban</span>
+        <span class="skill-item">Arquitetura em Camadas</span>
+        <span class="skill-item">Padrão MVC</span>
+        <span class="skill-item">Clean Code</span>
+        <span class="skill-item">Análise Técnica</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EDUCAÇÃO -->
+<section id="educacao">
+  <div class="section-header reveal">
+    <span class="section-num">05</span>
+    <h2 class="section-title">Formação & Certificações</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="edu-grid">
+
+    <div class="edu-card reveal">
+      <p class="edu-year">2023 – 2025</p>
+      <h3 class="edu-title">Análise e Desenvolvimento de Sistemas</h3>
+      <p class="edu-inst">Centro Universitário Senac · São Paulo, SP</p>
+      <p class="edu-desc">Graduação com foco em desenvolvimento back-end e front-end, banco de dados, engenharia de software, integração de sistemas e metodologias ágeis. TCC desenvolvido: SaúdeMemora — aplicação com OCR e IA para digitalização de documentos médicos.</p>
+    </div>
+
+    <div class="edu-card reveal">
+      <p class="edu-year">Mai 2025</p>
+      <h3 class="edu-title">AWS Academy Cloud Foundations</h3>
+      <p class="edu-inst">Amazon Web Services (AWS)</p>
+      <p class="edu-desc">Certificação em fundamentos de computação em nuvem cobrindo infraestrutura AWS, serviços core (EC2, S3, RDS, Lambda), segurança, preços e arquitetura de soluções escaláveis na nuvem.</p>
+    </div>
+
+    <div class="edu-card reveal">
+      <p class="edu-year">2021</p>
+      <h3 class="edu-title">Técnico em Tecnologia da Informação</h3>
+      <p class="edu-inst">Instituto Nossa Senhora de Fátima</p>
+      <p class="edu-desc">Formação técnica com base em lógica de programação, desenvolvimento de sistemas, banco de dados, testes de software e projeto prático com JavaScript, C#, HTML, CSS e MySQL.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section id="contato" style="background: var(--bg2);">
+  <div class="contact-inner">
+    <div class="section-header reveal" style="justify-content: center; text-align: center; flex-direction: column; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+      <span class="section-num">06</span>
+      <h2 class="section-title">Vamos conversar?</h2>
+    </div>
+    <p class="contact-subtitle reveal">
+      Estou aberto a novas oportunidades como desenvolvedor backend. Se você tem um projeto interessante ou uma vaga em aberto, me chama!
+    </p>
+    <div class="contact-cards reveal">
+      <a class="contact-card" href="mailto:rafaelmatheus061@gmail.com">
+        <div class="contact-card-icon">✉️</div>
+        <p class="contact-card-label">E-mail</p>
+        <p class="contact-card-value">rafaelmatheus061@gmail.com</p>
+      </a>
+      <a class="contact-card" href="https://www.linkedin.com/in/matheus-rafael-50a676219/" target="_blank">
+        <div class="contact-card-icon">💼</div>
+        <p class="contact-card-label">LinkedIn</p>
+        <p class="contact-card-value">Matheus Rafael</p>
+      </a>
+      <a class="contact-card" href="https://github.com/MatheusRafaDev" target="_blank">
+        <div class="contact-card-icon">🐙</div>
+        <p class="contact-card-label">GitHub</p>
+        <p class="contact-card-value">MatheusRafaDev</p>
+      </a>
+      <a class="contact-card" href="tel:+5511956601009">
+        <div class="contact-card-icon">📱</div>
+        <p class="contact-card-label">Telefone</p>
+        <p class="contact-card-value">(11) 95660-1009</p>
+      </a>
+    </div>
+    <div class="reveal">
+      <a class="btn btn-primary" href="mailto:rafaelmatheus061@gmail.com" style="margin: 0 auto; width: fit-content; display: flex;">
+        Enviar mensagem ↗
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Feito com ❤️ por <span>Matheus Rafael</span> · São Paulo, SP · 2025</p>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, 80 * (Array.from(reveals).indexOf(entry.target) % 4));
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  reveals.forEach(el => observer.observe(el));
+
+  // Nav active link
+  const sections = document.querySelectorAll('section[id], div[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 100;
+      if (window.scrollY >= sectionTop) current = section.getAttribute('id');
+    });
+    navLinks.forEach(link => {
+      link.style.color = link.getAttribute('href') === '#' + current ? 'var(--text)' : '';
+    });
+  });
+</script>
+
+</body>
+</html>
