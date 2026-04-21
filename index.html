@@ -42,7 +42,6 @@
     overflow-x: hidden;
   }
 
-  /* ─── NOISE TEXTURE ─── */
   body::before {
     content: '';
     position: fixed;
@@ -53,12 +52,10 @@
     opacity: 0.4;
   }
 
-  /* ─── SCROLLBAR ─── */
   ::-webkit-scrollbar { width: 4px; }
   ::-webkit-scrollbar-track { background: var(--bg); }
   ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 4px; }
 
-  /* ─── NAV ─── */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -98,7 +95,6 @@
 
   .nav-links a:hover { color: var(--text); }
 
-  /* ─── HERO ─── */
   .hero {
     min-height: 100vh;
     display: flex;
@@ -257,7 +253,6 @@
     border-radius: 100px;
   }
 
-  /* ─── SECTION ─── */
   section {
     padding: 6rem 2.5rem;
     position: relative;
@@ -291,7 +286,6 @@
     max-width: 200px;
   }
 
-  /* ─── ABOUT ─── */
   .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -341,7 +335,6 @@
     font-family: var(--mono);
   }
 
-  /* ─── PROJECTS ─── */
   .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -498,14 +491,13 @@
     border: 1px solid rgba(45,212,160,0.2);
   }
 
-  /* project colors */
-  .c-health .proj-top-bar { background: linear-gradient(90deg, #2dd4a0, #1aaf80); }
-  .c-health .proj-icon-wrap { background: rgba(45,212,160,0.1); }
-  .c-health .proj-badge { background: rgba(45,212,160,0.1); color: #2dd4a0; }
-
   .c-couple .proj-top-bar { background: linear-gradient(90deg, #7c6aff, #a594ff); }
   .c-couple .proj-icon-wrap { background: rgba(124,106,255,0.12); }
   .c-couple .proj-badge { background: rgba(124,106,255,0.12); color: var(--accent2); }
+
+  .c-health .proj-top-bar { background: linear-gradient(90deg, #2dd4a0, #1aaf80); }
+  .c-health .proj-icon-wrap { background: rgba(45,212,160,0.1); }
+  .c-health .proj-badge { background: rgba(45,212,160,0.1); color: #2dd4a0; }
 
   .c-love .proj-top-bar { background: linear-gradient(90deg, #f06292, #e91e8c); }
   .c-love .proj-icon-wrap { background: rgba(240,98,146,0.1); }
@@ -519,7 +511,6 @@
   .c-bus .proj-icon-wrap { background: rgba(96,165,250,0.1); }
   .c-bus .proj-badge { background: rgba(96,165,250,0.1); color: var(--blue); }
 
-  /* ─── EXPERIENCE ─── */
   .exp-timeline { position: relative; padding-left: 2rem; }
 
   .exp-timeline::before {
@@ -602,7 +593,6 @@
     letter-spacing: 0.04em;
   }
 
-  /* ─── SKILLS ─── */
   .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -651,7 +641,6 @@
 
   .skill-item:hover { border-color: var(--accent); color: var(--accent2); }
 
-  /* ─── EDUCATION & CERTS ─── */
   .edu-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -681,7 +670,6 @@
   .edu-inst { font-family: var(--mono); font-size: 11px; color: var(--text3); letter-spacing: 0.06em; margin-bottom: 0.75rem; }
   .edu-desc { font-size: 0.875rem; color: var(--text2); line-height: 1.7; }
 
-  /* ─── CONTACT ─── */
   .contact-inner {
     max-width: 640px;
     margin: 0 auto;
@@ -719,7 +707,6 @@
   .contact-card-label { font-family: var(--mono); font-size: 10px; color: var(--text3); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.25rem; }
   .contact-card-value { font-size: 0.875rem; color: var(--text); }
 
-  /* ─── FOOTER ─── */
   footer {
     text-align: center;
     padding: 2rem 2.5rem;
@@ -732,7 +719,6 @@
 
   footer span { color: var(--accent2); }
 
-  /* ─── ANIMATIONS ─── */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }
     to { opacity: 1; transform: translateY(0); }
@@ -754,7 +740,6 @@
     transform: translateY(0);
   }
 
-  /* ─── RESPONSIVE ─── */
   @media (max-width: 768px) {
     nav { padding: 1rem 1.25rem; }
     .nav-links { display: none; }
@@ -773,7 +758,6 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <a class="nav-logo" href="#">MatheusRafaDev</a>
   <ul class="nav-links">
@@ -785,7 +769,6 @@
   </ul>
 </nav>
 
-<!-- HERO -->
 <div class="hero">
   <div class="hero-grid-lines"></div>
   <div class="hero-glow"></div>
@@ -814,7 +797,6 @@
   </div>
 </div>
 
-<!-- SOBRE -->
 <section id="sobre">
   <div class="section-header reveal">
     <span class="section-num">01</span>
@@ -824,9 +806,9 @@
   <div class="about-grid">
     <div class="about-text reveal">
       <p>Tenho 21 anos e sou desenvolvedor backend com atuação profissional desde outubro de 2022. Trabalho atualmente na <strong>PWI Sistemas</strong>, onde desenvolvo e mantenho sistemas ERP corporativos usando Node.js, SQL Server e integrações entre sistemas.</p>
-      <p>Minha trajetória é marcada por <strong>aprendizado contínuo e projetos práticos</strong> — cada projeto pessoal foi uma oportunidade de aprender novas tecnologias: do .NET ao Java, do MongoDB ao Docker, passando por integração com LLMs e OCR.</p>
+      <p>Minha trajetória é marcada por <strong>aprendizado contínuo e projetos práticos</strong> — cada projeto foi uma oportunidade de aprender novas tecnologias: do .NET ao Java, do MongoDB ao Docker, passando por integração com LLMs e OCR.</p>
       <p>Tenho certificação <strong>AWS Academy Cloud Foundations</strong> e experiência com Azure, o que me dá visão de deploy e infraestrutura cloud. Gosto de arquitetura limpa, APIs bem documentadas e código que escala.</p>
-      <p>Fora do trabalho, construo produtos que resolvem problemas reais — como o <strong>Casal Planner</strong>, que usa IA para pesquisa de preços em tempo real, e o <strong>SaúdeMemora</strong>, meu TCC, que aplica OCR para digitalizar documentos médicos.</p>
+      <p>Meu principal projeto pessoal é o <strong>Casal Planner</strong>, uma plataforma full-stack com IA para pesquisa de preços. Desenvolvi também projetos acadêmicos como o <strong>SaúdeMemora</strong> (TCC com OCR), <strong>Date of Love</strong>, <strong>Pitiquinho</strong> e <strong>RodosBus</strong>.</p>
     </div>
     <div class="about-stats reveal">
       <div class="stat-card">
@@ -834,8 +816,8 @@
         <div class="stat-label">anos de experiência</div>
       </div>
       <div class="stat-card">
-        <div class="stat-num">5</div>
-        <div class="stat-label">projetos pessoais</div>
+        <div class="stat-num">1</div>
+        <div class="stat-label">projeto pessoal</div>
       </div>
       <div class="stat-card">
         <div class="stat-num">10+</div>
@@ -849,7 +831,6 @@
   </div>
 </section>
 
-<!-- PROJETOS -->
 <section id="projetos" style="background: var(--bg2);">
   <div class="section-header reveal">
     <span class="section-num">02</span>
@@ -857,12 +838,56 @@
     <div class="section-line"></div>
   </div>
 
+  <!-- PROJETO PESSOAL (ÚNICO) -->
   <div class="proj-category-label reveal">
-    <span class="cat-pill personal">✦ Projetos Pessoais</span>
+    <span class="cat-pill personal">✦ Projeto Pessoal</span>
+  </div>
+  <div class="projects-grid">
+    <div class="proj-card c-couple reveal">
+      <div class="proj-top-bar"></div>
+      <div class="proj-inner">
+        <div class="proj-header">
+          <div class="proj-icon-wrap">🏠</div>
+          <div class="proj-links">
+            <a class="proj-link-icon" href="https://github.com/MatheusRafaDev/casal-planner" target="_blank" title="GitHub">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+            <a class="proj-link-icon" href="https://casalplanner.vercel.app/" target="_blank" title="Live Demo">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
+        <span class="proj-badge">Full-stack · IA integrada · Live ↗</span>
+        <h3 class="proj-name">Casal Planner</h3>
+        <p class="proj-desc">Plataforma full-stack para casais organizarem compras da nova casa — controle de orçamento por cômodo, separação de pagamentos VR/VA, e pesquisa de preços em tempo real usando IA (Llama 3.1) para validar produtos e lojas.</p>
+        <ul class="proj-features">
+          <li><span class="feat-icon">👥</span>Conta casal com autenticação JWT (HttpOnly cookies + BCrypt)</li>
+          <li><span class="feat-icon">🏷️</span>CRUD de cômodos com drag-and-drop e personalização visual</li>
+          <li><span class="feat-icon">🔍</span>Pesquisa de preços via SerpAPI + validação com Groq / Llama 3.1</li>
+          <li><span class="feat-icon">💰</span>Resumo financeiro com separação VR/VA automática</li>
+          <li><span class="feat-icon">🌙</span>Modo escuro/claro, mobile-first e animações com Styled Components</li>
+          <li><span class="feat-icon">🐳</span>Backend containerizado com Docker e Docker Compose</li>
+        </ul>
+        <div class="proj-stack">
+          <span class="stack-tag">ASP.NET Core 8</span>
+          <span class="stack-tag">React 18</span>
+          <span class="stack-tag">MongoDB</span>
+          <span class="stack-tag">Docker</span>
+          <span class="stack-tag">JWT Auth</span>
+          <span class="stack-tag">Groq / Llama 3.1</span>
+          <span class="stack-tag">SerpAPI</span>
+          <span class="stack-tag">Styled Components</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJETOS ACADÊMICOS -->
+  <div class="proj-category-label reveal" style="margin-top: 3rem;">
+    <span class="cat-pill academic">🎓 Projetos Acadêmicos</span>
   </div>
   <div class="projects-grid">
 
-    <!-- SaúdeMemora -->
     <div class="proj-card c-health reveal">
       <div class="proj-top-bar"></div>
       <div class="proj-inner">
@@ -896,50 +921,6 @@
       </div>
     </div>
 
-    <!-- Casal Planner -->
-    <div class="proj-card c-couple reveal">
-      <div class="proj-top-bar"></div>
-      <div class="proj-inner">
-        <div class="proj-header">
-          <div class="proj-icon-wrap">🏠</div>
-          <div class="proj-links">
-            <a class="proj-link-icon" href="https://github.com/MatheusRafaDev/casal-planner" target="_blank" title="GitHub">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-            </a>
-          </div>
-        </div>
-        <span class="proj-badge">Full-stack · IA integrada</span>
-        <h3 class="proj-name">Casal Planner</h3>
-        <p class="proj-desc">Plataforma full-stack para casais organizarem compras da nova casa — controle de orçamento por cômodo, separação de pagamentos VR/VA, e pesquisa de preços em tempo real usando IA (Llama 3.1) para validar produtos e lojas.</p>
-        <ul class="proj-features">
-          <li><span class="feat-icon">👥</span>Conta casal com autenticação JWT (HttpOnly cookies + BCrypt)</li>
-          <li><span class="feat-icon">🏷️</span>CRUD de cômodos com drag-and-drop e personalização visual</li>
-          <li><span class="feat-icon">🔍</span>Pesquisa de preços via SerpAPI + validação com Groq / Llama 3.1</li>
-          <li><span class="feat-icon">💰</span>Resumo financeiro com separação VR/VA automática</li>
-          <li><span class="feat-icon">🌙</span>Modo escuro/claro, mobile-first e animações com Styled Components</li>
-          <li><span class="feat-icon">🐳</span>Backend containerizado com Docker e Docker Compose</li>
-        </ul>
-        <div class="proj-stack">
-          <span class="stack-tag">ASP.NET Core 8</span>
-          <span class="stack-tag">React 18</span>
-          <span class="stack-tag">MongoDB</span>
-          <span class="stack-tag">Docker</span>
-          <span class="stack-tag">JWT Auth</span>
-          <span class="stack-tag">Groq / Llama 3.1</span>
-          <span class="stack-tag">SerpAPI</span>
-          <span class="stack-tag">Styled Components</span>
-        </div>
-      </div>
-    </div>
-
-  </div><!-- fim grid pessoais -->
-
-  <div class="proj-category-label reveal" style="margin-top: 3rem;">
-    <span class="cat-pill academic">🎓 Projetos Acadêmicos</span>
-  </div>
-  <div class="projects-grid">
-
-    <!-- Date of Love -->
     <div class="proj-card c-love reveal">
       <div class="proj-top-bar"></div>
       <div class="proj-inner">
@@ -974,15 +955,14 @@
       </div>
     </div>
 
-    <!-- Pitiquinho -->
     <div class="proj-card c-pet reveal">
       <div class="proj-top-bar"></div>
       <div class="proj-inner">
         <div class="proj-header">
-          <div class="proj-icon-wrap">🐾</div>
+          <div class="proj-icon-wrap">👶</div>
           <div class="proj-links">
             <a class="proj-link-icon" href="https://github.com/MatheusRafaDev/pitiquinho" target="_blank" title="GitHub">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.805 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
             </a>
           </div>
         </div>
@@ -1008,7 +988,6 @@
       </div>
     </div>
 
-    <!-- RodosBus -->
     <div class="proj-card c-bus reveal">
       <div class="proj-top-bar"></div>
       <div class="proj-inner">
@@ -1046,7 +1025,6 @@
   </div>
 </section>
 
-<!-- EXPERIÊNCIA -->
 <section id="experiencia">
   <div class="section-header reveal">
     <span class="section-num">03</span>
@@ -1054,7 +1032,6 @@
     <div class="section-line"></div>
   </div>
   <div class="exp-timeline">
-
     <div class="exp-item reveal">
       <div class="exp-dot active"></div>
       <div class="exp-meta">
@@ -1063,9 +1040,7 @@
       </div>
       <h3 class="exp-role">Desenvolvedor Back-end Júnior</h3>
       <p class="exp-company">PWI Sistemas</p>
-      <p class="exp-body">
-        Atuo no desenvolvimento e manutenção de sistemas ERP corporativos, com foco total em back-end. Trabalho com criação e manutenção de APIs RESTful, integrações entre sistemas, correção de bugs e implementação de melhorias evolutivas em ambiente produtivo. Participo de análises de demandas, definição de soluções técnicas e entrego em times ágeis utilizando Scrum e Kanban. Desde que entrei como júnior, evoluí de tarefas de suporte para responsabilidade direta em funcionalidades críticas do sistema.
-      </p>
+      <p class="exp-body">Atuo no desenvolvimento e manutenção de sistemas ERP corporativos, com foco total em back-end. Trabalho com criação e manutenção de APIs RESTful, integrações entre sistemas, correção de bugs e implementação de melhorias evolutivas em ambiente produtivo. Participo de análises de demandas, definição de soluções técnicas e entrego em times ágeis utilizando Scrum e Kanban.</p>
       <div class="exp-techs">
         <span class="exp-tech">Node.js</span>
         <span class="exp-tech">SQL Server</span>
@@ -1075,7 +1050,6 @@
         <span class="exp-tech">Kanban</span>
       </div>
     </div>
-
     <div class="exp-item reveal">
       <div class="exp-dot"></div>
       <div class="exp-meta">
@@ -1084,9 +1058,7 @@
       </div>
       <h3 class="exp-role">Estagiário de TI</h3>
       <p class="exp-company">PWI Sistemas</p>
-      <p class="exp-body">
-        Primeira experiência profissional na área, com apoio direto no desenvolvimento e manutenção do ERP da empresa. Realizei correções de bugs, melhorias em funcionalidades existentes, manutenção de bancos de dados SQL e desenvolvimento de telas em FoxPro. Aprendi a dinâmica de um ambiente corporativo real, participando de testes e suporte ao cliente — base que foi essencial para minha evolução para o cargo de desenvolvedor júnior.
-      </p>
+      <p class="exp-body">Primeira experiência profissional na área, com apoio direto no desenvolvimento e manutenção do ERP da empresa. Realizei correções de bugs, melhorias em funcionalidades existentes, manutenção de bancos de dados SQL e desenvolvimento de telas em FoxPro.</p>
       <div class="exp-techs">
         <span class="exp-tech">FoxPro</span>
         <span class="exp-tech">SQL Server</span>
@@ -1094,11 +1066,9 @@
         <span class="exp-tech">Suporte ao Cliente</span>
       </div>
     </div>
-
   </div>
 </section>
 
-<!-- SKILLS -->
 <section id="skills" style="background: var(--bg2);">
   <div class="section-header reveal">
     <span class="section-num">04</span>
@@ -1106,107 +1076,33 @@
     <div class="section-line"></div>
   </div>
   <div class="skills-grid">
-
     <div class="skill-card reveal">
-      <div class="skill-card-header">
-        <span class="skill-card-icon">⚙️</span>
-        <span class="skill-card-title">Back-end</span>
-      </div>
-      <div class="skill-items">
-        <span class="skill-item">C# / .NET</span>
-        <span class="skill-item">ASP.NET Core 8</span>
-        <span class="skill-item">Node.js</span>
-        <span class="skill-item">Java</span>
-        <span class="skill-item">Spring Boot</span>
-        <span class="skill-item">APIs RESTful</span>
-        <span class="skill-item">Microsserviços</span>
-        <span class="skill-item">JWT Auth</span>
-        <span class="skill-item">BCrypt</span>
-      </div>
+      <div class="skill-card-header"><span class="skill-card-icon">⚙️</span><span class="skill-card-title">Back-end</span></div>
+      <div class="skill-items"><span class="skill-item">C# / .NET</span><span class="skill-item">ASP.NET Core 8</span><span class="skill-item">Node.js</span><span class="skill-item">Java</span><span class="skill-item">Spring Boot</span><span class="skill-item">APIs RESTful</span><span class="skill-item">Microsserviços</span><span class="skill-item">JWT Auth</span><span class="skill-item">BCrypt</span></div>
     </div>
-
     <div class="skill-card reveal">
-      <div class="skill-card-header">
-        <span class="skill-card-icon">🗄️</span>
-        <span class="skill-card-title">Banco de Dados</span>
-      </div>
-      <div class="skill-items">
-        <span class="skill-item">SQL Server</span>
-        <span class="skill-item">MySQL</span>
-        <span class="skill-item">MongoDB</span>
-        <span class="skill-item">Entity Framework Core</span>
-        <span class="skill-item">Spring Data JPA</span>
-        <span class="skill-item">Modelagem de BD</span>
-        <span class="skill-item">Otimização de Queries</span>
-      </div>
+      <div class="skill-card-header"><span class="skill-card-icon">🗄️</span><span class="skill-card-title">Banco de Dados</span></div>
+      <div class="skill-items"><span class="skill-item">SQL Server</span><span class="skill-item">MySQL</span><span class="skill-item">MongoDB</span><span class="skill-item">Entity Framework Core</span><span class="skill-item">Spring Data JPA</span><span class="skill-item">Modelagem de BD</span><span class="skill-item">Otimização de Queries</span></div>
     </div>
-
     <div class="skill-card reveal">
-      <div class="skill-card-header">
-        <span class="skill-card-icon">☁️</span>
-        <span class="skill-card-title">Cloud & Infra</span>
-      </div>
-      <div class="skill-items">
-        <span class="skill-item">AWS</span>
-        <span class="skill-item">Microsoft Azure</span>
-        <span class="skill-item">Docker</span>
-        <span class="skill-item">Docker Compose</span>
-        <span class="skill-item">Git / GitHub</span>
-        <span class="skill-item">Versionamento</span>
-      </div>
+      <div class="skill-card-header"><span class="skill-card-icon">☁️</span><span class="skill-card-title">Cloud & Infra</span></div>
+      <div class="skill-items"><span class="skill-item">AWS</span><span class="skill-item">Microsoft Azure</span><span class="skill-item">Docker</span><span class="skill-item">Docker Compose</span><span class="skill-item">Git / GitHub</span><span class="skill-item">Versionamento</span></div>
     </div>
-
     <div class="skill-card reveal">
-      <div class="skill-card-header">
-        <span class="skill-card-icon">🖥️</span>
-        <span class="skill-card-title">Front-end</span>
-      </div>
-      <div class="skill-items">
-        <span class="skill-item">React 18</span>
-        <span class="skill-item">HTML / CSS</span>
-        <span class="skill-item">JSP</span>
-        <span class="skill-item">Bootstrap</span>
-        <span class="skill-item">Styled Components</span>
-        <span class="skill-item">React Router</span>
-        <span class="skill-item">Ajax</span>
-      </div>
+      <div class="skill-card-header"><span class="skill-card-icon">🖥️</span><span class="skill-card-title">Front-end</span></div>
+      <div class="skill-items"><span class="skill-item">React 18</span><span class="skill-item">HTML / CSS</span><span class="skill-item">JSP</span><span class="skill-item">Bootstrap</span><span class="skill-item">Styled Components</span><span class="skill-item">React Router</span><span class="skill-item">Ajax</span></div>
     </div>
-
     <div class="skill-card reveal">
-      <div class="skill-card-header">
-        <span class="skill-card-icon">🤖</span>
-        <span class="skill-card-title">IA & Integrações</span>
-      </div>
-      <div class="skill-items">
-        <span class="skill-item">Groq API</span>
-        <span class="skill-item">Llama 3.1</span>
-        <span class="skill-item">OpenRouter</span>
-        <span class="skill-item">OCR</span>
-        <span class="skill-item">SerpAPI</span>
-        <span class="skill-item">LLM Integration</span>
-        <span class="skill-item">Prompt Engineering</span>
-      </div>
+      <div class="skill-card-header"><span class="skill-card-icon">🤖</span><span class="skill-card-title">IA & Integrações</span></div>
+      <div class="skill-items"><span class="skill-item">Groq API</span><span class="skill-item">Llama 3.1</span><span class="skill-item">OpenRouter</span><span class="skill-item">OCR</span><span class="skill-item">SerpAPI</span><span class="skill-item">LLM Integration</span><span class="skill-item">Prompt Engineering</span></div>
     </div>
-
     <div class="skill-card reveal">
-      <div class="skill-card-header">
-        <span class="skill-card-icon">📋</span>
-        <span class="skill-card-title">Metodologias</span>
-      </div>
-      <div class="skill-items">
-        <span class="skill-item">Scrum</span>
-        <span class="skill-item">Kanban</span>
-        <span class="skill-item">Arquitetura em Camadas</span>
-        <span class="skill-item">Padrão MVC</span>
-        <span class="skill-item">Clean Code</span>
-        <span class="skill-item">Análise Técnica</span>
-      </div>
+      <div class="skill-card-header"><span class="skill-card-icon">📋</span><span class="skill-card-title">Metodologias</span></div>
+      <div class="skill-items"><span class="skill-item">Scrum</span><span class="skill-item">Kanban</span><span class="skill-item">Arquitetura em Camadas</span><span class="skill-item">Padrão MVC</span><span class="skill-item">Clean Code</span><span class="skill-item">Análise Técnica</span></div>
     </div>
-
   </div>
 </section>
 
-<!-- EDUCAÇÃO -->
 <section id="educacao">
   <div class="section-header reveal">
     <span class="section-num">05</span>
@@ -1214,106 +1110,65 @@
     <div class="section-line"></div>
   </div>
   <div class="edu-grid">
-
     <div class="edu-card reveal">
       <p class="edu-year">2023 – 2025</p>
       <h3 class="edu-title">Análise e Desenvolvimento de Sistemas</h3>
       <p class="edu-inst">Centro Universitário Senac · São Paulo, SP</p>
       <p class="edu-desc">Graduação com foco em desenvolvimento back-end e front-end, banco de dados, engenharia de software, integração de sistemas e metodologias ágeis. TCC desenvolvido: SaúdeMemora — aplicação com OCR e IA para digitalização de documentos médicos.</p>
     </div>
-
     <div class="edu-card reveal">
       <p class="edu-year">Mai 2025</p>
       <h3 class="edu-title">AWS Academy Cloud Foundations</h3>
       <p class="edu-inst">Amazon Web Services (AWS)</p>
       <p class="edu-desc">Certificação em fundamentos de computação em nuvem cobrindo infraestrutura AWS, serviços core (EC2, S3, RDS, Lambda), segurança, preços e arquitetura de soluções escaláveis na nuvem.</p>
     </div>
-
     <div class="edu-card reveal">
       <p class="edu-year">2021</p>
       <h3 class="edu-title">Técnico em Tecnologia da Informação</h3>
       <p class="edu-inst">Instituto Nossa Senhora de Fátima</p>
       <p class="edu-desc">Formação técnica com base em lógica de programação, desenvolvimento de sistemas, banco de dados, testes de software e projeto prático com JavaScript, C#, HTML, CSS e MySQL.</p>
     </div>
-
   </div>
 </section>
 
-<!-- CONTATO -->
 <section id="contato" style="background: var(--bg2);">
   <div class="contact-inner">
     <div class="section-header reveal" style="justify-content: center; text-align: center; flex-direction: column; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
       <span class="section-num">06</span>
       <h2 class="section-title">Vamos conversar?</h2>
     </div>
-    <p class="contact-subtitle reveal">
-      Estou aberto a novas oportunidades como desenvolvedor backend. Se você tem um projeto interessante ou uma vaga em aberto, me chama!
-    </p>
+    <p class="contact-subtitle reveal">Estou aberto a novas oportunidades como desenvolvedor backend. Se você tem um projeto interessante ou uma vaga em aberto, me chama!</p>
     <div class="contact-cards reveal">
-      <a class="contact-card" href="mailto:rafaelmatheus061@gmail.com">
-        <div class="contact-card-icon">✉️</div>
-        <p class="contact-card-label">E-mail</p>
-        <p class="contact-card-value">rafaelmatheus061@gmail.com</p>
-      </a>
-      <a class="contact-card" href="https://www.linkedin.com/in/matheus-rafael-50a676219/" target="_blank">
-        <div class="contact-card-icon">💼</div>
-        <p class="contact-card-label">LinkedIn</p>
-        <p class="contact-card-value">Matheus Rafael</p>
-      </a>
-      <a class="contact-card" href="https://github.com/MatheusRafaDev" target="_blank">
-        <div class="contact-card-icon">🐙</div>
-        <p class="contact-card-label">GitHub</p>
-        <p class="contact-card-value">MatheusRafaDev</p>
-      </a>
-      <a class="contact-card" href="tel:+5511956601009">
-        <div class="contact-card-icon">📱</div>
-        <p class="contact-card-label">Telefone</p>
-        <p class="contact-card-value">(11) 95660-1009</p>
-      </a>
+      <a class="contact-card" href="mailto:rafaelmatheus061@gmail.com"><div class="contact-card-icon">✉️</div><p class="contact-card-label">E-mail</p><p class="contact-card-value">rafaelmatheus061@gmail.com</p></a>
+      <a class="contact-card" href="https://www.linkedin.com/in/matheus-rafael-50a676219/" target="_blank"><div class="contact-card-icon">💼</div><p class="contact-card-label">LinkedIn</p><p class="contact-card-value">Matheus Rafael</p></a>
+      <a class="contact-card" href="https://github.com/MatheusRafaDev" target="_blank"><div class="contact-card-icon">🐙</div><p class="contact-card-label">GitHub</p><p class="contact-card-value">MatheusRafaDev</p></a>
+      <a class="contact-card" href="tel:+5511956601009"><div class="contact-card-icon">📱</div><p class="contact-card-label">Telefone</p><p class="contact-card-value">(11) 95660-1009</p></a>
     </div>
-    <div class="reveal">
-      <a class="btn btn-primary" href="mailto:rafaelmatheus061@gmail.com" style="margin: 0 auto; width: fit-content; display: flex;">
-        Enviar mensagem ↗
-      </a>
-    </div>
+    <div class="reveal"><a class="btn btn-primary" href="mailto:rafaelmatheus061@gmail.com" style="margin: 0 auto; width: fit-content; display: flex;">Enviar mensagem ↗</a></div>
   </div>
 </section>
 
-<footer>
-  <p>Feito com ❤️ por <span>Matheus Rafael</span> · São Paulo, SP · 2025</p>
-</footer>
+<footer><p>Feito com ❤️ por <span>Matheus Rafael</span> · São Paulo, SP · 2025</p></footer>
 
 <script>
-  // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
       if (entry.isIntersecting) {
-        setTimeout(() => {
-          entry.target.classList.add('visible');
-        }, 80 * (Array.from(reveals).indexOf(entry.target) % 4));
+        setTimeout(() => { entry.target.classList.add('visible'); }, 80 * (Array.from(reveals).indexOf(entry.target) % 4));
         observer.unobserve(entry.target);
       }
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
   reveals.forEach(el => observer.observe(el));
 
-  // Nav active link
   const sections = document.querySelectorAll('section[id], div[id]');
   const navLinks = document.querySelectorAll('.nav-links a');
-
   window.addEventListener('scroll', () => {
     let current = '';
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 100;
-      if (window.scrollY >= sectionTop) current = section.getAttribute('id');
-    });
-    navLinks.forEach(link => {
-      link.style.color = link.getAttribute('href') === '#' + current ? 'var(--text)' : '';
-    });
+    sections.forEach(section => { const sectionTop = section.offsetTop - 100; if (window.scrollY >= sectionTop) current = section.getAttribute('id'); });
+    navLinks.forEach(link => { link.style.color = link.getAttribute('href') === '#' + current ? 'var(--text)' : ''; });
   });
 </script>
-
 </body>
 </html>
