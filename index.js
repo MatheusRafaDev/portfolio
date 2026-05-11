@@ -60,8 +60,8 @@ const translations = {
     badge_fullstack: "Full-stack · IA Integrada",
     badge_tcc: "TCC · OCR + IA",
     badge_java_spring: "Java · Spring Boot",
-    resume_csharp: "assets/Matheus Rafael - C#.pdf",
-    resume_java: "assets/Matheus Rafael - JAVA.pdf",
+    resume_csharp: "assets/Matheus_Rafael_csharp.pdf",
+    resume_java: "assets/Matheus_Rafael_java.pdf",
   },
   en: {
     nav_about: "About",
@@ -123,8 +123,8 @@ const translations = {
     badge_fullstack: "Full-stack · AI Integrated",
     badge_tcc: "Graduation Project · OCR + AI",
     badge_java_spring: "Java · Spring Boot",
-    resume_csharp: "assets/Matheus Rafael - C# (EN).pdf",
-    resume_java: "assets/Matheus Rafael - JAVA (EN).pdf",
+    resume_csharp: "assets/resume-en-csharp.html",
+    resume_java: "assets/resume-en-java.html",
   }
 };
 
