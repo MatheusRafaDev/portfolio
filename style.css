@@ -539,6 +539,24 @@ section {
   border: 1px solid rgba(16, 185, 129, 0.2);
 }
 
+.project-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.project-title-wrapper .project-title {
+  margin-bottom: 0;
+}
+
+.project-logo {
+  height: 28px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
 .project-title {
   font-family: var(--font-display);
   font-size: 1.1rem;
