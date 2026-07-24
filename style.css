@@ -1332,6 +1332,66 @@ section:first-of-type {
   }
 }
 
+/* ===== CONTACT ===== */
+.contact-intro {
+  color: var(--text-muted);
+  max-width: 560px;
+  margin: -8px 0 28px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--bg-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  text-decoration: none;
+  transition: all var(--transition);
+}
+
+.contact-card i {
+  font-size: 1.3rem;
+  color: var(--accent);
+  width: 28px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.contact-card-label {
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin-bottom: 2px;
+}
+
+.contact-card-value {
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 500;
+  word-break: break-word;
+}
+
+.contact-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(124, 58, 237, 0.08);
+}
+
+.contact-card:hover i {
+  color: var(--accent-light);
+}
+
 /* ===== FOOTER ===== */
 footer {
   text-align: center;
