@@ -60,8 +60,13 @@ const translations = {
     badge_fullstack: "Full-stack · IA Integrada",
     badge_tcc: "TCC · OCR + IA",
     badge_java_spring: "Java · Spring Boot",
-    resume_csharp: "assets/Matheus_Rafael_csharp.pdf",
-    resume_java: "assets/Matheus_Rafael_java.pdf",
+    resume_csharp: "assets/curriculos/Matheus Rafael - C#.pdf",
+    resume_java: "assets/curriculos/Matheus Rafael - JAVA.pdf",
+    contact_tag: "Vamos conversar",
+    contact_title: "Contato",
+    contact_intro: "Estou aberto a novas oportunidades, projetos e parcerias. Me chame por qualquer um dos canais abaixo.",
+    contact_email_label: "E-mail",
+    contact_phone_label: "Telefone",
   },
   en: {
     nav_about: "About",
@@ -123,8 +128,13 @@ const translations = {
     badge_fullstack: "Full-stack · AI Integrated",
     badge_tcc: "Graduation Project · OCR + AI",
     badge_java_spring: "Java · Spring Boot",
-    resume_csharp: "assets/resume-en-csharp.html",
-    resume_java: "assets/resume-en-java.html",
+    resume_csharp: "assets/curriculos/resume-en-csharp.html",
+    resume_java: "assets/curriculos/resume-en-java.html",
+    contact_tag: "Let's talk",
+    contact_title: "Contact",
+    contact_intro: "I'm open to new opportunities, projects, and partnerships. Reach out through any of the channels below.",
+    contact_email_label: "Email",
+    contact_phone_label: "Phone",
   }
 };
 
@@ -184,7 +194,7 @@ sections.forEach(section => observer.observe(section));
 
 // ===== FADE-IN ON SCROLL =====
 const fadeEls = document.querySelectorAll(
-  '.project-card, .exp-item, .edu-item, .skill-category, .contact-item'
+  '.project-card, .exp-item, .edu-item, .skill-category, .contact-card'
 );
 
 const fadeObserver = new IntersectionObserver((entries) => {
