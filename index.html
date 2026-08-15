@@ -25,7 +25,7 @@
     content="Desenvolvedor Backend com experiência em C#/.NET, Node.js/TypeScript e Java.">
   <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/90002960?v=4">
 
-  <meta name="theme-color" content="#820AD1">
+  <meta name="theme-color" content="#3B82F6">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -85,8 +85,8 @@
         <span class="bridge-tag"><i class="dot dot-legacy"></i><i class="dash"></i><i
             class="dot dot-modern"></i><span data-i18n="hero_eyebrow">legado × moderno</span></span>
         <h1 data-i18n="hero_title">Matheus<br><span class="highlight">Rafael</span></h1>
-        <p class="hero-sub" data-i18n="hero_sub">
-          Desenvolvedor Backend com <strong>3 anos e 11 meses</strong> de experiência sólida em Node.js/TypeScript,
+        <p class="hero-sub" id="hero-sub">
+          Desenvolvedor Backend com <strong>EXPERIENCE_PLACEHOLDER</strong> de experiência sólida em Node.js/TypeScript,
           C#/.NET e Java.
           Especialista em sistemas ERP, APIs escaláveis e integrações inteligentes.
         </p>
@@ -134,8 +134,8 @@
           </div>
           <div class="about-right">
             <div class="about-text">
-              <p data-i18n="about_text_1">Tenho 21 anos e sou desenvolvedor backend com <strong>3 anos e 11 meses de
-                  experiência</strong>. Atualmente trabalho na <strong>PWI Sistemas</strong>, onde desenvolvo e mantenho
+              <p id="about-text-1">Tenho 21 anos e sou desenvolvedor backend com <strong>EXPERIENCE_PLACEHOLDER</strong> de
+                  experiência. Atualmente trabalho na <strong>PWI Sistemas</strong>, onde desenvolvo e mantenho
                 sistemas ERP corporativos com <strong>Node.js/TypeScript</strong> e SQL Server.</p>
               <p data-i18n="about_text_2">Me mantenho sempre atualizado com as tendências do mercado e estou
                 constantemente desenvolvendo novos projetos seja para aprender novas tecnologias, resolver problemas
@@ -169,7 +169,7 @@
                     loading="lazy" decoding="async">
                   <h3 class="project-title">Casal Planner</h3>
                 </div>
-                <p class="project-desc">Plataforma para casais organizarem compras com controle de orçamento, separação
+                <p class="project-desc" data-i18n="proj_casal_desc">Plataforma para casais organizarem compras com controle de orçamento, separação
                   VR/VA e pesquisa de preços com IA.</p>
                 <div class="tech-stack"><span class="tech">ASP.NET Core</span><span class="tech">React</span><span
                     class="tech">MongoDB</span><span class="tech">Groq/Llama 3.1</span></div>
@@ -185,14 +185,14 @@
                   decoding="async"></div>
               <div class="project-content">
                 <div class="project-header"><span class="project-badge badge-personal"
-                    data-i18n="badge_fullstack_2">Full-stack</span>
+                    data-i18n="badge_fullstack">Full-stack</span>
                 </div>
                 <div class="project-title-wrapper">
                   <img src="assets/logos/imovplan-logo.png" alt="Imov.Plan Logo" class="project-logo" loading="lazy"
                     decoding="async">
                   <h3 class="project-title">Imov.Plan</h3>
                 </div>
-                <p class="project-desc">Aplicação para simular financiamento imobiliário, calcular capacidade de
+                <p class="project-desc" data-i18n="proj_imov_desc">Aplicação para simular financiamento imobiliário, calcular capacidade de
                   compra e organizar renda, aportes e evolução patrimonial entre os participantes do plano.</p>
                 <div class="tech-stack"><span class="tech">Next.js</span><span class="tech">TypeScript</span><span
                     class="tech">.NET</span><span class="tech">MongoDB</span></div>
@@ -208,12 +208,14 @@
               <div class="project-image"><img src="assets/telas/saudememora.jpg" alt="SaúdeMemora" loading="lazy"
                   decoding="async"></div>
               <div class="project-content">
-                <div class="project-header"><span class="project-badge badge-personal">Full-stack · Pessoal & Acadêmico</span>
+                <div class="project-header"><span class="project-badge badge-personal" data-i18n="badge_academic">Full-stack · Pessoal & Acadêmico TCC</span>
                 </div>
                 <div class="project-title-wrapper">
+                  <img src="assets/logos/saudememora-logo.png" alt="SaúdeMemora Logo" class="project-logo" loading="lazy"
+                    decoding="async">
                   <h3 class="project-title">SaúdeMemora</h3>
                 </div>
-                <p class="project-desc">Digitaliza e organiza documentos médicos usando OCR e IA para extrair
+                <p class="project-desc" data-i18n="proj_saude_desc">Digitaliza e organiza documentos médicos usando OCR e IA para extrair
                   informações automaticamente. Projeto pessoal com base acadêmica.</p>
                 <div class="tech-stack"><span class="tech">C# / .NET</span><span class="tech">React</span><span
                     class="tech">SQL Server</span><span class="tech">OCR+IA</span></div>
@@ -237,7 +239,7 @@
                   decoding="async"></div>
               <div class="project-content">
                 <h3 class="project-title">Date of Love</h3>
-                <p class="project-desc">Plataforma para organização de casamentos com catálogo de serviços, orçamento
+                <p class="project-desc" data-i18n="proj_date_desc">Plataforma para organização de casamentos com catálogo de serviços, orçamento
                   automático e e-mail.</p>
                 <div class="tech-stack"><span class="tech">Java</span><span class="tech">Spring Boot</span><span
                     class="tech">SQL Server</span><span class="tech">JSP</span></div>
@@ -253,7 +255,7 @@
               </div>
               <div class="project-content">
                 <h3 class="project-title">Pitiquinho</h3>
-                <p class="project-desc">E-commerce completo com cadastro de usuários, catálogo de produtos e controle de
+                <p class="project-desc" data-i18n="proj_pitiquinho_desc">E-commerce completo com cadastro de usuários, catálogo de produtos e controle de
                   sessão com JSP.</p>
                 <div class="tech-stack"><span class="tech">Java</span><span class="tech">Spring Boot</span><span
                     class="tech">Spring Data JPA</span><span class="tech">JSP</span></div>
@@ -268,7 +270,7 @@
                   decoding="async"></div>
               <div class="project-content">
                 <h3 class="project-title">RodosBus</h3>
-                <p class="project-desc">Plataforma de reserva de passagens de ônibus. Gerente de projeto e líder técnico
+                <p class="project-desc" data-i18n="proj_rodobus_desc">Plataforma de reserva de passagens de ônibus. Gerente de projeto e líder técnico
                   da equipe.</p>
                 <div class="tech-stack"><span class="tech">Java</span><span class="tech">Java Swing</span><span
                     class="tech">MySQL</span><span class="tech">JavaMail</span></div>
@@ -288,47 +290,47 @@
           <h2 class="section-title" data-i18n="exp_title">Experiência</h2>
         </div>
         <div class="timeline">
-          <div class="exp-item exp-current">
-            <div class="exp-period" data-i18n="period_present">Jul 2025 — Presente · 11 meses</div>
+          <div class="exp-item exp-current" data-date-start="2025-07" data-date-end="present">
+            <div class="exp-period"></div>
             <div class="exp-role" data-i18n="role_backend">Desenvolvedor Back-end</div>
             <div class="exp-company" data-i18n="company_pwi">PWI Sistemas · Tempo Integral · São Paulo (Híbrido)</div>
             <div class="exp-desc">
-              <p>Atuação no desenvolvimento contínuo de sistemas ERP com foco em back-end utilizando <strong>Node.js e
+              <p data-i18n="exp_backend_p1">Atuação no desenvolvimento contínuo de sistemas ERP com foco em back-end utilizando <strong>Node.js e
                   TypeScript</strong>.</p>
               <ul>
-                <li>Desenvolvimento de soluções nas áreas de pagamento, financeiro e contabilidade.</li>
-                <li>Análise e implementação de integrações completas com APIs de terceiros.</li>
-                <li>Automação de processos internos, eliminando tarefas manuais repetitivas.</li>
-                <li>Resolução de problemas críticos de integração e correção de bugs operacionais.</li>
-                <li>Modelagem e manutenção de bancos de dados SQL e documentação técnica detalhada.</li>
+                <li data-i18n="exp_backend_b1">Desenvolvimento de soluções nas áreas de pagamento, financeiro e contabilidade.</li>
+                <li data-i18n="exp_backend_b2">Análise e implementação de integrações completas com APIs de terceiros.</li>
+                <li data-i18n="exp_backend_b3">Automação de processos internos, eliminando tarefas manuais repetitivas.</li>
+                <li data-i18n="exp_backend_b4">Resolução de problemas críticos de integração e correção de bugs operacionais.</li>
+                <li data-i18n="exp_backend_b5">Modelagem e manutenção de bancos de dados SQL e documentação técnica detalhada.</li>
               </ul>
             </div>
           </div>
-          <div class="exp-item">
-            <div class="exp-period" data-i18n="period_dev">Nov 2023 — Jul 2025 · 1 ano 9 meses</div>
+          <div class="exp-item" data-date-start="2023-11" data-date-end="2025-07">
+            <div class="exp-period"></div>
             <div class="exp-role" data-i18n="role_dev">Desenvolvedor</div>
             <div class="exp-company" data-i18n="company_pwi">PWI Sistemas · Tempo Integral · São Paulo (Híbrido)</div>
             <div class="exp-desc">
-              <p>Evolução e manutenção de APIs REST e sistemas legados.</p>
+              <p data-i18n="exp_dev_p1">Evolução e manutenção de APIs REST e sistemas legados.</p>
               <ul>
-                <li>Criação de novas funcionalidades e integrações com sistemas ERP em Node.js.</li>
-                <li>Desenvolvimento e manutenção de módulos ERP em <strong>FoxPro</strong>.</li>
-                <li>Manutenção de bancos de dados SQL e configuração de servidores.</li>
-                <li>Suporte técnico especializado e correção de bugs críticos.</li>
+                <li data-i18n="exp_dev_b1">Criação de novas funcionalidades e integrações com sistemas ERP em Node.js.</li>
+                <li data-i18n="exp_dev_b2">Desenvolvimento e manutenção de módulos ERP em <strong>FoxPro</strong>.</li>
+                <li data-i18n="exp_dev_b3">Manutenção de bancos de dados SQL e configuração de servidores.</li>
+                <li data-i18n="exp_dev_b4">Suporte técnico especializado e correção de bugs críticos.</li>
               </ul>
             </div>
           </div>
-          <div class="exp-item exp-legacy">
-            <div class="exp-period" data-i18n="period_intern">Out 2022 — Nov 2023 · 1 ano 2 meses</div>
+          <div class="exp-item exp-legacy" data-date-start="2022-10" data-date-end="2023-11">
+            <div class="exp-period"></div>
             <div class="exp-role" data-i18n="role_intern">Estagiário de TI</div>
             <div class="exp-company" data-i18n="company_pwi_intern">PWI Sistemas · Estágio · São Paulo (Híbrido)</div>
             <div class="exp-desc">
-              <p>Apoio no desenvolvimento e manutenção de sistemas corporativos.</p>
+              <p data-i18n="exp_intern_p1">Apoio no desenvolvimento e manutenção de sistemas corporativos.</p>
               <ul>
-                <li>Correção de bugs e melhorias evolutivas em sistemas ERP.</li>
-                <li>Desenvolvimento de novas funcionalidades utilizando FoxPro.</li>
-                <li>Manutenção de banco de dados SQL e suporte ao cliente.</li>
-                <li>Auxílio na análise de demandas e validações de sistemas.</li>
+                <li data-i18n="exp_intern_b1">Correção de bugs e melhorias evolutivas em sistemas ERP.</li>
+                <li data-i18n="exp_intern_b2">Desenvolvimento de novas funcionalidades utilizando FoxPro.</li>
+                <li data-i18n="exp_intern_b3">Manutenção de banco de dados SQL e suporte ao cliente.</li>
+                <li data-i18n="exp_intern_b4">Auxílio na análise de demandas e validações de sistemas.</li>
               </ul>
             </div>
           </div>

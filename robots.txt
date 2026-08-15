@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://matheusrafadev.github.io/portfolio/sitemap.xml
+Sitemap: https://matheusrafadev.github.io/portfolio/Sitemap.xml

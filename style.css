@@ -18,11 +18,11 @@
   --text-mid: #b8bccb;
   --text-muted: #868ba0;
 
-  /* Identidade Nubank-inspired purple */
-  --legacy: #A855F7;
-  --legacy-soft: rgba(168, 85, 247, 0.14);
-  --modern: #820AD1;
-  --modern-soft: rgba(130, 10, 209, 0.14);
+  /* Tema Azul Neutro */
+  --legacy: #60A5FA;
+  --legacy-soft: rgba(96, 165, 250, 0.14);
+  --modern: #3B82F6;
+  --modern-soft: rgba(59, 130, 246, 0.14);
 
   /* Tipografia */
   --font-display: 'Outfit', sans-serif;
@@ -393,7 +393,7 @@ a.contact-tag:hover {
 
 .btn-primary:hover {
   transform: translateY(-1px);
-  background: #9333EA;
+  background: #2563EB;
 }
 
 .btn-outline {

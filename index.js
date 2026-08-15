@@ -1,3 +1,117 @@
+// ===== DATE CALCULATIONS =====
+const BIRTH_DATE = '2004-09-10'; // Formato YYYY-MM-DD
+
+function calculateAge() {
+  const birthDate = new Date(BIRTH_DATE);
+  const today = new Date();
+  
+  let age = today.getFullYear() - birthDate.getFullYear();
+  const monthDiff = today.getMonth() - birthDate.getMonth();
+  
+  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+    age--;
+  }
+  
+  return age;
+}
+
+function calculateDuration(startDate, endDate) {
+  const start = new Date(startDate);
+  const end = endDate === 'present' ? new Date() : new Date(endDate);
+
+  let years = end.getFullYear() - start.getFullYear();
+  let months = end.getMonth() - start.getMonth();
+
+  if (months < 0) {
+    years--;
+    months += 12;
+  }
+
+  return { years, months };
+}
+
+function formatDateDuration(startDate, endDate, lang) {
+  const { years, months } = calculateDuration(startDate, endDate);
+  
+  const monthNames = {
+    pt: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+    en: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+  };
+
+  const startParts = startDate.split('-');
+  const startMonth = monthNames[lang][parseInt(startParts[1]) - 1];
+  const startYear = startParts[0];
+
+  let endMonth, endYear;
+  if (endDate === 'present') {
+    endMonth = lang === 'pt' ? 'Presente' : 'Present';
+    endYear = '';
+  } else {
+    const endParts = endDate.split('-');
+    endMonth = monthNames[lang][parseInt(endParts[1]) - 1];
+    endYear = endParts[0];
+  }
+
+  const durationText = lang === 'pt' 
+    ? `${years} ano${years !== 1 ? 's' : ''} ${months > 0 ? `e ${months} mês${months !== 1 ? 'es' : ''}` : ''}`
+    : `${years} year${years !== 1 ? 's' : ''}${months > 0 ? ` and ${months} month${months !== 1 ? 's' : ''}` : ''}`;
+
+  const endDateDisplay = endDate === 'present' 
+    ? (lang === 'pt' ? 'Presente' : 'Present')
+    : `${endMonth} ${endYear}`;
+
+  return `${startMonth} ${startYear} — ${endDateDisplay} · ${durationText}`;
+}
+
+function updateExperienceDates(lang) {
+  document.querySelectorAll('.exp-item[data-date-start]').forEach(item => {
+    const startDate = item.getAttribute('data-date-start');
+    const endDate = item.getAttribute('data-date-end');
+    const periodElement = item.querySelector('.exp-period');
+    
+    if (periodElement) {
+      periodElement.textContent = formatDateDuration(startDate, endDate, lang);
+    }
+  });
+}
+
+function updateTotalExperience(lang) {
+  const expItems = document.querySelectorAll('.exp-item[data-date-start]');
+  let totalMonths = 0;
+
+  expItems.forEach(item => {
+    const startDate = item.getAttribute('data-date-start');
+    const endDate = item.getAttribute('data-date-end');
+    const { years, months } = calculateDuration(startDate, endDate);
+    totalMonths += (years * 12) + months;
+  });
+
+  const totalYears = Math.floor(totalMonths / 12);
+  const remainingMonths = totalMonths % 12;
+
+  const experienceText = lang === 'pt'
+    ? `${totalYears} anos e ${remainingMonths} meses`
+    : `${totalYears} years and ${remainingMonths} months`;
+
+  const age = calculateAge();
+
+  // Update hero section by replacing placeholders in translation
+  const heroSub = document.getElementById('hero-sub');
+  if (heroSub) {
+    let translation = translations[lang].hero_sub.replace('EXPERIENCE_PLACEHOLDER', experienceText);
+    translation = translation.replace('AGE_PLACEHOLDER', age);
+    heroSub.innerHTML = translation;
+  }
+
+  // Update about section by replacing placeholders in translation
+  const aboutText1 = document.getElementById('about-text-1');
+  if (aboutText1) {
+    let translation = translations[lang].about_text_1.replace('EXPERIENCE_PLACEHOLDER', experienceText);
+    translation = translation.replace('AGE_PLACEHOLDER', age);
+    aboutText1.innerHTML = translation;
+  }
+}
+
 // ===== TRANSLATIONS =====
 const translations = {
   pt: {
@@ -8,12 +122,12 @@ const translations = {
     nav_skills: "Skills",
     nav_contact: "Contato",
     hero_title: "Matheus<br><span class='highlight'>Rafael</span>",
-    hero_sub: "Desenvolvedor Backend com <strong>3 anos e 8 meses</strong> de experiência sólida em Node.js/TypeScript, C#/.NET e Java.<br>Especialista em sistemas ERP, APIs escaláveis e integrações inteligentes.",
+    hero_sub: "Desenvolvedor Backend com <strong>EXPERIENCE_PLACEHOLDER</strong> de experiência sólida em Node.js/TypeScript, C#/.NET e Java.<br>Especialista em sistemas ERP, APIs escaláveis e integrações inteligentes.",
     hero_resumes: "Download currículos:",
     hero_ver_projetos: "Ver Projetos",
     about_tag: "Quem sou",
     about_title: "Sobre mim",
-    about_text_1: "Tenho 21 anos e sou desenvolvedor backend com <strong>3 anos e 8 meses de experiência</strong>. Atualmente trabalho na <strong>PWI Sistemas</strong>, onde desenvolvo e mantenho sistemas ERP corporativos com <strong>Node.js/TypeScript</strong> e SQL Server.",
+    about_text_1: "Tenho AGE_PLACEHOLDER anos e sou desenvolvedor backend com <strong>EXPERIENCE_PLACEHOLDER</strong> de experiência. Atualmente trabalho na <strong>PWI Sistemas</strong>, onde desenvolvo e mantenho sistemas ERP corporativos com <strong>Node.js/TypeScript</strong> e SQL Server.",
     about_text_2: "Me mantenho sempre atualizado com as tendências do mercado e estou constantemente desenvolvendo novos projetos seja para aprender novas tecnologias, resolver problemas reais ou explorar integrações com <strong>inteligência artificial</strong>.",
     projects_tag: "O que construí",
     projects_title: "Projetos",
@@ -32,24 +146,29 @@ const translations = {
     role_intern: "Estagiário de TI",
     company_pwi: "PWI Sistemas · Tempo Integral · São Paulo (Híbrido)",
     company_pwi_intern: "PWI Sistemas · Estágio · São Paulo (Híbrido)",
-    period_present: "Jul 2025 — Presente · 11 meses",
-    period_dev: "Nov 2023 — Jul 2025 · 1 ano 9 meses",
-    period_intern: "Out 2022 — Nov 2023 · 1 ano 2 meses",
     exp_backend_p1: "Atuação no desenvolvimento contínuo de sistemas ERP com foco em back-end utilizando <strong>Node.js e TypeScript</strong>.",
-    exp_backend_b1: "Desenvolvimento de soluções em pagamento, financeiro e contabilidade.",
-    exp_backend_b2: "Análise e implementação de integrações com APIs de terceiros.",
-    exp_backend_b3: "Automação de processos internos e resolução de problemas críticos.",
+    exp_backend_b1: "Desenvolvimento de soluções nas áreas de pagamento, financeiro e contabilidade.",
+    exp_backend_b2: "Análise e implementação de integrações completas com APIs de terceiros.",
+    exp_backend_b3: "Automação de processos internos, eliminando tarefas manuais repetitivas.",
+    exp_backend_b4: "Resolução de problemas críticos de integração e correção de bugs operacionais.",
+    exp_backend_b5: "Modelagem e manutenção de bancos de dados SQL e documentação técnica detalhada.",
     exp_dev_p1: "Evolução e manutenção de APIs REST e sistemas legados.",
-    exp_dev_b1: "Criação de novas funcionalidades e integrações ERP em Node.js.",
+    exp_dev_b1: "Criação de novas funcionalidades e integrações com sistemas ERP em Node.js.",
     exp_dev_b2: "Desenvolvimento e manutenção de módulos ERP em FoxPro.",
-    exp_dev_b3: "Suporte técnico especializado e correção de bugs críticos.",
+    exp_dev_b3: "Manutenção de bancos de dados SQL e configuração de servidores.",
+    exp_dev_b4: "Suporte técnico especializado e correção de bugs críticos.",
     exp_intern_p1: "Apoio no desenvolvimento e manutenção de sistemas corporativos.",
     exp_intern_b1: "Correção de bugs e melhorias evolutivas em sistemas ERP.",
     exp_intern_b2: "Desenvolvimento de novas funcionalidades utilizando FoxPro.",
     exp_intern_b3: "Manutenção de banco de dados SQL e suporte ao cliente.",
-    proj_casal_desc: "Plataforma para casais com organização financeira, metas compartilhadas e sugestões de encontros via IA.",
-    proj_saude_desc: "Sistema de auxílio médico com leitura de exames (OCR) e diagnóstico preliminar assistido por IA.",
-    proj_date_desc: "Plataforma de agendamento e reserva para dates, com foco em experiência do usuário e performance.",
+    exp_intern_b4: "Auxílio na análise de demandas e validações de sistemas.",
+    proj_casal_desc: "Plataforma para casais organizarem compras com controle de orçamento, separação VR/VA e pesquisa de preços com IA.",
+    proj_imov_desc: "Aplicação para simular financiamento imobiliário, calcular capacidade de compra e organizar renda, aportes e evolução patrimonial entre os participantes do plano.",
+    proj_saude_desc: "Digitaliza e organiza documentos médicos usando OCR e IA para extrair informações automaticamente. Projeto pessoal com base acadêmica.",
+    proj_date_desc: "Plataforma para organização de casamentos com catálogo de serviços, orçamento automático e e-mail.",
+    proj_pitiquinho_desc: "E-commerce completo com cadastro de usuários, catálogo de produtos e controle de sessão com JSP.",
+    proj_rodobus_desc: "Plataforma de reserva de passagens de ônibus. Gerente de projeto e líder técnico da equipe.",
+    badge_academic: "Full-stack · Pessoal & Acadêmico",
     edu_ads_desc: "Desenvolvimento de competências em programação, banco de dados, engenharia de software e metodologias ágeis.",
     edu_eng_desc: "Foco em conversação, escrita e compreensão auditiva, incluindo vocabulário técnico aplicado ao ambiente profissional.",
     edu_tec_desc: "Desenvolvimento de projetos práticos, lógica de programação e sistemas utilizando JavaScript, C#, HTML, CSS e MySQL.",
@@ -60,8 +179,9 @@ const translations = {
     badge_fullstack: "Full-stack · IA Integrada",
     badge_tcc: "TCC · OCR + IA",
     badge_java_spring: "Java · Spring Boot",
-    resume_csharp: "assets/curriculos/Matheus Rafael - C#.pdf",
-    resume_java: "assets/curriculos/Matheus Rafael - JAVA.pdf",
+    resume_csharp: "assets/curriculos/CSHARP.pdf",
+    resume_java: "assets/curriculos/JAVA.pdf",
+    resume_typescript: "assets/curriculos/TYPESCRIPT.pdf",
     contact_tag: "Vamos conversar",
     contact_title: "Contato",
     contact_intro: "Estou aberto a novas oportunidades, projetos e parcerias. Me chame por qualquer um dos canais abaixo.",
@@ -76,12 +196,12 @@ const translations = {
     nav_skills: "Skills",
     nav_contact: "Contact",
     hero_title: "Matheus<br><span class='highlight'>Rafael</span>",
-    hero_sub: "Backend Developer with <strong>3 years and 8 months</strong> of solid experience in Node.js/TypeScript, C#/.NET and Java.<br>Expert in ERP systems, scalable APIs, and intelligent integrations.",
+    hero_sub: "Backend Developer with <strong>EXPERIENCE_PLACEHOLDER</strong> of solid experience in Node.js/TypeScript, C#/.NET and Java.<br>Expert in ERP systems, scalable APIs, and intelligent integrations.",
     hero_resumes: "Download resumes:",
     hero_ver_projetos: "View Projects",
     about_tag: "Who I am",
     about_title: "About me",
-    about_text_1: "I'm 21 years old and a backend developer with <strong>3 years and 8 months of experience</strong>. Currently working at <strong>PWI Sistemas</strong>, where I develop and maintain corporate ERP systems with <strong>Node.js/TypeScript</strong> and SQL Server.",
+    about_text_1: "I'm AGE_PLACEHOLDER years old and a backend developer with <strong>EXPERIENCE_PLACEHOLDER</strong> of experience. Currently working at <strong>PWI Sistemas</strong>, where I develop and maintain corporate ERP systems with <strong>Node.js/TypeScript</strong> and SQL Server.",
     about_text_2: "I always keep up with market trends and I'm constantly developing new projects, whether to learn new technologies, solve real problems, or explore integrations with <strong>artificial intelligence</strong>.",
     projects_tag: "What I built",
     projects_title: "Projects",
@@ -100,24 +220,29 @@ const translations = {
     role_intern: "IT Intern",
     company_pwi: "PWI Sistemas · Full-time · São Paulo (Hybrid)",
     company_pwi_intern: "PWI Sistemas · Internship · São Paulo (Hybrid)",
-    period_present: "July 2025 — Present · 11 months",
-    period_dev: "Nov 2023 — July 2025 · 1 year 9 months",
-    period_intern: "Oct 2022 — Nov 2023 · 1 year 2 months",
     exp_backend_p1: "Continuous development of ERP systems focusing on the backend using <strong>Node.js and TypeScript</strong>.",
-    exp_backend_b1: "Development of payment, financial, and accounting solutions.",
-    exp_backend_b2: "Analysis and implementation of third-party API integrations.",
-    exp_backend_b3: "Internal process automation and critical issue resolution.",
+    exp_backend_b1: "Development of solutions in payment, financial, and accounting areas.",
+    exp_backend_b2: "Analysis and implementation of complete integrations with third-party APIs.",
+    exp_backend_b3: "Internal process automation, eliminating repetitive manual tasks.",
+    exp_backend_b4: "Resolution of critical integration issues and operational bug fixes.",
+    exp_backend_b5: "SQL database modeling and maintenance with detailed technical documentation.",
     exp_dev_p1: "Evolution and maintenance of REST APIs and legacy systems.",
-    exp_dev_b1: "Creation of new features and ERP integrations in Node.js.",
+    exp_dev_b1: "Creation of new features and integrations with ERP systems in Node.js.",
     exp_dev_b2: "Development and maintenance of ERP modules in FoxPro.",
-    exp_dev_b3: "Specialized technical support and critical bug fixing.",
+    exp_dev_b3: "SQL database maintenance and server configuration.",
+    exp_dev_b4: "Specialized technical support and critical bug fixing.",
     exp_intern_p1: "Support in the development and maintenance of corporate systems.",
     exp_intern_b1: "Bug fixes and evolutionary improvements in ERP systems.",
     exp_intern_b2: "Development of new features using FoxPro.",
     exp_intern_b3: "SQL database maintenance and customer support.",
-    proj_casal_desc: "Platform for couples with financial organization, shared goals, and AI-powered date suggestions.",
-    proj_saude_desc: "Medical assistance system with exam reading (OCR) and AI-assisted preliminary diagnosis.",
-    proj_date_desc: "Scheduling and reservation platform for dates, focused on user experience and performance.",
+    exp_intern_b4: "Assistance in requirement analysis and system validations.",
+    proj_casal_desc: "Platform for couples to organize shopping with budget control, VR/VA separation, and AI-powered price research.",
+    proj_imov_desc: "Application to simulate real estate financing, calculate purchasing capacity, and organize income, contributions, and asset evolution among plan participants.",
+    proj_saude_desc: "Digitizes and organizes medical documents using OCR and AI to automatically extract information. Personal project with academic foundation.",
+    proj_date_desc: "Platform for wedding organization with service catalog, automatic budgeting, and email.",
+    proj_pitiquinho_desc: "Complete e-commerce with user registration, product catalog, and session control with JSP.",
+    proj_rodobus_desc: "Bus ticket reservation platform. Project manager and technical team leader.",
+    badge_academic: "Full-stack · Personal & Academic",
     edu_ads_desc: "Development of skills in programming, databases, software engineering, and agile methodologies.",
     edu_eng_desc: "Focus on speaking, writing, and listening comprehension, including technical vocabulary for professional environments.",
     edu_tec_desc: "Development of practical projects, programming logic, and systems using JavaScript, C#, HTML, CSS, and MySQL.",
@@ -128,8 +253,9 @@ const translations = {
     badge_fullstack: "Full-stack · AI Integrated",
     badge_tcc: "Graduation Project · OCR + AI",
     badge_java_spring: "Java · Spring Boot",
-    resume_csharp: "assets/curriculos/resume-en-csharp.html",
-    resume_java: "assets/curriculos/resume-en-java.html",
+    resume_csharp: "assets/curriculos/CSHARP.pdf",
+    resume_java: "assets/curriculos/JAVA.pdf",
+    resume_typescript: "assets/curriculos/TYPESCRIPT.pdf",
     contact_tag: "Let's talk",
     contact_title: "Contact",
     contact_intro: "I'm open to new opportunities, projects, and partnerships. Reach out through any of the channels below.",
@@ -139,6 +265,11 @@ const translations = {
 };
 
 function switchLanguage(lang) {
+  // Update dates dynamically first
+  updateExperienceDates(lang);
+  updateTotalExperience(lang);
+
+  // Then update other translations
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
     if (translations[lang][key]) {
@@ -146,6 +277,8 @@ function switchLanguage(lang) {
         el.placeholder = translations[lang][key];
       } else if (el.tagName === 'A' && key.startsWith('resume_')) {
         el.href = translations[lang][key];
+      } else if (el.tagName === 'LI') {
+        el.innerHTML = translations[lang][key];
       } else {
         el.innerHTML = translations[lang][key];
       }
