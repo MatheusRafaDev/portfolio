@@ -108,12 +108,12 @@ function updateTotalExperience(lang) {
     heroSub.innerHTML = translation;
   }
 
-  // Update hero role section with age
+  // Update hero role section
   const heroRole = document.getElementById('hero-role');
   if (heroRole) {
     const roleText = lang === 'pt'
-      ? `Desenvolvedor Backend · ${age} anos · Sistemas Corporativos & APIs`
-      : `Backend Developer · ${age} years · Corporate Systems & APIs`;
+      ? `Desenvolvedor Backend · ERP · APIs · Integrações`
+      : `Backend Developer · ERP · APIs · Integrations`;
     heroRole.textContent = roleText;
   }
 
