@@ -395,7 +395,7 @@ section > .container {
 .stat-label { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.04em; }
 
 /* =========================================================
-   PROJECTS
+   PROJETOS
    ========================================================= */
 .project-tabs { display: flex; gap: 8px; margin-bottom: 32px; flex-wrap: wrap; }
 .tab-btn {
