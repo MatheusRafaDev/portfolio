@@ -1,5 +1,6 @@
 // ===== DATE CALCULATIONS =====
-const BIRTH_DATE = '2004-09-10'; // Formato YYYY-MM-DD
+const BIRTH_DATE = '2004-09-10'; // Formato YYYY-MM-DD (10/09/2004)
+const WORK_START_DATE = '2022-10-01'; // Outubro 2022
 
 function calculateAge() {
   const birthDate = new Date(BIRTH_DATE);
@@ -13,6 +14,21 @@ function calculateAge() {
   }
   
   return age;
+}
+
+function calculateWorkExperience() {
+  const startDate = new Date(WORK_START_DATE);
+  const today = new Date();
+  
+  let years = today.getFullYear() - startDate.getFullYear();
+  let months = today.getMonth() - startDate.getMonth();
+  
+  if (months < 0) {
+    years--;
+    months += 12;
+  }
+  
+  return { years, months };
 }
 
 function calculateDuration(startDate, endDate) {
@@ -76,22 +92,11 @@ function updateExperienceDates(lang) {
 }
 
 function updateTotalExperience(lang) {
-  const expItems = document.querySelectorAll('.exp-item[data-date-start]');
-  let totalMonths = 0;
-
-  expItems.forEach(item => {
-    const startDate = item.getAttribute('data-date-start');
-    const endDate = item.getAttribute('data-date-end');
-    const { years, months } = calculateDuration(startDate, endDate);
-    totalMonths += (years * 12) + months;
-  });
-
-  const totalYears = Math.floor(totalMonths / 12);
-  const remainingMonths = totalMonths % 12;
-
+  const workExp = calculateWorkExperience();
+  
   const experienceText = lang === 'pt'
-    ? `${totalYears} anos e ${remainingMonths} meses`
-    : `${totalYears} years and ${remainingMonths} months`;
+    ? `${workExp.years} anos e ${workExp.months} meses`
+    : `${workExp.years} years and ${workExp.months} months`;
 
   const age = calculateAge();
 
@@ -103,12 +108,22 @@ function updateTotalExperience(lang) {
     heroSub.innerHTML = translation;
   }
 
-  // Update about section by replacing placeholders in translation
-  const aboutText1 = document.getElementById('about-text-1');
-  if (aboutText1) {
-    let translation = translations[lang].about_text_1.replace('EXPERIENCE_PLACEHOLDER', experienceText);
-    translation = translation.replace('AGE_PLACEHOLDER', age);
-    aboutText1.innerHTML = translation;
+  // Update hero role section with age
+  const heroRole = document.getElementById('hero-role');
+  if (heroRole) {
+    const roleText = lang === 'pt'
+      ? `Desenvolvedor Backend · ${age} anos · Sistemas Corporativos & APIs`
+      : `Backend Developer · ${age} years · Corporate Systems & APIs`;
+    heroRole.textContent = roleText;
+  }
+
+  // Update experience stat
+  const statExp = document.getElementById('stat-exp');
+  if (statExp) {
+    const statText = lang === 'pt'
+      ? `${workExp.years}<span style="font-size:1.1rem;">a</span> ${workExp.months}<span style="font-size:1.1rem;">m</span>`
+      : `${workExp.years}<span style="font-size:1.1rem;">y</span> ${workExp.months}<span style="font-size:1.1rem;">m</span>`;
+    statExp.innerHTML = statText;
   }
 }
 
