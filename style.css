@@ -294,7 +294,7 @@ section > .container {
   color: var(--text-faint);
 }
 .hero-meta span { display: inline-flex; align-items: center; gap: 6px; }
-.hero-meta a { display: inline-flex; align-items: center; gap: 6px; }
+.hero-meta a { display: inline-flex; align-items: center; gap: 6px; word-break: break-all; }
 .hero-meta a:hover { color: var(--blue); }
 .hero-meta i { font-size: 0.9rem; }
 
@@ -591,7 +591,7 @@ section > .container {
   font-size: 1.2rem;
 }
 .contact-label { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.04em; }
-.contact-value { font-size: 0.95rem; margin-top: 3px; word-break: break-word; color: var(--text); white-space: nowrap; }
+.contact-value { font-size: 0.95rem; margin-top: 3px; word-break: break-all; color: var(--text); }
 
 /* =========================================================
    FOOTER — status bar
