@@ -139,6 +139,46 @@
     }
   };
 
+  /* =========================================================
+     DATE CALCULATIONS
+     ========================================================= */
+  const startCareerDate = new Date('2022-10-01T00:00:00-03:00');
+  const startCurrentRoleDate = new Date('2025-07-01T00:00:00-03:00');
+  const today = new Date();
+
+  function getDiff(startDate) {
+    let years = today.getFullYear() - startDate.getFullYear();
+    let months = today.getMonth() - startDate.getMonth();
+    if (months < 0) {
+      years--;
+      months += 12;
+    }
+    return { years, months };
+  }
+
+  const careerDiff = getDiff(startCareerDate);
+  const roleDiff = getDiff(startCurrentRoleDate);
+  const currentYear = today.getFullYear();
+
+  function formatTime(diff, lang) {
+    let yStr = '';
+    let mStr = '';
+    if (lang === 'pt') {
+      if (diff.years > 0) yStr = `${diff.years} ano${diff.years > 1 ? 's' : ''}`;
+      if (diff.months > 0) mStr = `${diff.months} ${diff.months > 1 ? 'meses' : 'mês'}`;
+    } else {
+      if (diff.years > 0) yStr = `${diff.years} year${diff.years > 1 ? 's' : ''}`;
+      if (diff.months > 0) mStr = `${diff.months} month${diff.months > 1 ? 's' : ''}`;
+    }
+    return [yStr, mStr].filter(Boolean).join(' ');
+  }
+
+  translations.pt['exp.p1'] = `Jul 2025 — Presente · ${formatTime(roleDiff, 'pt')}`;
+  translations.en['exp.p1'] = `Jul 2025 — Present · ${formatTime(roleDiff, 'en')}`;
+
+  translations.pt['footer.made'] = `Feito por Matheus Rafael · São Paulo, SP · ${currentYear}`;
+  translations.en['footer.made'] = `Made by Matheus Rafael · São Paulo, Brazil · ${currentYear}`;
+
   const htmlEl = document.documentElement;
   const langButtons = document.querySelectorAll('.lang-toggle button');
 
@@ -154,11 +194,29 @@
       btn.setAttribute('aria-pressed', String(isActive));
     });
     htmlEl.lang = lang === 'pt' ? 'pt-BR' : 'en';
+
+    // Update dynamic dates in HTML
+    const termExpEl = document.getElementById('term-exp');
+    if (termExpEl) {
+      termExpEl.textContent = `"${careerDiff.years}y ${careerDiff.months}m"`;
+    }
+
+    const statExpEl = document.getElementById('stat-exp');
+    if (statExpEl) {
+      const yearLabel = lang === 'pt' ? 'a' : 'y';
+      let html = '';
+      if (careerDiff.years > 0) html += `${careerDiff.years}<span style="font-size:1.1rem;">${yearLabel}</span>`;
+      if (careerDiff.months > 0) html += ` ${careerDiff.months}<span style="font-size:1.1rem;">m</span>`;
+      statExpEl.innerHTML = html.trim();
+    }
   }
 
   langButtons.forEach((btn) => {
     btn.addEventListener('click', () => applyLang(btn.dataset.lang));
   });
+
+  // Inicializa a página com as datas e dados calculados
+  applyLang('pt');
 
   /* =========================================================
      MOBILE MENU
