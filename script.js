@@ -7,293 +7,575 @@
   const translations = {
     pt: {
       'nav.about': 'Sobre',
-      'nav.projects': 'Projetos',
       'nav.experience': 'Experiência',
+      'nav.projects': 'Projetos',
       'nav.education': 'Formação',
       'nav.skills': 'Skills',
       'nav.contact': 'Contato',
 
       'hero.badge': 'Disponível para oportunidades',
-      'hero.role': 'Desenvolvedor Backend · EXPERIENCE_PLACEHOLDER · ERP & APIs Escaláveis',
-      'hero.bio': 'Desenvolvedor Backend especializado em sistemas corporativos, APIs e integrações. Experiência com Node.js/TypeScript e C#/.NET, atuando em ERP, automação de processos e integrações com plataformas como CargoWise e Magento.',
+      'hero.role': 'Desenvolvedor Back-end · APIs RESTful · Microsserviços · ERP',
+      'hero.bio': 'Desenvolvedor Back-end especializado em APIs RESTful, microsserviços, sistemas ERP corporativos e integrações ponta a ponta. Experiência sólida com Node.js/TypeScript, C#/.NET (ASP.NET Core), Java/Spring Boot e bancos de dados SQL.',
       'hero.location': 'São Paulo, SP',
       'hero.ctaProjects': 'Ver Projetos',
       'hero.cvCsharp': 'Currículo C# .NET',
       'hero.cvJava': 'Currículo Java',
+      'hero.cvTypescript': 'Currículo TypeScript',
+      'hero.pillAi': 'IA & RAG',
+
+      'term.file': 'resposta.json — 200 OK',
+      'term.copy': 'Copiar',
+      'term.copied': 'Copiado!',
+      'term.route': '/desenvolvedor/matheus-rafael',
+      'term.kRole': '"cargo"',
+      'term.vRole': '"Desenvolvedor Back-end"',
+      'term.kExp': '"experiencia"',
+      'term.kFocus': '"foco"',
+      'term.vFocus': '"APIs RESTful, Microsserviços, ERP, IA & Infraestrutura"',
+      'term.kLoc': '"localizacao"',
+      'term.vLoc': '"São Paulo, SP"',
+      'term.vStatus': '"disponível para oportunidades"',
 
       'about.title': 'Quem sou',
-      'about.p1': 'Sou Desenvolvedor Back-end com experiência profissional em desenvolvimento, manutenção e evolução de sistemas ERP corporativos, atuando principalmente com Node.js, TypeScript, SQL Server e sistemas legados. Além de Node.js e TypeScript, tenho experiência prática com C#/.NET, ASP.NET Core, Java/Spring Boot, MongoDB, Entity Framework, Docker e AWS. Tenho interesse em oportunidades como Desenvolvedor Back-end, Software Engineer ou Desenvolvedor de Integrações, especialmente em ambientes que envolvam APIs, sistemas corporativos, ERP e desenvolvimento de soluções escaláveis.',
-      'about.p2': 'Possuo experiência na análise de integrações ponta a ponta, incluindo plataformas como CargoWise e Magento, investigação e resolução de problemas críticos em APIs, otimização de consultas SQL e manutenção de sistemas legados. Além de Node.js e TypeScript, tenho experiência prática com C#/.NET, ASP.NET Core, Java/Spring Boot, MongoDB, Entity Framework, Docker e AWS. Tenho interesse em oportunidades como Desenvolvedor Back-end, Software Engineer ou Desenvolvedor de Integrações, especialmente em ambientes que envolvam APIs, sistemas corporativos, ERP e desenvolvimento de soluções escaláveis.',
-      'about.statExp': 'experiência',
-      'about.statProjects': 'projetos entregues',
-      'about.statStacks': 'stacks principais',
+      'about.lead': 'Sou Desenvolvedor Back-end com sólida atuação no desenvolvimento, manutenção e evolução de sistemas ERP corporativos, APIs RESTful e microsserviços, trabalhando com Node.js, TypeScript, C#/.NET (ASP.NET Core), Java/Spring Boot e SQL Server. Na PWI Sistemas, conduzo soluções para processos críticos de pagamento, financeiro e contabilidade, além da automação de operações internas.',
+      'about.p2': 'Atuo no mapeamento e implementação de integrações ponta a ponta com plataformas de terceiros como CargoWise e Magento, investigação de causa raiz em falhas críticas, otimização de consultas e rotinas SQL, documentação técnica e evolução contínua de sistemas legados. Aplico Clean Architecture, SOLID, MVC, autenticação JWT/OAuth2, testes automatizados (JUnit/Jest), Docker, CI/CD (GitHub Actions), cloud (AWS e Azure) e soluções com IA Generativa (LLMs, RAG, AI Agents, LangChain/LangGraph e MCP).',
+
+      'exp.title': 'Experiência',
+      'exp.role1': 'Desenvolvedor Back-end',
+      'exp.r1b1': 'Análise e desenvolvimento de integrações ponta a ponta com APIs de terceiros, mapeando fluxos de negócio, regras e dependências para propor e implementar soluções completas.',
+      'exp.r1b2': 'Desenvolvimento de APIs RESTful e microsserviços para processos de pagamento, financeiro e contabilidade em sistemas ERP utilizando Node.js, TypeScript e C#/.NET.',
+      'exp.r1b3': 'Desenvolvimento e manutenção de integrações entre ERP e plataformas como CargoWise e Magento, garantindo consistência e sincronização confiável dos dados.',
+      'exp.r1b4': 'Investigação de causa raiz e resolução de problemas críticos em integrações, APIs e processos financeiros, além de otimização de consultas SQL e performance em rotinas críticas do ERP.',
+      'exp.r1b5': 'Automação de processos internos reduzindo tarefas manuais, documentação técnica traduzindo requisitos de negócio em especificações e evolução contínua de sistemas legados, arquitetura e qualidade de código.',
+      'exp.role2': 'Desenvolvedor Back-end Júnior',
+      'exp.r2b1': 'Desenvolvimento e manutenção de APIs RESTful em Node.js e TypeScript integradas ao ERP Volpe e a sistemas internos.',
+      'exp.r2b2': 'Implementação de integrações entre sistemas, atuando no fluxo de dados, regras de negócio e comunicação via APIs.',
+      'exp.r2b3': 'Modelagem, manutenção e otimização de bancos de dados SQL, incluindo consultas e rotinas críticas utilizadas pelo ERP.',
+      'exp.r2b4': 'Análise técnica de demandas ponta a ponta, correção de falhas críticas e implementação de melhorias evolutivas em sistemas legados e ferramentas internas, conciliando novas funcionalidades às regras do ERP.',
+      'exp.role3': 'Estagiário de TI',
+      'exp.r3b1': 'Manutenção evolutiva e suporte ao ERP Volpe, desenvolvido em FoxPro, e aos bancos de dados SQL.',
+      'exp.r3b2': 'Correção de bugs e inconsistências no sistema e nos processos internos, além do desenvolvimento de novas funcionalidades e ferramentas de apoio.',
+      'exp.r3b3': 'Atendimento e suporte técnico a clientes na análise e resolução de problemas, apoiando também no levantamento de demandas, testes e validação de entregas.',
 
       'projects.title': 'Projetos',
-      'projects.sub': 'Uma seleção de sistemas que projetei e construí do zero, do modelo de dados à interface.',
+      'projects.sub': 'Sistemas completos que projetei e desenvolvi do zero, da modelagem de dados e APIs à interface.',
       'projects.tabAll': 'Todos',
       'projects.tabPersonal': 'Projetos Pessoais',
       'projects.tabAcademic': 'Projetos Acadêmicos',
       'projects.demo': 'Ver Aplicação',
-      'projects.casalplanner': 'Planejamento financeiro para casais, com metas compartilhadas e um assistente de IA (Groq/Llama 3.1) para sugestões de orçamento.',
-      'projects.imovplan': 'Planejamento financeiro para compra e gestão de imóveis, simulando financiamentos e acompanhando investimentos imobiliários.',
-      'projects.saudememora': 'Organização de histórico médico e exames com OCR e IA para extrair e estruturar dados de documentos de saúde.',
-      'projects.pitiquinho': 'Controle financeiro pessoal para registrar receitas, despesas e acompanhar o orçamento mensal.',
-      'projects.dateoflove': 'Projeto acadêmico para organizar encontros e momentos especiais de um casal, com agenda e lembretes.',
-      'projects.rodobus': 'Sistema acadêmico de gestão de passagens rodoviárias, com venda de bilhetes e notificações automáticas por e-mail.',
-
-      'exp.title': 'Experiência',
-      'exp.p1': 'Jul 2025 — Presente · 1 ano 2 meses',
-      'exp.role1': 'Desenvolvedor Back-end',
-      'exp.desc1': 'Desenvolvimento e manutenção de sistemas ERP corporativos com Node.js e TypeScript. Responsável por soluções para processos de pagamento, financeiro e contabilidade, construção de APIs REST e integrações com sistemas terceiros. Automação de processos internos reduzindo tarefas manuais e tempo operacional. Otimização de consultas SQL utilizadas em processos críticos do ERP. Correção de falhas em integrações responsáveis por processos financeiros. Desenvolvimento de integrações entre ERP, CargoWise e Magento garantindo sincronização de dados e estabilidade dos processos de negócio.',
-      'exp.p2': 'Nov 2023 — Jul 2025 · 1 ano 8 meses',
-      'exp.role2': 'Desenvolvedor',
-      'exp.desc2': 'Desenvolvimento, evolução e manutenção de APIs REST em Node.js e TypeScript. Atuação em módulos do ERP, correção de bugs e desenvolvimento de novas funcionalidades para sistemas legados e integrações. Participação em projetos de integração entre sistemas e automação de processos internos, reduzindo atividades manuais e aumentando eficiência operacional.',
-      'exp.p3': 'Out 2022 — Nov 2023 · 1 ano 1 mês',
-      'exp.role3': 'Estagiário de TI',
-      'exp.desc3': 'Primeiros passos em desenvolvimento e suporte a sistemas internos, aprendendo as tecnologias e processos da empresa.',
+      'projects.imovplan': 'Planejamento financeiro para aquisição de imóveis com simulação comparativa SAC e PRICE, cálculo de rendimento líquido com CDI e IR regressivo, aportes extras (13º, férias e FGTS) e composição de renda individual ou em casal.',
+      'projects.casalplanner': 'Organização financeira e montagem da casa a dois por cômodos, com controle de orçamento em tempo real, metas e compras sincronizadas, separação VR/VA e assistente de IA (Groq/Llama 3.1) para recomendações.',
+      'projects.saudememora': 'Gestão inteligente de documentos médicos com processamento assíncrono em .NET 9, OCR duplo, extração clínica estruturada com Gemini/Groq, alertas de interações medicamentosas e chat assistente com Tool Calling e RAG Híbrido (busca vetorial e lexical no MongoDB).',
+      'projects.ragTag': 'RAG Híbrido',
+      'projects.pitiquinhoMeta': 'E-commerce · 2023',
+      'projects.pitiquinho': 'E-commerce completo desenvolvido no padrão MVC com cadastro e autenticação de usuários, gerenciamento de catálogo de produtos, carrinho de compras, controle de sessão HTTP com JSP e persistência relacional via Spring Data JPA.',
+      'projects.dateofloveMeta': 'Plataforma Web · 2023',
+      'projects.dateoflove': 'Plataforma web para organização de casamentos com catálogo de serviços e fornecedores, cálculo automático de orçamento personalizado, envio automatizado de propostas por e-mail e persistência de dados em SQL Server.',
+      'projects.rodobusMeta': 'Líder Técnico · 2022',
+      'projects.rodobus': 'Sistema desktop de reserva e venda de passagens rodoviárias, com controle de rotas e assentos, persistência em MySQL e disparo automático de comprovantes via JavaMail. Atuei como gerente de projeto e líder técnico da equipe.',
 
       'edu.title': 'Formação',
       'edu.c1': 'Análise e Desenvolvimento de Sistemas',
+      'edu.desc1': 'Desenvolvi competências em programação, banco de dados, engenharia de software e metodologias ágeis. O curso proporcionou uma base sólida em tecnologia da informação, preparando-me para atuar no desenvolvimento e manutenção de sistemas, integração de soluções e resolução de problemas técnicos.',
       'edu.c2': 'Inglês — Pré-avançado',
+      'edu.desc2': 'Curso de Inglês (Básico a Pré-Avançado), com foco em conversação, leitura, escrita e compreensão auditiva, incluindo vocabulário técnico e comunicação aplicada ao ambiente profissional e acadêmico. Práticas de conversação, exercícios de compreensão oral, leitura de textos em inglês e atividades em grupo.',
       'edu.c3': 'Ensino Técnico em Informática',
+      'edu.desc3': 'Formação técnica em Tecnologia da Informação, com foco em lógica de programação, desenvolvimento de sistemas e banco de dados. Desenvolvimento de projeto prático utilizando JavaScript, C#, HTML, CSS e MySQL, aplicando conceitos de front-end, back-end e persistência de dados, além de vivência em análise de problemas, criação de soluções, testes e organização de código.',
 
       'skills.title': 'Skills',
       'skills.backend': 'Back-end',
-      'skills.db': 'Banco de Dados',
-      'skills.cloud': 'Cloud & DevOps',
-      'skills.integration': 'Integrações & Mensageria',
-      'skills.frontend': 'Front-end',
+      'skills.integration': 'APIs, Integrações & Segurança',
+      'skills.db': 'Banco de Dados & ORM',
+      'skills.ai': 'Inteligência Artificial',
+      'skills.genai': 'IA Generativa',
+      'skills.cloud': 'Testes, Cloud & DevOps',
+      'skills.arch': 'Arquitetura & Front-end',
 
       'contact.title': 'Contato',
       'contact.sub': 'Aberto a novas oportunidades como desenvolvedor backend. Vamos conversar.',
       'contact.phone': 'Telefone',
-
-      'footer.made': 'Feito por Matheus Rafael · São Paulo, SP · 2026',
-      'footer.online': 'status: online',
+      'footer.verse': '"Consagre ao Senhor tudo o que você faz, e os seus planos serão bem-sucedidos." — Provérbios 16:3',
     },
     en: {
       'nav.about': 'About',
-      'nav.projects': 'Projects',
       'nav.experience': 'Experience',
+      'nav.projects': 'Projects',
       'nav.education': 'Education',
       'nav.skills': 'Skills',
       'nav.contact': 'Contact',
 
       'hero.badge': 'Available for opportunities',
-      'hero.role': 'Backend Developer · EXPERIENCE_PLACEHOLDER · ERP & Scalable APIs',
-      'hero.bio': 'Backend Developer specialized in corporate systems, APIs, and integrations. Experience with Node.js/TypeScript and C#/.NET, working with ERP, process automation, and integrations with platforms like CargoWise and Magento.',
+      'hero.role': 'Backend Developer · RESTful APIs · Microservices · ERP',
+      'hero.bio': 'Backend Developer specialized in RESTful APIs, microservices, corporate ERP systems, and end-to-end integrations. Solid experience with Node.js/TypeScript, C#/.NET (ASP.NET Core), Java/Spring Boot, and SQL databases.',
       'hero.location': 'São Paulo, Brazil',
       'hero.ctaProjects': 'View Projects',
       'hero.cvCsharp': 'Resume — C# .NET',
       'hero.cvJava': 'Resume — Java',
+      'hero.cvTypescript': 'Resume — TypeScript',
+      'hero.pillAi': 'AI & RAG',
+
+      'term.file': 'response.json — 200 OK',
+      'term.copy': 'Copy',
+      'term.copied': 'Copied!',
+      'term.route': '/developer/matheus-rafael',
+      'term.kRole': '"role"',
+      'term.vRole': '"Backend Developer"',
+      'term.kExp': '"experience"',
+      'term.kFocus': '"focus"',
+      'term.vFocus': '"RESTful APIs, Microservices, ERP, AI & Infrastructure"',
+      'term.kLoc': '"location"',
+      'term.vLoc': '"São Paulo, Brazil"',
+      'term.vStatus': '"available for opportunities"',
 
       'about.title': 'About me',
-      'about.p1': 'I am a Backend Developer with professional experience in developing, maintaining, and evolving corporate ERP systems, primarily working with Node.js, TypeScript, SQL Server, and REST APIs. Currently at PWI Sistemas, I develop solutions for payment, financial, and accounting processes, as well as APIs, system integrations, and internal process automation.',
-      'about.p2': 'I have experience in end-to-end integration analysis, including platforms like CargoWise and Magento, investigation and resolution of critical API issues, SQL query optimization, and legacy system maintenance. Beyond Node.js and TypeScript, I have practical experience with C#/.NET, ASP.NET Core, Java/Spring Boot, MongoDB, Entity Framework, Docker, and AWS. I am interested in opportunities as Backend Developer, Software Engineer, or Integration Developer, especially in environments involving APIs, corporate systems, ERP, and scalable solution development.',
-      'about.statExp': 'experience',
-      'about.statProjects': 'projects shipped',
-      'about.statStacks': 'core stacks',
+      'about.lead': 'I am a Backend Developer with solid experience building, maintaining, and evolving corporate ERP systems, RESTful APIs, and microservices using Node.js, TypeScript, C#/.NET (ASP.NET Core), Java/Spring Boot, and SQL Server. At PWI Sistemas, I deliver solutions for critical payment, financial, and accounting workflows as well as internal process automation.',
+      'about.p2': 'I lead end-to-end third-party integrations with platforms such as CargoWise and Magento, root-cause investigation of critical failures, SQL query and database performance optimization, technical documentation, and legacy modernization. I apply Clean Architecture, SOLID, MVC, JWT/OAuth2 authentication, automated testing (JUnit/Jest), Docker, CI/CD (GitHub Actions), cloud platforms (AWS & Azure), and Generative AI solutions (LLMs, RAG, AI Agents, LangChain/LangGraph, and MCP).',
+
+      'exp.title': 'Experience',
+      'exp.role1': 'Backend Developer',
+      'exp.r1b1': 'End-to-end analysis and development of third-party API integrations, mapping business workflows, rules, and dependencies to design and deliver complete solutions.',
+      'exp.r1b2': 'Development of RESTful APIs and microservices for payment, financial, and accounting processes in ERP systems using Node.js, TypeScript, and C#/.NET.',
+      'exp.r1b3': 'Development and maintenance of integrations between ERP and platforms such as CargoWise and Magento, ensuring reliable data consistency and synchronization.',
+      'exp.r1b4': 'Root-cause investigation and resolution of critical failures across integrations, APIs, and financial workflows, alongside SQL query and performance optimization in core ERP routines.',
+      'exp.r1b5': 'Internal process automation reducing manual effort, technical documentation translating business requirements into specifications, and continuous evolution of legacy systems, architecture, and code quality.',
+      'exp.role2': 'Junior Backend Developer',
+      'exp.r2b1': 'Development and maintenance of RESTful APIs in Node.js and TypeScript integrated with Volpe ERP and internal systems.',
+      'exp.r2b2': 'Cross-system integration development, handling data flows, business rules, and API communication.',
+      'exp.r2b3': 'Modeling, maintenance, and optimization of SQL databases, including critical queries and routines used by the ERP.',
+      'exp.r2b4': 'End-to-end technical requirement analysis, bug investigation and fixes, and evolutionary improvements across legacy systems and internal tools while preserving core ERP rules.',
+      'exp.role3': 'IT Intern',
+      'exp.r3b1': 'Evolutionary maintenance and support for Volpe ERP (built in FoxPro) and SQL databases.',
+      'exp.r3b2': 'Bug and data inconsistency fixes across internal processes, plus development of new features and internal support tools.',
+      'exp.r3b3': 'Customer technical support for issue analysis and troubleshooting, assisting with requirement analysis, testing, and release validation.',
 
       'projects.title': 'Projects',
-      'projects.sub': 'A selection of systems I designed and built from the ground up, from data model to interface.',
+      'projects.sub': 'End-to-end systems I designed and built from scratch, from data modeling and APIs to the user interface.',
       'projects.tabAll': 'All',
       'projects.tabPersonal': 'Personal Projects',
       'projects.tabAcademic': 'Academic Projects',
       'projects.demo': 'View Application',
-      'projects.casalplanner': 'Financial planning for couples, with shared goals and an AI assistant (Groq/Llama 3.1) for budget suggestions.',
-      'projects.imovplan': 'Financial planning for buying and managing real estate, simulating financing and tracking property investments.',
-      'projects.saudememora': 'Organizes medical history and exams with OCR and AI to extract and structure data from health documents.',
-      'projects.pitiquinho': 'Personal finance tracker for recording income and expenses and following the monthly budget.',
-      'projects.dateoflove': 'Academic project to organize dates and special moments for a couple, with a shared agenda and reminders.',
-      'projects.rodobus': 'Academic bus-ticketing management system, with ticket sales and automatic email notifications.',
-
-      'exp.title': 'Experience',
-      'exp.p1': 'Jul 2025 — Present · 1 year 2 months',
-      'exp.role1': 'Backend Developer',
-      'exp.desc1': 'Development and maintenance of corporate ERP systems with Node.js and TypeScript. Responsible for solutions for payment, financial, and accounting processes, building REST APIs and integrations with third-party systems. Internal process automation reducing manual tasks and operational time. Optimization of SQL queries used in critical ERP processes. Correction of failures in integrations responsible for financial processes. Development of integrations between ERP, CargoWise and Magento ensuring data synchronization and business process stability.',
-      'exp.p2': 'Nov 2023 — Jul 2025 · 1 year 8 months',
-      'exp.role2': 'Developer',
-      'exp.desc2': 'Development, evolution and maintenance of REST APIs in Node.js and TypeScript. Working on ERP modules, bug fixing and developing new features for legacy systems and integrations. Participation in system integration projects and internal process automation, reducing manual activities and increasing operational efficiency.',
-      'exp.p3': 'Oct 2022 — Nov 2023 · 1 year 1 month',
-      'exp.role3': 'IT Intern',
-      'exp.desc3': 'First steps in development and support for internal systems, learning the company\u2019s technologies and processes.',
+      'projects.imovplan': 'Real estate financial planning platform featuring SAC vs. PRICE amortization comparison, net CDI yield calculation with regressive income tax, extra contributions (13th salary, vacation, FGTS), and individual or couple income composition.',
+      'projects.casalplanner': 'Home setup and financial planning for couples organized by room, with real-time budget tracking, synced shopping goals, meal/food voucher separation, and an AI assistant (Groq/Llama 3.1) for recommendations.',
+      'projects.saudememora': 'Intelligent medical document platform with async .NET 9 processing, dual-engine OCR, structured clinical extraction via Gemini/Groq, drug-interaction alerts, and an AI chat assistant powered by Tool Calling and Hybrid RAG (vector & lexical search in MongoDB).',
+      'projects.ragTag': 'Hybrid RAG',
+      'projects.pitiquinhoMeta': 'E-commerce · 2023',
+      'projects.pitiquinho': 'Full-featured MVC e-commerce platform with user registration and authentication, product catalog management, shopping cart, HTTP session control with JSP, and relational persistence via Spring Data JPA.',
+      'projects.dateofloveMeta': 'Web Platform · 2023',
+      'projects.dateoflove': 'Wedding planning web platform featuring a vendor and service catalog, automated custom budget calculation, email proposal delivery, and SQL Server database persistence.',
+      'projects.rodobusMeta': 'Tech Lead · 2022',
+      'projects.rodobus': 'Desktop bus ticket reservation and sales system with route and seat management, MySQL persistence, and automated email receipts via JavaMail. Served as project manager and technical team lead.',
 
       'edu.title': 'Education',
       'edu.c1': 'Systems Analysis and Development',
+      'edu.desc1': 'Developed expertise in programming, databases, software engineering, and agile methodologies. The program provided a solid foundation in IT, preparing me for systems development, maintenance, system integration, and technical problem-solving.',
       'edu.c2': 'English — Upper-Intermediate',
+      'edu.desc2': 'English Course (Basic to Upper-Intermediate), focusing on conversation, reading, writing, and listening comprehension, including technical vocabulary and applied communication for professional and academic environments.',
       'edu.c3': 'Technical Degree in Information Technology',
+      'edu.desc3': 'Technical training in IT focused on programming logic, systems development, and relational databases. Built practical projects using JavaScript, C#, HTML, CSS, and MySQL, applying front-end, back-end, persistence, testing, and clean code organization.',
 
       'skills.title': 'Skills',
       'skills.backend': 'Back-end',
-      'skills.db': 'Databases',
-      'skills.cloud': 'Cloud & DevOps',
-      'skills.integration': 'Integrations & Messaging',
-      'skills.frontend': 'Front-end',
+      'skills.integration': 'APIs, Integrations & Security',
+      'skills.db': 'Databases & ORM',
+      'skills.ai': 'Artificial Intelligence',
+      'skills.genai': 'Generative AI',
+      'skills.cloud': 'Testing, Cloud & DevOps',
+      'skills.arch': 'Architecture & Front-end',
 
       'contact.title': 'Contact',
       'contact.sub': "Open to new opportunities as a backend developer. Let's talk.",
       'contact.phone': 'Phone',
-
-      'footer.made': 'Made by Matheus Rafael · São Paulo, Brazil · 2026',
-      'footer.online': 'status: online',
+      'footer.verse': '"Commit to the Lord whatever you do, and he will establish your plans." — Proverbs 16:3',
     }
   };
 
   /* =========================================================
-     DATE CALCULATIONS
+     DYNAMIC DATE & EXPERIENCE CALCULATIONS
      ========================================================= */
-  const startCareerDate = new Date('2022-10-01T00:00:00-03:00');
-  const startCurrentRoleDate = new Date('2025-07-01T00:00:00-03:00');
+  const CAREER_START_YM = '2022-10';
   const today = new Date();
-
-  function getDiff(startDate) {
-    let years = today.getFullYear() - startDate.getFullYear();
-    let months = today.getMonth() - startDate.getMonth();
-    if (months < 0) {
-      years--;
-      months += 12;
-    }
-    return { years, months };
-  }
-
-  const careerDiff = getDiff(startCareerDate);
-  const roleDiff = getDiff(startCurrentRoleDate);
   const currentYear = today.getFullYear();
 
-  function formatTime(diff, lang) {
-    let yStr = '';
-    let mStr = '';
-    if (lang === 'pt') {
-      if (diff.years > 0) yStr = `${diff.years} ano${diff.years > 1 ? 's' : ''}`;
-      if (diff.months > 0) mStr = `${diff.months} ${diff.months > 1 ? 'meses' : 'mês'}`;
-    } else {
-      if (diff.years > 0) yStr = `${diff.years} year${diff.years > 1 ? 's' : ''}`;
-      if (diff.months > 0) mStr = `${diff.months} month${diff.months > 1 ? 's' : ''}`;
+  const monthNames = {
+    pt: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+    en: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+  };
+
+  function parseYearMonth(ym) {
+    if (!ym || ym === 'present') {
+      return { year: today.getFullYear(), month: today.getMonth() + 1 };
     }
-    return [yStr, mStr].filter(Boolean).join(' ');
+    const [y, m] = ym.split('-').map(Number);
+    return { year: y, month: m };
   }
 
-  translations.pt['exp.p1'] = `Jul 2025 — Presente · ${formatTime(roleDiff, 'pt')}`;
-  translations.en['exp.p1'] = `Jul 2025 — Present · ${formatTime(roleDiff, 'en')}`;
+  function calcDuration(startYM, endYM) {
+    const start = parseYearMonth(startYM);
+    const end = parseYearMonth(endYM);
+    const rawMonths = (end.year - start.year) * 12 + (end.month - start.month);
+    const totalMonths = Math.max(1, rawMonths);
+    return {
+      years: Math.floor(totalMonths / 12),
+      months: totalMonths % 12,
+      totalMonths
+    };
+  }
+
+  function formatDuration(diff, lang) {
+    const parts = [];
+    if (lang === 'pt') {
+      if (diff.years > 0) parts.push(`${diff.years} ${diff.years === 1 ? 'ano' : 'anos'}`);
+      if (diff.months > 0) parts.push(`${diff.months} ${diff.months === 1 ? 'mês' : 'meses'}`);
+      return parts.join(' e ');
+    }
+    if (diff.years > 0) parts.push(`${diff.years} ${diff.years === 1 ? 'year' : 'years'}`);
+    if (diff.months > 0) parts.push(`${diff.months} ${diff.months === 1 ? 'month' : 'months'}`);
+    return parts.join(' ');
+  }
+
+  function formatYearMonth(ym, lang) {
+    if (ym === 'present') {
+      return lang === 'pt' ? 'Presente' : 'Present';
+    }
+    const { year, month } = parseYearMonth(ym);
+    return `${monthNames[lang][month - 1]} ${year}`;
+  }
+
+  const careerDiff = calcDuration(CAREER_START_YM, 'present');
 
   translations.pt['footer.made'] = `Feito por Matheus Rafael · São Paulo, SP · ${currentYear}`;
   translations.en['footer.made'] = `Made by Matheus Rafael · São Paulo, Brazil · ${currentYear}`;
 
+  let currentLang = 'pt';
+
+  function updateDynamicMetrics(lang) {
+    // 1. Terminal JSON experience localized in PT/EN
+    const termExpEl = document.getElementById('term-exp');
+    if (termExpEl) {
+      termExpEl.textContent = `"${formatDuration(careerDiff, lang)}"`;
+    }
+
+    // 2. Experience section total experience subtitle
+    const expTotalEl = document.getElementById('exp-total');
+    if (expTotalEl) {
+      const totalFormatted = formatDuration(careerDiff, lang);
+      expTotalEl.textContent = lang === 'pt'
+        ? `Trajetória profissional · ${totalFormatted} de experiência`
+        : `Career path · ${totalFormatted} of experience`;
+    }
+
+    // 3. Individual experience timeline periods & durations
+    document.querySelectorAll('[data-exp-period]').forEach((el) => {
+      const startYM = el.getAttribute('data-start');
+      const endYM = el.getAttribute('data-end') || 'present';
+      const diff = calcDuration(startYM, endYM);
+      const startLabel = formatYearMonth(startYM, lang);
+      const endLabel = formatYearMonth(endYM, lang);
+      el.textContent = `${startLabel} — ${endLabel} · ${formatDuration(diff, lang)}`;
+    });
+
+    // 4. Education periods localized in PT/EN
+    document.querySelectorAll('[data-edu-period]').forEach((el) => {
+      const startYM = el.getAttribute('data-start');
+      const endYM = el.getAttribute('data-end') || 'present';
+      const startLabel = formatYearMonth(startYM, lang);
+      const endLabel = formatYearMonth(endYM, lang);
+      el.textContent = `${startLabel} – ${endLabel}`;
+    });
+  }
+
+  /* =========================================================
+     LANGUAGE SWITCHING
+     ========================================================= */
   const htmlEl = document.documentElement;
-  const langButtons = document.querySelectorAll('.lang-toggle button');
+  const langButtons = document.querySelectorAll('.lang button');
 
   function applyLang(lang) {
     const dict = translations[lang];
+    if (!dict) return;
+    currentLang = lang;
+
     document.querySelectorAll('[data-i18n]').forEach((el) => {
       const key = el.getAttribute('data-i18n');
-      if (dict[key] !== undefined) el.textContent = dict[key];
+      if (dict[key] !== undefined) {
+        el.textContent = dict[key];
+      }
     });
+
     langButtons.forEach((btn) => {
       const isActive = btn.dataset.lang === lang;
       btn.classList.toggle('active', isActive);
       btn.setAttribute('aria-pressed', String(isActive));
     });
+
     htmlEl.lang = lang === 'pt' ? 'pt-BR' : 'en';
+    updateDynamicMetrics(lang);
 
-    // Update dynamic dates in HTML
-    const termExpEl = document.getElementById('term-exp');
-    if (termExpEl) {
-      termExpEl.textContent = `"${careerDiff.years}y ${careerDiff.months}m"`;
-    }
-
-    const statExpEl = document.getElementById('stat-exp');
-    if (statExpEl) {
-      const yearLabel = lang === 'pt' ? 'a' : 'y';
-      let html = '';
-      if (careerDiff.years > 0) html += `${careerDiff.years}<span style="font-size:1.1rem;">${yearLabel}</span>`;
-      if (careerDiff.months > 0) html += ` ${careerDiff.months}<span style="font-size:1.1rem;">m</span>`;
-      statExpEl.innerHTML = html.trim();
+    try {
+      localStorage.setItem('preferredLang', lang);
+    } catch (_) {
+      // Ignore storage restrictions
     }
   }
 
+  /* =========================================================
+     TERMINAL COPY BUTTON
+     ========================================================= */
+  const copyCodeBtn = document.getElementById('copyCodeBtn');
+  const copyCodeLabel = document.getElementById('copyCodeLabel');
+  let copyResetTimer = null;
+
+  function buildTerminalSnippet(lang) {
+    const expStr = formatDuration(careerDiff, lang);
+    if (lang === 'en') {
+      return [
+        'GET /developer/matheus-rafael',
+        '→ 200 OK · 41ms',
+        '{',
+        '  "role": "Backend Developer",',
+        `  "experience": "${expStr}",`,
+        '  "stack": ["Node.js", "TypeScript", "C#/.NET", "Java"],',
+        '  "focus": "RESTful APIs, Microservices, ERP, AI & Infrastructure",',
+        '  "location": "São Paulo, Brazil",',
+        '  "status": "available for opportunities"',
+        '}'
+      ].join('\n');
+    }
+    return [
+      'GET /desenvolvedor/matheus-rafael',
+      '→ 200 OK · 41ms',
+      '{',
+      '  "cargo": "Desenvolvedor Back-end",',
+      `  "experiencia": "${expStr}",`,
+      '  "stack": ["Node.js", "TypeScript", "C#/.NET", "Java"],',
+      '  "foco": "APIs RESTful, Microsserviços, ERP, IA & Infraestrutura",',
+      '  "localizacao": "São Paulo, SP",',
+      '  "status": "disponível para oportunidades"',
+      '}'
+    ].join('\n');
+  }
+
+  async function copyTextToClipboard(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      await navigator.clipboard.writeText(text);
+      return;
+    }
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+  }
+
+  if (copyCodeBtn && copyCodeLabel) {
+    copyCodeBtn.addEventListener('click', async () => {
+      try {
+        await copyTextToClipboard(buildTerminalSnippet(currentLang));
+        const dict = translations[currentLang] || translations.pt;
+        copyCodeBtn.classList.add('copied');
+        copyCodeLabel.textContent = dict['term.copied'];
+        if (copyResetTimer) clearTimeout(copyResetTimer);
+        copyResetTimer = setTimeout(() => {
+          copyCodeBtn.classList.remove('copied');
+          const activeDict = translations[currentLang] || translations.pt;
+          copyCodeLabel.textContent = activeDict['term.copy'];
+        }, 2000);
+      } catch (_) {
+        // Ignore clipboard errors
+      }
+    });
+  }
+
   langButtons.forEach((btn) => {
-    btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+    btn.addEventListener('click', () => {
+      applyLang(btn.dataset.lang);
+    });
   });
 
-  // Inicializa a página com as datas e dados calculados
-  applyLang('pt');
+  let initialLang = 'pt';
+  try {
+    const saved = localStorage.getItem('preferredLang');
+    if (saved === 'pt' || saved === 'en') initialLang = saved;
+  } catch (_) {
+    // Default to pt
+  }
+  applyLang(initialLang);
 
   /* =========================================================
      MOBILE MENU
      ========================================================= */
   const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileNav = document.getElementById('mobileNav');
 
-  function closeMobileMenu() {
-    hamburger.classList.remove('open');
-    mobileMenu.classList.remove('open');
-    hamburger.setAttribute('aria-expanded', 'false');
+  function closeMobileNav() {
+    if (hamburger && mobileNav) {
+      hamburger.classList.remove('open');
+      mobileNav.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
   }
 
-  hamburger.addEventListener('click', () => {
-    const open = mobileMenu.classList.toggle('open');
-    hamburger.classList.toggle('open', open);
-    hamburger.setAttribute('aria-expanded', String(open));
-  });
+  if (hamburger && mobileNav) {
+    hamburger.addEventListener('click', () => {
+      const isOpen = mobileNav.classList.toggle('open');
+      hamburger.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', String(isOpen));
+    });
 
-  mobileMenu.querySelectorAll('a').forEach((a) => a.addEventListener('click', closeMobileMenu));
+    mobileNav.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', closeMobileNav);
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !mobileNav.contains(e.target)) {
+        closeMobileNav();
+      }
+    });
+  }
 
   /* =========================================================
-     PROJECT FILTER TABS
+     PROJECT TABS FILTER (STAGGERED + CLEAN HOVER HANDOFF)
      ========================================================= */
-  const tabButtons = document.querySelectorAll('.tab-btn');
-  const projectCards = document.querySelectorAll('.project-card');
+  const tabButtons = document.querySelectorAll('.tabs .tab-btn');
+  const projectCards = document.querySelectorAll('#projectGrid .card');
 
   tabButtons.forEach((btn) => {
     btn.addEventListener('click', () => {
-      tabButtons.forEach((b) => b.classList.remove('active'));
-      btn.classList.add('active');
+      tabButtons.forEach((b) => b.classList.remove('on'));
+      btn.classList.add('on');
+
       const filter = btn.dataset.filter;
+      let visibleIndex = 0;
+
       projectCards.forEach((card) => {
-        const show = filter === 'all' || card.dataset.category === filter;
-        card.hidden = !show;
+        const matches = filter === 'all' || card.dataset.category === filter;
+        if (matches) {
+          const delay = visibleIndex * 65;
+          visibleIndex += 1;
+          card.style.display = 'flex';
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(16px) scale(0.985)';
+          setTimeout(() => {
+            card.style.transition = 'opacity 0.42s cubic-bezier(0.22, 1, 0.36, 1), transform 0.42s cubic-bezier(0.22, 1, 0.36, 1)';
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0) scale(1)';
+            setTimeout(() => {
+              card.style.opacity = '';
+              card.style.transform = '';
+              card.style.transition = '';
+            }, 440);
+          }, 16 + delay);
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(10px) scale(0.98)';
+          setTimeout(() => {
+            card.style.display = 'none';
+            card.style.opacity = '';
+            card.style.transform = '';
+          }, 190);
+        }
       });
     });
   });
 
   /* =========================================================
-     SCROLL REVEAL
+     STAGGERED SCROLL REVEAL & INTERACTIVE CARD SPOTLIGHT
      ========================================================= */
+  const staggerGroups = document.querySelectorAll('.about, .tl, .grid, .edu, .skills, .cg');
+  staggerGroups.forEach((group) => {
+    const items = group.querySelectorAll(':scope > .reveal');
+    items.forEach((el, idx) => {
+      el.style.setProperty('--stagger-delay', `${Math.min(idx * 85, 425)}ms`);
+    });
+  });
+
   const revealEls = document.querySelectorAll('.reveal');
+  function markRevealIn(el) {
+    el.classList.add('in');
+    const delayStr = el.style.getPropertyValue('--stagger-delay') || '0ms';
+    const delayMs = parseInt(delayStr, 10) || 0;
+    setTimeout(() => {
+      el.classList.add('settled');
+    }, 680 + delayMs);
+  }
+
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('in');
+            markRevealIn(entry.target);
             observer.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+      { threshold: 0.1, rootMargin: '0px 0px -36px 0px' }
     );
     revealEls.forEach((el) => observer.observe(el));
   } else {
-    revealEls.forEach((el) => el.classList.add('in'));
+    revealEls.forEach((el) => {
+      el.classList.add('in', 'settled');
+    });
   }
+
+  // Interactive cursor spotlight on cards
+  const spotlightCards = document.querySelectorAll('.card, .tl-i, .ec, .cc');
+  spotlightCards.forEach((card) => {
+    let rafId = 0;
+    card.addEventListener('pointermove', (e) => {
+      if (rafId) return;
+      rafId = requestAnimationFrame(() => {
+        const rect = card.getBoundingClientRect();
+        card.style.setProperty('--mx', `${(e.clientX - rect.left).toFixed(1)}px`);
+        card.style.setProperty('--my', `${(e.clientY - rect.top).toFixed(1)}px`);
+        rafId = 0;
+      });
+    }, { passive: true });
+  });
 
   /* =========================================================
-     ACTIVE NAV LINK ON SCROLL
+     ACTIVE NAV LINK & FIXED HEADER ON SCROLL
      ========================================================= */
-  const sections = document.querySelectorAll('main section[id]');
-  const navLinks = document.querySelectorAll('.nav-links a');
+  const siteHeader = document.getElementById('siteHeader');
+  const sections = document.querySelectorAll('section[id], header[id], footer[id]');
+  const desktopLinks = document.querySelectorAll('.links a');
+  const mobileLinks = document.querySelectorAll('.mobile-nav a');
 
-  function updateActiveLink() {
-    let currentId = '';
+  function updateActiveNav() {
+    if (siteHeader) {
+      siteHeader.classList.toggle('scrolled', window.scrollY > 12);
+    }
+
+    let currentId = 'top';
     const scrollPos = window.scrollY + 140;
-    sections.forEach((section) => {
-      if (scrollPos >= section.offsetTop) currentId = section.id;
+    const nearBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 40;
+
+    if (nearBottom) {
+      currentId = 'contato';
+    } else {
+      sections.forEach((sec) => {
+        if (scrollPos >= sec.offsetTop) {
+          currentId = sec.id;
+        }
+      });
+    }
+
+    desktopLinks.forEach((link) => {
+      const href = link.getAttribute('href');
+      const isMatch = href === `#${currentId}` || (currentId === 'top' && href === '#sobre');
+      link.classList.toggle('on', isMatch);
     });
-    navLinks.forEach((link) => {
-      link.classList.toggle('active', link.getAttribute('href') === `#${currentId}`);
+
+    mobileLinks.forEach((link) => {
+      const href = link.getAttribute('href');
+      const isMatch = href === `#${currentId}`;
+      link.classList.toggle('active', isMatch);
     });
   }
 
-  window.addEventListener('scroll', updateActiveLink, { passive: true });
-  updateActiveLink();
+  window.addEventListener('scroll', updateActiveNav, { passive: true });
+  updateActiveNav();
 })();

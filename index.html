@@ -1,434 +1,635 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Matheus Rafael · Desenvolvedor Backend</title>
-<meta name="description" content="Matheus Rafael — Desenvolvedor Backend especializado em Node.js/TypeScript, C#/.NET e Java. ERP corporativo e APIs escaláveis.">
-<meta name="theme-color" content="#0D1117">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matheus Rafael · Desenvolvedor Back-end</title>
+  <meta name="description" content="Matheus Rafael — Desenvolvedor Back-end especializado em APIs RESTful, microsserviços, sistemas ERP corporativos e integrações ponta a ponta. Experiência com Node.js/TypeScript, C#/.NET (ASP.NET Core), Java/Spring Boot e SQL Server.">
+  <meta name="theme-color" content="#2A45F0">
 
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
-<link rel="icon" href="favicon-16.png" sizes="16x16" type="image/png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="manifest" href="site.webmanifest">
+  <link rel="icon" href="favicon.svg?v=3" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico?v=3" sizes="any">
+  <link rel="icon" href="favicon-32.png?v=3" sizes="32x32" type="image/png">
+  <link rel="icon" href="favicon-16.png?v=3" sizes="16x16" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=3">
+  <link rel="manifest" href="site.webmanifest?v=3">
 
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- ============ NAV ============ -->
-<nav class="nav">
-  <div class="nav-inner">
-    <a href="#top" class="logo"><span class="status-dot" aria-hidden="true"></span><span class="bracket">&lt;</span>Matheus Rafael<span class="bracket">/&gt;</span></a>
+  <!-- ================= HERO ================= -->
+  <header class="hero" id="top">
+    <div class="topbar" id="siteHeader">
+      <nav class="nav" aria-label="Navegação principal">
+        <a class="logo" href="#top" aria-label="Matheus Rafael - Início">
+          <span>MR<i></i></span>
+          Matheus Rafael
+        </a>
 
-    <ul class="nav-links" role="menubar">
-      <li><a href="#sobre" data-i18n="nav.about">Sobre</a></li>
-      <li><a href="#projetos" data-i18n="nav.projects">Projetos</a></li>
-      <li><a href="#experiencia" data-i18n="nav.experience">Experiência</a></li>
-      <li><a href="#formacao" data-i18n="nav.education">Formação</a></li>
-      <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
-      <li><a href="#contato" data-i18n="nav.contact">Contato</a></li>
-    </ul>
-
-    <div class="nav-right">
-      <div class="lang-toggle" role="group" aria-label="Idioma / Language">
-        <button type="button" data-lang="pt" class="active" aria-pressed="true">PT</button>
-        <button type="button" data-lang="en" aria-pressed="false">EN</button>
-      </div>
-      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-</nav>
-
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#sobre" data-i18n="nav.about">Sobre</a>
-  <a href="#projetos" data-i18n="nav.projects">Projetos</a>
-  <a href="#experiencia" data-i18n="nav.experience">Experiência</a>
-  <a href="#formacao" data-i18n="nav.education">Formação</a>
-  <a href="#skills" data-i18n="nav.skills">Skills</a>
-  <a href="#contato" data-i18n="nav.contact">Contato</a>
-</div>
-
-<main id="top">
-
-<!-- ============ HERO ============ -->
-<header class="hero">
-  <div class="container hero-grid">
-    <div>
-      <span class="route" style="color:var(--green); background:var(--green-dim); border-color:rgba(62,213,152,0.3);">
-        <span class="dot" style="background:var(--green);"></span>
-        <span data-i18n="hero.badge">Disponível para oportunidades</span>
-      </span>
-
-      <h1 class="hero-title">Matheus Rafael</h1>
-      <p class="hero-role" id="hero-role">Desenvolvedor Backend · ERP · APIs · Integrações</p>
-      <p class="hero-bio" data-i18n="hero.bio">Desenvolvedor Backend especializado em sistemas corporativos, APIs e integrações. Experiência com Node.js/TypeScript e C#/.NET, atuando em ERP, automação de processos e integrações com plataformas como CargoWise e Magento.</p>
-
-      <div class="hero-meta">
-        <span><i class="fas fa-map-marker-alt"></i> <span data-i18n="hero.location">São Paulo, SP</span></span>
-        <a href="mailto:rafaelmatheus061@gmail.com"><i class="fas fa-envelope"></i> rafaelmatheus061@gmail.com</a>
-        <a href="tel:+5511956601009"><i class="fas fa-phone"></i> (11) 95660-1009</a>
-      </div>
-
-      <div class="hero-cta">
-        <a href="#projetos" class="btn btn-primary"><span data-i18n="hero.ctaProjects">Ver Projetos</span> <i class="fas fa-arrow-right"></i></a>
-        <a href="https://github.com/MatheusRafaDev" target="_blank" rel="noopener" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
-        <a href="https://www.linkedin.com/in/matheus-rafael-50a676219/" target="_blank" rel="noopener" class="btn btn-outline"><i class="fab fa-linkedin"></i> LinkedIn</a>
-      </div>
-
-      <div class="resume-row">
-        <a href="./assets/curriculos/CSHARP.pdf" download><img src="https://raw.githubusercontent.com/dotnet/vscode-csharp/main/images/csharpIcon.png" alt="C#" style="width:16px;height:16px;"> <span data-i18n="hero.cvCsharp">Currículo C# .NET</span></a>
-        <a href="./assets/curriculos/JAVA.pdf" download><i class="fab fa-java"></i> <span data-i18n="hero.cvJava">Currículo Java</span></a>
-         <a href="./assets/curriculos/TYPESCRIPT.pdf" download><i class="fab fa-js"></i> <span data-i18n="hero.cvTypescript">Currículo TypeScript</span></a>
-      </div>
-    </div>
-
-    <div class="terminal reveal">
-      <div class="terminal-bar">
-        <span class="terminal-dot r"></span><span class="terminal-dot y"></span><span class="terminal-dot g"></span>
-        <span class="terminal-title">response.json — 200 OK</span>
-      </div>
-      <div class="terminal-body">
-        <div class="term-line term-request" style="animation-delay:0.1s"><span class="method">GET</span> /developer/matheus-rafael</div>
-        <div class="term-line term-status" style="animation-delay:0.3s">→ <span class="code-200">200 OK</span> · 41ms</div>
-        <div class="term-line" style="animation-delay:0.45s">{</div>
-        <div class="term-line json-line" style="animation-delay:0.6s"><span class="json-key">"role"</span>: <span class="json-string">"Backend Developer"</span>,</div>
-        <div class="term-line json-line" style="animation-delay:0.75s"><span class="json-key">"experience"</span>: <span class="json-string" id="term-exp">"3y 11m"</span>,</div>
-        <div class="term-line json-line" style="animation-delay:0.9s"><span class="json-key">"stack"</span>: [<span class="json-arr">"Node.js"</span>, <span class="json-arr">"TypeScript"</span>, <span class="json-arr">"C#/.NET"</span>, <span class="json-arr">"Java"</span>],</div>
-        <div class="term-line json-line" style="animation-delay:1.05s"><span class="json-key">"focus"</span>: <span class="json-string">"ERP systems &amp; scalable APIs"</span>,</div>
-        <div class="term-line json-line" style="animation-delay:1.2s"><span class="json-key">"location"</span>: <span class="json-string">"São Paulo, BR"</span>,</div>
-        <div class="term-line json-line" style="animation-delay:1.35s"><span class="json-key">"status"</span>: <span class="json-string">"available_for_hire"</span></div>
-        <div class="term-line" style="animation-delay:1.5s">}<span class="cursor"></span></div>
-      </div>
-    </div>
-  </div>
-</header>
-
-<!-- ============ SOBRE ============ -->
-<section id="sobre">
-  <div class="container">
-    <div class="about-grid">
-      <div class="avatar-container reveal">
-        <div class="avatar-wrap">
-          <img src="./assets/fotos/foto.png" alt="Foto de perfil de Matheus Rafael">
+        <div class="links" role="menubar">
+          <a href="#sobre" class="on" data-i18n="nav.about">Sobre</a>
+          <a href="#experiencia" data-i18n="nav.experience">Experiência</a>
+          <a href="#projetos" data-i18n="nav.projects">Projetos</a>
+          <a href="#formacao" data-i18n="nav.education">Formação</a>
+          <a href="#skills" data-i18n="nav.skills">Skills</a>
+          <a href="#contato" data-i18n="nav.contact">Contato</a>
         </div>
-        <div class="avatar-tag-wrap">
-          <span class="avatar-tag"><i class="fas fa-map-marker-alt"></i> São Paulo, BR</span>
-        </div>
-      </div>
-      <div class="about-text reveal">
-        <h2 class="section-title" data-i18n="about.title" style="margin-bottom:18px;">Quem sou</h2>
-        <p id="about-text-1" data-i18n="about.p1">Sou Desenvolvedor Back-end com experiência profissional em desenvolvimento, manutenção e evolução de sistemas ERP corporativos, atuando principalmente com Node.js, TypeScript, SQL Server e APIs REST. Atualmente na PWI Sistemas, desenvolvo soluções para processos de pagamento, financeiro e contabilidade, além de APIs, integrações entre sistemas e automação de processos internos.</p>
-        <p data-i18n="about.p2">Possuo experiência na análise de integrações ponta a ponta, incluindo plataformas como CargoWise e Magento, investigação e resolução de problemas críticos em APIs, otimização de consultas SQL e manutenção de sistemas legados. Além de Node.js e TypeScript, tenho experiência prática com C#/.NET, ASP.NET Core, Java/Spring Boot, MongoDB, Entity Framework, Docker e AWS. Tenho interesse em oportunidades como Desenvolvedor Back-end, Software Engineer ou Desenvolvedor de Integrações, especialmente em ambientes que envolvam APIs, sistemas corporativos, ERP e desenvolvimento de soluções escaláveis.</p>
 
-        <div class="about-stats">
-          <div>
-            <div class="stat-num" id="stat-exp">3<span style="font-size:1.1rem;">a</span> 10<span style="font-size:1.1rem;">m</span></div>
-            <div class="stat-label" data-i18n="about.statExp">experiência</div>
+        <div class="nav-r">
+          <div class="lang" role="group" aria-label="Idioma / Language">
+            <button type="button" data-lang="pt" class="active" aria-pressed="true">PT</button>
+            <button type="button" data-lang="en" aria-pressed="false">EN</button>
           </div>
-          <div>
-            <div class="stat-num">6+</div>
-            <div class="stat-label" data-i18n="about.statProjects">projetos entregues</div>
+          <button class="burger" id="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileNav">
+            <s></s><s></s><s></s>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Menu mobile drawer -->
+      <div class="mobile-nav" id="mobileNav">
+        <a href="#sobre" data-i18n="nav.about">Sobre</a>
+        <a href="#experiencia" data-i18n="nav.experience">Experiência</a>
+        <a href="#projetos" data-i18n="nav.projects">Projetos</a>
+        <a href="#formacao" data-i18n="nav.education">Formação</a>
+        <a href="#skills" data-i18n="nav.skills">Skills</a>
+        <a href="#contato" data-i18n="nav.contact">Contato</a>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="hero-g">
+        <div class="l">
+          <span class="badge">
+            <i></i><span data-i18n="hero.badge">Disponível para oportunidades</span>
+          </span>
+
+          <h1 class="name">Matheus <span>Rafael</span></h1>
+          <p class="role" data-i18n="hero.role">Desenvolvedor Back-end · APIs RESTful · Microsserviços · ERP</p>
+          <p class="bio" data-i18n="hero.bio">Desenvolvedor Back-end especializado em APIs RESTful, microsserviços, sistemas ERP corporativos e integrações ponta a ponta. Experiência sólida com Node.js/TypeScript, C#/.NET (ASP.NET Core), Java/Spring Boot e bancos de dados SQL.</p>
+
+          <div class="meta">
+            <span>
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>
+              <span data-i18n="hero.location">São Paulo, SP</span>
+            </span>
+            <a href="mailto:rafaelmatheus061@gmail.com">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>
+              rafaelmatheus061@gmail.com
+            </a>
+            <a href="tel:+5511956601009">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"></path></svg>
+              (11) 95660-1009
+            </a>
           </div>
-          <div>
-            <div class="stat-num">3</div>
-            <div class="stat-label" data-i18n="about.statStacks">stacks principais</div>
+
+          <div class="cta">
+            <a class="btn p" href="#projetos">
+              <span data-i18n="hero.ctaProjects">Ver Projetos</span>
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+            </a>
+            <a class="btn" href="https://github.com/MatheusRafaDev" target="_blank" rel="noopener">
+              <svg class="ico f" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"></path></svg>
+              GitHub
+            </a>
+            <a class="btn" href="https://www.linkedin.com/in/matheus-rafael-50a676219/" target="_blank" rel="noopener">
+              <svg class="ico f" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4V21H3zM9.5 9.75h3.8v1.6h.06c.53-1 1.82-2.05 3.75-2.05 4 0 4.74 2.64 4.74 6.07V21h-4v-4.9c0-1.17-.02-2.67-1.63-2.67-1.63 0-1.88 1.27-1.88 2.59V21h-4z"></path></svg>
+              LinkedIn
+            </a>
+          </div>
+
+          <div class="cv">
+            <a href="./assets/curriculos/CSHARP.pdf" download>
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="M7 10l5 5 5-5"></path><path d="M12 15V3"></path></svg>
+              <span data-i18n="hero.cvCsharp">Currículo C# .NET</span>
+            </a>
+            <a href="./assets/curriculos/JAVA.pdf" download>
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="M7 10l5 5 5-5"></path><path d="M12 15V3"></path></svg>
+              <span data-i18n="hero.cvJava">Currículo Java</span>
+            </a>
+            <a href="./assets/curriculos/TYPESCRIPT.pdf" download>
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="M7 10l5 5 5-5"></path><path d="M12 15V3"></path></svg>
+              <span data-i18n="hero.cvTypescript">Currículo TypeScript</span>
+            </a>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ============ PROJETOS ============ -->
-<section id="projetos">
-  <div class="container">
-    <div class="section-head">
-      <h2 class="section-title" data-i18n="projects.title">Projetos</h2>
-      <p class="section-sub" data-i18n="projects.sub">Uma seleção de sistemas que projetei e construí do zero, do modelo de dados à interface.</p>
-    </div>
+        <div class="r hero-scene reveal">
+          <ul class="hero-pills hero-pills--left" aria-label="Linguagens e frameworks">
+            <li>
+              <span class="hp-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 2.2l8.4 4.85v9.9L12 21.8l-8.4-4.85v-9.9L12 2.2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><text x="12" y="14.3" text-anchor="middle" fill="currentColor" font-size="6.8" font-weight="800" font-family="Plus Jakarta Sans, sans-serif">JS</text></svg>
+              </span>
+              Node.js
+            </li>
+            <li>
+              <span class="hp-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4" fill="none" stroke="currentColor" stroke-width="1.85"/><text x="12" y="15.1" text-anchor="middle" fill="currentColor" font-size="7.8" font-weight="800" font-family="Plus Jakarta Sans, sans-serif">TS</text></svg>
+              </span>
+              TypeScript
+            </li>
+            <li>
+              <span class="hp-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 2.2l8.4 4.85v9.9L12 21.8l-8.4-4.85v-9.9L12 2.2z" fill="currentColor"/><text x="12" y="14.1" text-anchor="middle" fill="#0B3BBE" font-size="5.5" font-weight="800" font-family="Plus Jakarta Sans, sans-serif">.NET</text></svg>
+              </span>
+              C# / .NET
+            </li>
+            <li>
+              <span class="hp-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3c0 1.4-1.4 1.9-1.4 3.3S10 8.2 10 9.6"/><path d="M14 4c0 1.1-1.1 1.7-1.1 2.8S14 8.2 14 9.5"/><path d="M6 12h10v3.2a4.5 4.5 0 0 1-4.5 4.5h-1A4.5 4.5 0 0 1 6 15.2V12z"/><path d="M16 13h1.4a1.9 1.9 0 0 1 0 3.8H16"/><path d="M5 21h12"/></svg>
+              </span>
+              Java
+            </li>
+            <li>
+              <span class="hp-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 9 9c0-4.2-2.8-7.7-6.7-8.7"/><path d="M12 7v5"/></svg>
+              </span>
+              Spring Boot
+            </li>
+          </ul>
 
-    <div class="project-tabs" role="tablist">
-      <button class="tab-btn active" data-filter="all" data-i18n="projects.tabAll">Todos</button>
-      <button class="tab-btn" data-filter="personal" data-i18n="projects.tabPersonal">Projetos Pessoais</button>
-      <button class="tab-btn" data-filter="academic" data-i18n="projects.tabAcademic">Projetos Acadêmicos</button>
-    </div>
+          <div class="hero-illust">
+            <img src="./assets/fotos/hero-ilustracao.jpg" alt="Ilustração de Matheus Rafael — Desenvolvedor Back-end">
+          </div>
 
-    <div class="project-grid" id="projectGrid">
-
-      <article class="project-card reveal" data-category="personal">
-        <div class="card-top"><span class="tech-tag">2026</span></div>
-        <div class="project-screenshot"><img src="./assets/telas/imovplan.png" alt="Imov.Plan Screenshot"></div>
-        <div class="project-header">
-          <div class="project-logo"><img src="./assets/logos/imovplan-logo.png" alt="Imov.Plan Logo"></div>
-          <h3 class="project-name">Imov.Plan</h3>
-        </div>
-        <p class="project-desc" data-i18n="projects.imovplan">Planejamento financeiro para compra e gestão de imóveis, simulando financiamentos e acompanhando investimentos imobiliários.</p>
-        <div class="tech-tags">
-          <span class="tech-tag">Next.js</span><span class="tech-tag">TypeScript</span><span class="tech-tag">.NET</span><span class="tech-tag">MongoDB</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/MatheusRafaDev/imov-plan" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
-          <a href="https://imov-plan.vercel.app/auth" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> <span data-i18n="projects.demo">Ver Aplicação</span></a>
-        </div>
-      </article>
-
-      <article class="project-card reveal" data-category="personal">
-        <div class="card-top"><span class="tech-tag">2026</span></div>
-        <div class="project-screenshot"><img src="./assets/telas/casalplanner.png" alt="CasalPlanner Screenshot"></div>
-        <div class="project-header">
-          <div class="project-logo"><img src="./assets/logos/logo_casalplanner.png" alt="CasalPlanner Logo"></div>
-          <h3 class="project-name">CasalPlanner</h3>
-        </div>
-        <p class="project-desc" data-i18n="projects.casalplanner">Planejamento financeiro para casais, com metas compartilhadas e um assistente de IA (Groq/Llama 3.1) para sugestões de orçamento.</p>
-        <div class="tech-tags">
-          <span class="tech-tag">ASP.NET Core</span><span class="tech-tag">C#</span><span class="tech-tag">React</span><span class="tech-tag">MongoDB</span><span class="tech-tag">Groq/Llama 3.1</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/MatheusRafaDev/casal-planner" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
-          <a href="https://casalplanner.vercel.app/" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> <span data-i18n="projects.demo">Ver Aplicação</span></a>
-        </div>
-      </article>
-
-      <article class="project-card reveal" data-category="personal">
-        <div class="card-top"><span class="tech-tag">2025</span></div>
-        <div class="project-screenshot"><img src="./assets/telas/saudememora.jpg" alt="SaúdeMemora Screenshot"></div>
-        <div class="project-header">
-          <div class="project-logo"><img src="./assets/logos/saudememora-logo.png" alt="SaúdeMemora Logo"></div>
-          <h3 class="project-name">SaúdeMemora</h3>
-        </div>
-        <p class="project-desc" data-i18n="projects.saudememora">Organização de histórico médico e exames com OCR e IA para extrair e estruturar dados de documentos de saúde.</p>
-        <div class="tech-tags">
-          <span class="tech-tag">Java</span><span class="tech-tag">React</span><span class="tech-tag">SQL Server</span><span class="tech-tag">OCR + IA</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/MatheusRafaDev/saude-memora" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
-          <a href="https://saude-memora.vercel.app/" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> <span data-i18n="projects.demo">Ver Aplicação</span></a>
-        </div>
-      </article>
-
-      <article class="project-card reveal" data-category="academic">
-        <div class="card-top"><span class="tech-tag">2023</span></div>
-        <div class="project-header">
-          <h3 class="project-name">Pitiquinho</h3>
-        </div>
-        <p class="project-desc" data-i18n="projects.pitiquinho">Controle financeiro pessoal para registrar receitas, despesas e acompanhar o orçamento mensal.</p>
-        <div class="tech-tags">
-          <span class="tech-tag">Java</span><span class="tech-tag">Spring Boot</span><span class="tech-tag">Spring Data JPA</span><span class="tech-tag">JSP</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/MatheusRafaDev/pitiquinho" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
-        </div>
-      </article>
-
-      <article class="project-card reveal" data-category="academic">
-        <div class="card-top"><span class="tech-tag">2023</span></div>
-        <div class="project-header">
-          <h3 class="project-name">Date of Love</h3>
-        </div>
-        <p class="project-desc" data-i18n="projects.dateoflove">Projeto acadêmico para organizar encontros e momentos especiais de um casal, com agenda e lembretes.</p>
-        <div class="tech-tags">
-          <span class="tech-tag">Java</span><span class="tech-tag">Spring Boot</span><span class="tech-tag">SQL Server</span><span class="tech-tag">JSP</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/MatheusRafaDev/date-of-love" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
-        </div>
-      </article>
-
-      <article class="project-card reveal" data-category="academic">
-        <div class="card-top"><span class="tech-tag">2022</span></div>
-        <div class="project-header">
-          <h3 class="project-name">RodosBus</h3>
-        </div>
-        <p class="project-desc" data-i18n="projects.rodobus">Sistema acadêmico de gestão de passagens rodoviárias, com venda de bilhetes e notificações automáticas por e-mail.</p>
-        <div class="tech-tags">
-          <span class="tech-tag">Java</span><span class="tech-tag">Java Swing</span><span class="tech-tag">MySQL</span><span class="tech-tag">JavaMail</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/MatheusRafaDev/rodobus" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- ============ EXPERIÊNCIA ============ -->
-<section id="experiencia">
-  <div class="container">
-    <div class="section-head">
-      <h2 class="section-title" data-i18n="exp.title">Experiência</h2>
-    </div>
-
-    <div class="timeline">
-      <div class="tl-item current reveal">
-        <div class="tl-dot"></div>
-        <div class="tl-period" data-i18n="exp.p1">Jul 2025 — Presente · 1 ano 2 meses</div>
-        <div class="tl-role" data-i18n="exp.role1">Desenvolvedor Back-end</div>
-        <div class="tl-company">PWI Sistemas</div>
-        <p class="tl-desc" data-i18n="exp.desc1">Desenvolvimento e manutenção de sistemas ERP corporativos com Node.js e TypeScript. Responsável por soluções para processos de pagamento, financeiro e contabilidade, construção de APIs REST e integrações com sistemas terceiros. Automação de processos internos reduzindo tarefas manuais e tempo operacional. Otimização de consultas SQL utilizadas em processos críticos do ERP. Correção de falhas em integrações responsáveis por processos financeiros. Desenvolvimento de integrações entre ERP, CargoWise e Magento garantindo sincronização de dados e estabilidade dos processos de negócio.</p>
-      </div>
-      <div class="tl-item reveal">
-        <div class="tl-dot"></div>
-        <div class="tl-period" data-i18n="exp.p2">Nov 2023 — Jul 2025 · 1 ano 10 meses</div>
-        <div class="tl-role" data-i18n="exp.role2">Desenvolvedor</div>
-        <div class="tl-company">PWI Sistemas</div>
-        <p class="tl-desc" data-i18n="exp.desc2">Desenvolvimento, evolução e manutenção de APIs REST em Node.js e TypeScript. Atuação em módulos do ERP, correção de bugs e desenvolvimento de novas funcionalidades para sistemas legados e integrações. Participação em projetos de integração entre sistemas e automação de processos internos, reduzindo atividades manuais e aumentando eficiência operacional.</p>
-      </div>
-      <div class="tl-item reveal">
-        <div class="tl-dot"></div>
-        <div class="tl-period" data-i18n="exp.p3">Out 2022 — Nov 2023 · 1 ano 3 meses</div>
-        <div class="tl-role" data-i18n="exp.role3">Estagiário de TI</div>
-        <div class="tl-company">PWI Sistemas</div>
-        <p class="tl-desc" data-i18n="exp.desc3">Primeiros passos em desenvolvimento e suporte a sistemas internos, aprendendo as tecnologias e processos da empresa.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FORMAÇÃO ============ -->
-<section id="formacao">
-  <div class="container">
-    <div class="section-head">
-      <h2 class="section-title" data-i18n="edu.title">Formação</h2>
-    </div>
-    <div class="edu-grid">
-      <div class="edu-card reveal">
-        <div class="edu-period">Fev 2023 – Jun 2025</div>
-        <div class="edu-course" data-i18n="edu.c1">Análise e Desenvolvimento de Sistemas</div>
-        <div class="edu-inst"><img src="./assets/logos/Senac_logo.svg.png" alt="Senac Logo" class="edu-inst-logo"> Centro Universitário Senac</div>
-        <p class="edu-desc">Desenvolvi competências em programação, banco de dados, engenharia de software e metodologias ágeis. O curso proporcionou uma base sólida em tecnologia da informação, preparando-me para atuar no desenvolvimento e manutenção de sistemas, integração de soluções e resolução de problemas técnicos.</p>
-        <div class="edu-skills">
-          <span class="edu-skill">JavaScript</span>
-          <span class="edu-skill">Java</span>
-          <span class="edu-skill">Python</span>
-          <span class="edu-skill">MySQL</span>
-          <span class="edu-skill">Programação</span>
-          <span class="edu-skill">Banco de Dados</span>
-        </div>
-      </div>
-      <div class="edu-card reveal">
-        <div class="edu-period">Jan 2023 – Dez 2023</div>
-        <div class="edu-course" data-i18n="edu.c2">Inglês — Pré-avançado</div>
-        <div class="edu-inst"><img src="./assets/logos/logo frei png.avif" alt="Instituto Nossa Senhora de Fátima Logo" class="edu-inst-logo"> Instituto Nossa Senhora de Fátima</div>
-        <p class="edu-desc">Curso de Inglês (Básico a Pré-Avançado), com foco em conversação, leitura, escrita e compreensão auditiva, incluindo vocabulário técnico e comunicação aplicada ao ambiente profissional e acadêmico. Práticas de conversação, exercícios de compreensão oral, leitura de textos em inglês e atividades em grupo.</p>
-        <div class="edu-skills">
-          <span class="edu-skill">English</span>
-          <span class="edu-skill">Comunicação</span>
-          <span class="edu-skill">Leitura</span>
-          <span class="edu-skill">Escrita</span>
-        </div>
-      </div>
-      <div class="edu-card reveal">
-        <div class="edu-period">Fev 2021 – Dez 2021</div>
-        <div class="edu-course" data-i18n="edu.c3">Ensino Técnico em Informática</div>
-        <div class="edu-inst"><img src="./assets/logos/logo frei png.avif" alt="Instituto Nossa Senhora de Fátima Logo" class="edu-inst-logo"> Instituto Nossa Senhora de Fátima</div>
-        <p class="edu-desc">Formação técnica em Tecnologia da Informação, com foco em lógica de programação, desenvolvimento de sistemas e banco de dados. Desenvolvimento de projeto prático utilizando JavaScript, C#, HTML, CSS e MySQL, aplicando conceitos de front-end, back-end e persistência de dados, além de vivência em análise de problemas, criação de soluções, testes e organização de código.</p>
-        <div class="edu-skills">
-          <span class="edu-skill">JavaScript</span>
-          <span class="edu-skill">C#</span>
-          <span class="edu-skill">HTML/CSS</span>
-          <span class="edu-skill">MySQL</span>
+          <ul class="hero-pills hero-pills--right" aria-label="Bancos de dados, APIs, Cloud e IA">
+            <li>
+              <span class="hp-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.5" rx="6.8" ry="2.7"/><path d="M5.2 5.5v13c0 1.5 3.04 2.7 6.8 2.7s6.8-1.2 6.8-2.7v-13"/><path d="M5.2 12c0 1.5 3.04 2.7 6.8 2.7s6.8-1.2 6.8-2.7"/></svg>
+              </span>
+              SQL
+            </li>
+            <li>
+              <span class="hp-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5C8.5 7 7 10.5 7 13.8a5 5 0 0 0 10 0c0-3.3-1.5-6.8-5-11.3z"/><path d="M12 11v10.5"/></svg>
+              </span>
+              MongoDB
+            </li>
+            <li>
+              <span class="hp-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="M6.6 18h10.6a4.1 4.1 0 0 0 .6-8.15A5.4 5.4 0 0 0 7.3 8.3 4.2 4.2 0 0 0 6.6 18z"/></svg>
+              </span>
+              REST API
+            </li>
+            <li>
+              <span class="hp-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.3 7L12 12l8.7-5"/><path d="M12 22V12"/></svg>
+              </span>
+              Docker &amp; Cloud
+            </li>
+            <li>
+              <span class="hp-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 4.6L18.5 9.5l-4.6 1.9L12 16l-1.9-4.6L5.5 9.5l4.6-1.9L12 3z"/><path d="M19 15l.9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9L19 15z"/></svg>
+              </span>
+              <span data-i18n="hero.pillAi">IA &amp; RAG</span>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </header>
 
-<!-- ============ SKILLS ============ -->
-<section id="skills">
-  <div class="container">
-    <div class="section-head">
-      <h2 class="section-title" data-i18n="skills.title">Skills</h2>
+  <main>
+    <!-- ================= ABOUT ================= -->
+    <section id="sobre">
+      <div class="wrap">
+        <div class="about">
+          <div class="ph reveal">
+            <div class="ph-frame">
+              <div class="back"></div>
+              <img src="./assets/fotos/perfil.jpg" alt="Foto de perfil de Matheus Rafael">
+            </div>
+            <div class="ph-foot">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>
+              <span>São Paulo, BR</span>
+            </div>
+          </div>
+
+          <div class="tx reveal">
+            <h2 class="title" data-i18n="about.title">Quem sou</h2>
+            <p class="lead" data-i18n="about.lead">Sou Desenvolvedor Back-end com sólida atuação no desenvolvimento, manutenção e evolução de sistemas ERP corporativos, APIs RESTful e microsserviços, trabalhando com Node.js, TypeScript, C#/.NET (ASP.NET Core), Java/Spring Boot e SQL Server. Na PWI Sistemas, conduzo soluções para processos críticos de pagamento, financeiro e contabilidade, além da automação de operações internas.</p>
+            <p data-i18n="about.p2">Atuo no mapeamento e implementação de integrações ponta a ponta com plataformas de terceiros como CargoWise e Magento, investigação de causa raiz em falhas críticas, otimização de consultas e rotinas SQL, documentação técnica e evolução contínua de sistemas legados. Aplico Clean Architecture, SOLID, MVC, autenticação JWT/OAuth2, testes automatizados (JUnit/Jest), Docker, CI/CD (GitHub Actions), cloud (AWS e Azure) e soluções com IA Generativa (LLMs, RAG, AI Agents, LangChain/LangGraph e MCP).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= EXPERIENCE ================= -->
+    <section class="alt" id="experiencia">
+      <div class="wrap">
+        <div class="head reveal">
+          <h2 data-i18n="exp.title">Experiência</h2>
+          <p id="exp-total"></p>
+        </div>
+
+        <div class="tl">
+          <div class="tl-i current reveal">
+            <span class="per" data-exp-period data-start="2025-07" data-end="present"></span>
+            <h3 data-i18n="exp.role1">Desenvolvedor Back-end</h3>
+            <div class="co">PWI Sistemas</div>
+            <ul class="exp-list">
+              <li data-i18n="exp.r1b1">Análise e desenvolvimento de integrações ponta a ponta com APIs de terceiros, mapeando fluxos de negócio, regras e dependências para propor e implementar soluções completas.</li>
+              <li data-i18n="exp.r1b2">Desenvolvimento de APIs RESTful e microsserviços para processos de pagamento, financeiro e contabilidade em sistemas ERP utilizando Node.js, TypeScript e C#/.NET.</li>
+              <li data-i18n="exp.r1b3">Desenvolvimento e manutenção de integrações entre ERP e plataformas como CargoWise e Magento, garantindo consistência e sincronização confiável dos dados.</li>
+              <li data-i18n="exp.r1b4">Investigação de causa raiz e resolução de problemas críticos em integrações, APIs e processos financeiros, além de otimização de consultas SQL e performance em rotinas críticas do ERP.</li>
+              <li data-i18n="exp.r1b5">Automação de processos internos reduzindo tarefas manuais, documentação técnica traduzindo requisitos de negócio em especificações e evolução contínua de sistemas legados, arquitetura e qualidade de código.</li>
+            </ul>
+            <div class="tags tl-tags">
+              <span>Node.js</span><span>TypeScript</span><span>C#/.NET</span><span>SQL Server</span><span>APIs RESTful</span><span>Microsserviços</span><span>CargoWise</span><span>Magento</span>
+            </div>
+          </div>
+
+          <div class="tl-i reveal">
+            <span class="per" data-exp-period data-start="2023-11" data-end="2025-07"></span>
+            <h3 data-i18n="exp.role2">Desenvolvedor Back-end Júnior</h3>
+            <div class="co">PWI Sistemas</div>
+            <ul class="exp-list">
+              <li data-i18n="exp.r2b1">Desenvolvimento e manutenção de APIs RESTful em Node.js e TypeScript integradas ao ERP Volpe e a sistemas internos.</li>
+              <li data-i18n="exp.r2b2">Implementação de integrações entre sistemas, atuando no fluxo de dados, regras de negócio e comunicação via APIs.</li>
+              <li data-i18n="exp.r2b3">Modelagem, manutenção e otimização de bancos de dados SQL, incluindo consultas e rotinas críticas utilizadas pelo ERP.</li>
+              <li data-i18n="exp.r2b4">Análise técnica de demandas ponta a ponta, correção de falhas críticas e implementação de melhorias evolutivas em sistemas legados e ferramentas internas, conciliando novas funcionalidades às regras do ERP.</li>
+            </ul>
+            <div class="tags tl-tags">
+              <span>Node.js</span><span>TypeScript</span><span>SQL Server</span><span>APIs RESTful</span><span>ERP Volpe</span><span>Integrações</span>
+            </div>
+          </div>
+
+          <div class="tl-i reveal">
+            <span class="per" data-exp-period data-start="2022-10" data-end="2023-11"></span>
+            <h3 data-i18n="exp.role3">Estagiário de TI</h3>
+            <div class="co">PWI Sistemas</div>
+            <ul class="exp-list">
+              <li data-i18n="exp.r3b1">Manutenção evolutiva e suporte ao ERP Volpe, desenvolvido em FoxPro, e aos bancos de dados SQL.</li>
+              <li data-i18n="exp.r3b2">Correção de bugs e inconsistências no sistema e nos processos internos, além do desenvolvimento de novas funcionalidades e ferramentas de apoio.</li>
+              <li data-i18n="exp.r3b3">Atendimento e suporte técnico a clientes na análise e resolução de problemas, apoiando também no levantamento de demandas, testes e validação de entregas.</li>
+            </ul>
+            <div class="tags tl-tags">
+              <span>FoxPro</span><span>SQL</span><span>ERP Volpe</span><span>Suporte Técnico</span><span>Testes &amp; Validação</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROJECTS ================= -->
+    <section id="projetos">
+      <div class="wrap">
+        <div class="head reveal">
+          <h2 data-i18n="projects.title">Projetos</h2>
+          <p data-i18n="projects.sub">Sistemas completos que projetei e desenvolvi do zero, da modelagem de dados e APIs à interface.</p>
+        </div>
+
+        <div class="tabs reveal" role="tablist" aria-label="Filtro de projetos">
+          <button type="button" class="tab-btn on" data-filter="all" data-i18n="projects.tabAll">Todos</button>
+          <button type="button" class="tab-btn" data-filter="personal" data-i18n="projects.tabPersonal">Projetos Pessoais</button>
+          <button type="button" class="tab-btn" data-filter="academic" data-i18n="projects.tabAcademic">Projetos Acadêmicos</button>
+        </div>
+
+        <div class="grid" id="projectGrid">
+          <!-- Imov.Plan -->
+          <article class="card reveal" data-category="personal">
+            <div class="shot">
+              <span class="yr">2026</span>
+              <img src="./assets/telas/imovplan.jpg?v=2" alt="Imov.Plan Screenshot" loading="lazy">
+            </div>
+            <div class="ph-h">
+              <img src="./assets/logos/imovplan-logo.png?v=2" alt="Imov.Plan logo">
+              <h3>Imov.Plan</h3>
+            </div>
+            <p class="desc" data-i18n="projects.imovplan">Planejamento financeiro para aquisição de imóveis com simulação comparativa SAC e PRICE, cálculo de rendimento líquido com CDI e IR regressivo, aportes extras (13º, férias e FGTS) e composição de renda individual ou em casal.</p>
+            <div class="tags">
+              <span>Next.js</span><span>TypeScript</span><span>C#/.NET</span><span>MongoDB</span>
+            </div>
+            <div class="links2">
+              <a href="https://github.com/MatheusRafaDev/imov-plan" target="_blank" rel="noopener">
+                <svg class="ico f" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"></path></svg>
+                GitHub
+              </a>
+              <a class="demo" href="https://imov-plan.vercel.app/auth" target="_blank" rel="noopener">
+                <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg>
+                <span data-i18n="projects.demo">Ver Aplicação</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- CasalPlanner -->
+          <article class="card reveal" data-category="personal">
+            <div class="shot">
+              <span class="yr">2026</span>
+              <img src="./assets/telas/casalplanner.jpg?v=2" alt="CasalPlanner Screenshot" loading="lazy">
+            </div>
+            <div class="ph-h">
+              <img src="./assets/logos/logo_casalplanner.png?v=2" alt="CasalPlanner logo">
+              <h3>CasalPlanner</h3>
+            </div>
+            <p class="desc" data-i18n="projects.casalplanner">Organização financeira e montagem da casa a dois por cômodos, com controle de orçamento em tempo real, metas e compras sincronizadas, separação VR/VA e assistente de IA (Groq/Llama 3.1) para recomendações.</p>
+            <div class="tags">
+              <span>ASP.NET Core</span><span>C#</span><span>React</span><span>MongoDB</span><span>Groq/Llama 3.1</span>
+            </div>
+            <div class="links2">
+              <a href="https://github.com/MatheusRafaDev/casal-planner" target="_blank" rel="noopener">
+                <svg class="ico f" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"></path></svg>
+                GitHub
+              </a>
+              <a class="demo" href="https://casalplanner.vercel.app/" target="_blank" rel="noopener">
+                <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg>
+                <span data-i18n="projects.demo">Ver Aplicação</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- SaúdeMemora -->
+          <article class="card reveal" data-category="personal">
+            <div class="shot">
+              <span class="yr">2026</span>
+              <img src="./assets/telas/saudememora.jpg?v=2" alt="SaúdeMemora Screenshot" loading="lazy">
+            </div>
+            <div class="ph-h">
+              <img src="./assets/logos/saudememora-logo.png?v=2" alt="SaúdeMemora logo">
+              <h3>SaúdeMemora</h3>
+            </div>
+            <p class="desc" data-i18n="projects.saudememora">Gestão inteligente de documentos médicos com processamento assíncrono em .NET 9, OCR duplo, extração clínica estruturada com Gemini/Groq, alertas de interações medicamentosas e chat assistente com Tool Calling e RAG Híbrido (busca vetorial e lexical no MongoDB).</p>
+            <div class="tags">
+              <span>ASP.NET Core 9</span><span>C#</span><span>React</span><span>MongoDB</span><span data-i18n="projects.ragTag">RAG Híbrido</span><span>Tool Calling</span><span>Gemini &amp; Groq</span>
+            </div>
+            <div class="links2">
+              <a href="https://github.com/MatheusRafaDev/saude-memora" target="_blank" rel="noopener">
+                <svg class="ico f" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"></path></svg>
+                GitHub
+              </a>
+              <a class="demo" href="https://saude-memora.vercel.app/" target="_blank" rel="noopener">
+                <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg>
+                <span data-i18n="projects.demo">Ver Aplicação</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Pitiquinho -->
+          <article class="card compact reveal" data-category="academic">
+            <div class="compact-top">
+              <div class="compact-title">
+                <h3>Pitiquinho</h3>
+                <span class="yr-inline" data-i18n="projects.pitiquinhoMeta">E-commerce · 2023</span>
+              </div>
+              <a class="gh-min" href="https://github.com/MatheusRafaDev/pitiquinho" target="_blank" rel="noopener" aria-label="GitHub Pitiquinho">
+                <svg class="ico f" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"></path></svg>
+                GitHub
+              </a>
+            </div>
+            <p class="desc" data-i18n="projects.pitiquinho">E-commerce completo desenvolvido no padrão MVC com cadastro e autenticação de usuários, gerenciamento de catálogo de produtos, carrinho de compras, controle de sessão HTTP com JSP e persistência relacional via Spring Data JPA.</p>
+            <div class="tags">
+              <span>Java</span><span>Spring Boot</span><span>Spring Data JPA</span><span>JSP</span><span>MVC</span>
+            </div>
+          </article>
+
+          <!-- Date of Love -->
+          <article class="card compact reveal" data-category="academic">
+            <div class="compact-top">
+              <div class="compact-title">
+                <h3>Date of Love</h3>
+                <span class="yr-inline" data-i18n="projects.dateofloveMeta">Plataforma Web · 2023</span>
+              </div>
+              <a class="gh-min" href="https://github.com/MatheusRafaDev/date-of-love" target="_blank" rel="noopener" aria-label="GitHub Date of Love">
+                <svg class="ico f" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"></path></svg>
+                GitHub
+              </a>
+            </div>
+            <p class="desc" data-i18n="projects.dateoflove">Plataforma web para organização de casamentos com catálogo de serviços e fornecedores, cálculo automático de orçamento personalizado, envio automatizado de propostas por e-mail e persistência de dados em SQL Server.</p>
+            <div class="tags">
+              <span>Java</span><span>Spring Boot</span><span>SQL Server</span><span>JSP</span><span>MVC</span>
+            </div>
+          </article>
+
+          <!-- RodosBus -->
+          <article class="card compact reveal" data-category="academic">
+            <div class="compact-top">
+              <div class="compact-title">
+                <h3>RodosBus</h3>
+                <span class="yr-inline" data-i18n="projects.rodobusMeta">Líder Técnico · 2022</span>
+              </div>
+              <a class="gh-min" href="https://github.com/MatheusRafaDev/rodobus" target="_blank" rel="noopener" aria-label="GitHub RodosBus">
+                <svg class="ico f" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"></path></svg>
+                GitHub
+              </a>
+            </div>
+            <p class="desc" data-i18n="projects.rodobus">Sistema desktop de reserva e venda de passagens rodoviárias, com controle de rotas e assentos, persistência em MySQL e disparo automático de comprovantes via JavaMail. Atuei como gerente de projeto e líder técnico da equipe.</p>
+            <div class="tags">
+              <span>Java</span><span>Java Swing</span><span>MySQL</span><span>JavaMail</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= EDUCATION ================= -->
+    <section class="alt" id="formacao">
+      <div class="wrap">
+        <div class="head reveal">
+          <h2 data-i18n="edu.title">Formação</h2>
+        </div>
+
+        <div class="edu">
+          <div class="ec reveal">
+            <span class="p" data-edu-period data-start="2023-02" data-end="2025-06"></span>
+            <h3 data-i18n="edu.c1">Análise e Desenvolvimento de Sistemas</h3>
+            <div class="in">
+              <img src="./assets/logos/Senac_logo.svg.png" alt="Senac logo">
+              Centro Universitário Senac
+            </div>
+            <p class="d" data-i18n="edu.desc1">Desenvolvi competências em programação, banco de dados, engenharia de software e metodologias ágeis. O curso proporcionou uma base sólida em tecnologia da informação, preparando-me para atuar no desenvolvimento e manutenção de sistemas, integração de soluções e resolução de problemas técnicos.</p>
+            <div class="tags">
+              <span>Engenharia de Software</span><span>Java &amp; Spring Boot</span><span>SQL Server &amp; MySQL</span><span>Arquitetura MVC</span><span>Metodologias Ágeis</span><span>JavaScript</span>
+            </div>
+          </div>
+
+          <div class="ec reveal">
+            <span class="p" data-edu-period data-start="2022-01" data-end="2023-12"></span>
+            <h3 data-i18n="edu.c2">Inglês — Pré-avançado</h3>
+            <div class="in">
+              <img src="./assets/logos/logo-frei.png" alt="Instituto Nossa Senhora de Fátima logo">
+              Instituto Nossa Senhora de Fátima
+            </div>
+            <p class="d" data-i18n="edu.desc2">Curso de Inglês (Básico a Pré-Avançado), com foco em conversação, leitura, escrita e compreensão auditiva, incluindo vocabulário técnico e comunicação aplicada ao ambiente profissional e acadêmico. Práticas de conversação, exercícios de compreensão oral, leitura de textos em inglês e atividades em grupo.</p>
+            <div class="tags">
+              <span>English</span><span>Comunicação</span><span>Leitura</span><span>Escrita</span>
+            </div>
+          </div>
+
+          <div class="ec reveal">
+            <span class="p" data-edu-period data-start="2021-02" data-end="2021-12"></span>
+            <h3 data-i18n="edu.c3">Ensino Técnico em Informática</h3>
+            <div class="in">
+              <img src="./assets/logos/logo-frei.png" alt="Instituto Nossa Senhora de Fátima logo">
+              Instituto Nossa Senhora de Fátima
+            </div>
+            <p class="d" data-i18n="edu.desc3">Formação técnica em Tecnologia da Informação, com foco em lógica de programação, desenvolvimento de sistemas e banco de dados. Desenvolvimento de projeto prático utilizando JavaScript, C#, HTML, CSS e MySQL, aplicando conceitos de front-end, back-end e persistência de dados, além de vivência em análise de problemas, criação de soluções, testes e organização de código.</p>
+            <div class="tags">
+              <span>JavaScript</span><span>C#</span><span>HTML/CSS</span><span>MySQL</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SKILLS ================= -->
+    <section id="skills">
+      <div class="wrap">
+        <div class="head reveal">
+          <h2 data-i18n="skills.title">Skills</h2>
+        </div>
+
+        <div class="skills">
+          <div class="sk reveal">
+            <h3 data-i18n="skills.backend">Back-end</h3>
+            <div class="tg">
+              <span>C#/.NET</span>
+              <span>ASP.NET Core</span>
+              <span>Node.js</span>
+              <span>TypeScript</span>
+              <span>Java</span>
+              <span>Spring Boot</span>
+              <span>Spring MVC</span>
+              <span>JavaScript</span>
+              <span>FoxPro</span>
+            </div>
+          </div>
+
+          <div class="sk reveal">
+            <h3 data-i18n="skills.integration">APIs, Integrações &amp; Segurança</h3>
+            <div class="tg">
+              <span>APIs RESTful</span>
+              <span>Microsserviços</span>
+              <span>JWT</span>
+              <span>OAuth2</span>
+              <span>CargoWise</span>
+              <span>Magento</span>
+              <span>Integração de Sistemas</span>
+            </div>
+          </div>
+
+          <div class="sk reveal">
+            <h3 data-i18n="skills.db">Banco de Dados &amp; ORM</h3>
+            <div class="tg">
+              <span>SQL Server</span>
+              <span>MySQL</span>
+              <span>MongoDB</span>
+              <span>Entity Framework Core</span>
+              <span>LINQ</span>
+              <span>T-SQL</span>
+              <span>Otimização de Queries</span>
+            </div>
+          </div>
+
+          <div class="sk reveal">
+            <h3 data-i18n="skills.ai">Inteligência Artificial</h3>
+            <div class="tg">
+              <span>LLMs</span>
+              <span>Prompt Engineering</span>
+              <span>RAG</span>
+              <span>Embeddings</span>
+              <span>Vector Search</span>
+              <span>Tool Calling (Function Calling)</span>
+              <span>AI Agents</span>
+              <span>LangChain</span>
+              <span>LangGraph</span>
+              <span>MCP</span>
+              <span data-i18n="skills.genai">IA Generativa</span>
+            </div>
+          </div>
+
+          <div class="sk reveal">
+            <h3 data-i18n="skills.cloud">Testes, Cloud &amp; DevOps</h3>
+            <div class="tg">
+              <span>JUnit</span>
+              <span>Jest</span>
+              <span>GitHub Actions</span>
+              <span>CI/CD</span>
+              <span>Docker</span>
+              <span>AWS</span>
+              <span>Azure</span>
+              <span>Oracle Cloud</span>
+              <span>Git</span>
+            </div>
+          </div>
+
+          <div class="sk reveal">
+            <h3 data-i18n="skills.arch">Arquitetura &amp; Front-end</h3>
+            <div class="tg">
+              <span>Clean Architecture</span>
+              <span>SOLID</span>
+              <span>MVC</span>
+              <span>React</span>
+              <span>Next.js</span>
+              <span>JSP</span>
+              <span>HTML/CSS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= CONTACT & FOOTER ================= -->
+  <footer class="contact" id="contato">
+    <div class="wrap">
+      <div class="head reveal">
+        <h2 data-i18n="contact.title">Contato</h2>
+        <p data-i18n="contact.sub">Aberto a novas oportunidades como desenvolvedor backend. Vamos conversar.</p>
+      </div>
+
+      <div class="cg">
+        <a class="cc reveal" href="mailto:rafaelmatheus061@gmail.com">
+          <span class="ic" aria-hidden="true">
+            <svg class="ico" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>
+          </span>
+          <span>
+            <small>Email</small>
+            <strong>rafaelmatheus061@gmail.com</strong>
+          </span>
+        </a>
+
+        <a class="cc reveal" href="tel:+5511956601009">
+          <span class="ic" aria-hidden="true">
+            <svg class="ico" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"></path></svg>
+          </span>
+          <span>
+            <small data-i18n="contact.phone">Telefone</small>
+            <strong>(11) 95660-1009</strong>
+          </span>
+        </a>
+
+        <a class="cc reveal" href="https://www.linkedin.com/in/matheus-rafael-50a676219/" target="_blank" rel="noopener">
+          <span class="ic" aria-hidden="true">
+            <svg class="ico f" viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4V21H3zM9.5 9.75h3.8v1.6h.06c.53-1 1.82-2.05 3.75-2.05 4 0 4.74 2.64 4.74 6.07V21h-4v-4.9c0-1.17-.02-2.67-1.63-2.67-1.63 0-1.88 1.27-1.88 2.59V21h-4z"></path></svg>
+          </span>
+          <span>
+            <small>LinkedIn</small>
+            <strong>matheus-rafael</strong>
+          </span>
+        </a>
+
+        <a class="cc reveal" href="https://github.com/MatheusRafaDev" target="_blank" rel="noopener">
+          <span class="ic" aria-hidden="true">
+            <svg class="ico f" viewBox="0 0 24 24"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"></path></svg>
+          </span>
+          <span>
+            <small>GitHub</small>
+            <strong>MatheusRafaDev</strong>
+          </span>
+        </a>
+      </div>
+
+      <div class="foot">
+        <p class="foot-verse" data-i18n="footer.verse">"Consagre ao Senhor tudo o que você faz, e os seus planos serão bem-sucedidos." — Provérbios 16:3</p>
+        <span data-i18n="footer.made">Feito por Matheus Rafael · São Paulo, SP · 2026</span>
+      </div>
     </div>
-    <div class="skills-grid">
-      <div class="reveal">
-        <div class="skill-group-title"><span class="comment">// </span><span data-i18n="skills.backend">Back-end</span></div>
-        <div class="skill-tags">
-          <span class="skill-tag"><img src="https://raw.githubusercontent.com/dotnet/vscode-csharp/main/images/csharpIcon.png" alt="C#" style="width:14px;height:14px;"> C#/.NET</span><span class="skill-tag"><i class="fab fa-node-js"></i> Node.js</span><span class="skill-tag"><i class="fab fa-java"></i> Java</span><span class="skill-tag"><i class="fas fa-leaf"></i> Spring Boot</span><span class="skill-tag"><i class="fab fa-js"></i> TypeScript</span><span class="skill-tag"><i class="fab fa-js"></i> JavaScript</span><span class="skill-tag"><img src="https://raw.githubusercontent.com/dotnet/vscode-csharp/main/images/csharpIcon.png" alt="ASP.NET" style="width:14px;height:14px;"> ASP.NET Core</span>
-        </div>
-      </div>
-      <div class="reveal">
-        <div class="skill-group-title"><span class="comment">// </span><span data-i18n="skills.db">Banco de Dados</span></div>
-        <div class="skill-tags">
-          <span class="skill-tag"><i class="fas fa-database"></i> SQL Server</span><span class="skill-tag"><i class="fas fa-database"></i> MySQL</span><span class="skill-tag"><i class="fas fa-leaf"></i> MongoDB</span><span class="skill-tag"><img src="https://raw.githubusercontent.com/dotnet/vscode-csharp/main/images/csharpIcon.png" alt=".NET" style="width:14px;height:14px;"> Entity Framework</span><span class="skill-tag"><i class="fas fa-database"></i> T-SQL</span><span class="skill-tag"><i class="fas fa-cogs"></i> ORM</span><span class="skill-tag"><i class="fas fa-tachometer-alt"></i> Otimização de Queries</span>
-        </div>
-      </div>
-      <div class="reveal">
-        <div class="skill-group-title"><span class="comment">// </span><span data-i18n="skills.cloud">Cloud &amp; DevOps</span></div>
-        <div class="skill-tags">
-          <span class="skill-tag"><i class="fab fa-aws"></i> AWS</span><span class="skill-tag"><i class="fab fa-microsoft"></i> Azure</span><span class="skill-tag"><i class="fas fa-database"></i> Oracle Cloud</span><span class="skill-tag"><i class="fab fa-docker"></i> Docker</span><span class="skill-tag"><i class="fab fa-git-alt"></i> Git/GitHub</span><span class="skill-tag"><i class="fas fa-infinity"></i> CI/CD</span>
-        </div>
-      </div>
-      <div class="reveal">
-        <div class="skill-group-title"><span class="comment">// </span><span data-i18n="skills.integration">Integrações &amp; Mensageria</span></div>
-        <div class="skill-tags">
-          <span class="skill-tag"><i class="fas fa-cogs"></i> CargoWise</span><span class="skill-tag"><i class="fas fa-shopping-cart"></i> Magento</span><span class="skill-tag"><i class="fas fa-stream"></i> Kafka</span><span class="skill-tag"><i class="fas fa-envelope"></i> RabbitMQ</span><span class="skill-tag"><i class="fas fa-server"></i> APIs REST</span><span class="skill-tag"><i class="fas fa-exchange-alt"></i> Integração de Sistemas</span><span class="skill-tag"><i class="fas fa-code"></i> JSON</span>
-        </div>
-      </div>
-      <div class="reveal">
-        <div class="skill-group-title"><span class="comment">// </span><span data-i18n="skills.frontend">Front-end</span></div>
-        <div class="skill-tags">
-          <span class="skill-tag"><i class="fab fa-react"></i> React</span><span class="skill-tag"><i class="fab fa-html5"></i> HTML/CSS</span><span class="skill-tag"><i class="fas fa-file-code"></i> JSP</span><span class="skill-tag"><i class="fab fa-react"></i> Next.js</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+  </footer>
 
-<!-- ============ CONTATO ============ -->
-<section id="contato">
-  <div class="container">
-    <div class="section-head">
-      <h2 class="section-title" data-i18n="contact.title">Contato</h2>
-      <p class="section-sub" data-i18n="contact.sub">Aberto a novas oportunidades como desenvolvedor backend. Vamos conversar.</p>
-    </div>
-    <div class="contact-grid">
-      <div class="contact-card reveal">
-        <span class="contact-icon" aria-hidden="true"><i class="fas fa-envelope"></i></span>
-        <span>
-          <span class="contact-label">Email</span>
-          <span class="contact-value">rafaelmatheus061@gmail.com</span>
-        </span>
-      </div>
-      <div class="contact-card reveal">
-        <span class="contact-icon" aria-hidden="true"><i class="fas fa-phone"></i></span>
-        <span>
-          <span class="contact-label" data-i18n="contact.phone">Telefone</span>
-          <span class="contact-value">(11) 95660-1009</span>
-        </span>
-      </div>
-      <div class="contact-card reveal">
-        <span class="contact-icon" aria-hidden="true"><i class="fab fa-linkedin"></i></span>
-        <span>
-          <span class="contact-label">LinkedIn</span>
-          <span class="contact-value">matheus-rafael</span>
-        </span>
-      </div>
-      <div class="contact-card reveal">
-        <span class="contact-icon" aria-hidden="true"><i class="fab fa-github"></i></span>
-        <span>
-          <span class="contact-label">GitHub</span>
-          <span class="contact-value">MatheusRafaDev</span>
-        </span>
-      </div>
-    </div>
-  </div>
-</section>
-
-</main>
-
-<footer>
-  <div class="container status-bar">
-    <span data-i18n="footer.made">Feito por Matheus Rafael · São Paulo, SP · 2026</span>
-    <span class="status-online"><span class="dot"></span><span data-i18n="footer.online">status: online</span></span>
-  </div>
-</footer>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
